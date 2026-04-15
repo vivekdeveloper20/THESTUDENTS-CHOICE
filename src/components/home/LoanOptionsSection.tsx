@@ -19,7 +19,7 @@ const rightBanks = [
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: {
-    opacity: 1, 
+    opacity: 1,
     scale: 1,
     transition: {
       duration: 0.8,
@@ -55,7 +55,7 @@ export function LoanOptionsSection() {
 
   return (
     <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -63,7 +63,7 @@ export function LoanOptionsSection() {
         className="max-w-7xl mx-auto rounded-[40px] bg-[#8424e8] p-8 md:p-14 overflow-hidden shadow-2xl"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          
+
           {/* Left Column Logos */}
           <div className="w-full lg:w-[240px]">
             <div className="grid grid-cols-2 gap-5 lg:hidden">

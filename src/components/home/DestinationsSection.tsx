@@ -49,7 +49,7 @@ export function DestinationsSection() {
   return (
     <section className="w-full bg-white pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -63,7 +63,7 @@ export function DestinationsSection() {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -71,16 +71,16 @@ export function DestinationsSection() {
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
         >
           {destinations.map((dest, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               variants={itemVariants}
               className="flex flex-col items-center group cursor-pointer"
             >
               <div className="w-full h-40 md:h-44 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <img 
-                  src={dest.image} 
-                  alt={dest.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                <img
+                  src={dest.image}
+                  alt={dest.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <p className="mt-4 text-[16px] md:text-[18px] font-bold text-gray-700 group-hover:text-[#8424e8] transition-colors text-center">
