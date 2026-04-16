@@ -104,3 +104,30 @@ a:focus-visible {
 .animate-marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* Fast marquee for destinations carousel */
+@keyframes marquee-left-fast {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right-fast {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left-fast {
+  animation: marquee-left-fast 7s linear infinite;
+}
+
+.animate-marquee-left-fast:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-right-fast {
+  animation: marquee-right-fast 7s linear infinite;
+}
+
+.animate-marquee-right-fast:hover {
+  animation-play-state: paused;
+}

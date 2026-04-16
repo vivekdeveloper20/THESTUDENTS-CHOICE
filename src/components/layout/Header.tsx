@@ -255,6 +255,13 @@ export function Header() {
             <StudyAbroadMega />
 
             <Link
+              href="/beyond-rejection"
+              className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
+            >
+              Beyond Rejection
+            </Link>
+
+            <Link
               href="/education-loan"
               className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
             >
@@ -326,6 +333,14 @@ export function Header() {
               </div>
             ))}
           </MobileAccordion>
+
+          <Link
+            href="/beyond-rejection"
+            onClick={close}
+            className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4 pt-2"
+          >
+            Beyond Rejection
+          </Link>
 
           <Link
             href="/education-loan"
