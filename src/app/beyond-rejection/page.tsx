@@ -129,6 +129,29 @@ const RECOVERY_PROCESS = [
   },
 ];
 
+const COMMON_QUESTIONS = [
+  {
+    q: 'Can I really get approved after rejection?',
+    a: "Yes! Many students get approved after working with us. A rejection often means wrong lender choice or presentation issues, not that you don't qualify at all.",
+  },
+  {
+    q: 'How long does the reapplication process take?',
+    a: 'Most students can restart in 7 to 21 days depending on document readiness, lender response time, and profile corrections. Urgent cases can be prioritized.',
+  },
+  {
+    q: 'Do you charge for rejection support?',
+    a: 'Initial case review is free. If you choose end-to-end support, we share transparent pricing before any paid engagement begins.',
+  },
+  {
+    q: 'What if I get rejected again?',
+    a: 'We do a second-level review and switch strategy quickly, including lender remapping and stronger documentation logic to reduce repeat rejection risk.',
+  },
+  {
+    q: 'Will this affect my credit score?',
+    a: 'Multiple hard inquiries in a short window can impact score slightly. We minimize unnecessary applications by choosing the right lender path first.',
+  },
+];
+
 export default function BeyondRejectionPage() {
   return (
     <PageShell>
@@ -356,6 +379,208 @@ export default function BeyondRejectionPage() {
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="rounded-3xl border border-[#e9defc] bg-gradient-to-br from-[#ffffff] via-[#faf6ff] to-[#f3ebff] p-7 md:p-10 shadow-[0_16px_40px_rgba(132,36,232,0.1)]">
+          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-10 items-start">
+            <div>
+              <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+                Beyond Rejection
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+                Get Your Case Reviewed by Experts
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Share your details and we&apos;ll provide a free assessment of your rejection case and next steps.
+              </p>
+              <div className="space-y-3">
+                {[
+                  '100% Confidential Review',
+                  'Response within 24 hours',
+                  'No obligation consultation',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#7c3aed] to-[#6d28d9] text-white text-xs font-bold">
+                      ✓
+                    </span>
+                    <p className="text-gray-700 font-medium leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-[#ebe4fb] bg-white/80 p-5">
+                <p className="text-gray-700 leading-relaxed">
+                  From first rejection to final approval, our experts walk with you at every step. You get a clear,
+                  personalized action plan so you can reapply with confidence instead of guesswork.
+                </p>
+
+                <div className="mt-4 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-xl bg-[#f5efff] border border-[#e6d9fb] p-3 text-center">
+                    <div className="text-2xl mb-1">🧠</div>
+                    <p className="text-xs font-semibold text-[#5e2ab4]">Expert Diagnosis</p>
+                  </div>
+                  <div className="rounded-xl bg-[#eef9ff] border border-[#d6efff] p-3 text-center">
+                    <div className="text-2xl mb-1">📋</div>
+                    <p className="text-xs font-semibold text-[#1b5f8a]">Action Checklist</p>
+                  </div>
+                  <div className="rounded-xl bg-[#edfff4] border border-[#d5f5e3] p-3 text-center">
+                    <div className="text-2xl mb-1">🚀</div>
+                    <p className="text-xs font-semibold text-[#1f7a47]">Comeback Roadmap</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form className="grid sm:grid-cols-2 gap-4 rounded-2xl border border-[#ebe4fb] bg-white/90 p-5 md:p-6">
+              <div className="sm:col-span-2">
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Student Name *</label>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Phone Number *</label>
+                <input
+                  type="tel"
+                  placeholder="+91 XXXXX XXXXX"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Country *</label>
+                <input
+                  type="text"
+                  placeholder="Study destination"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">University *</label>
+                <input
+                  type="text"
+                  placeholder="University name"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Rejected By *</label>
+                <input
+                  type="text"
+                  placeholder="Bank/NBFC name"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Loan Amount *</label>
+                <input
+                  type="text"
+                  placeholder="Amount needed (in ₹)"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors"
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="text-sm font-semibold text-gray-700 block mb-1.5">Message</label>
+                <textarea
+                  rows={4}
+                  placeholder="Brief description of your situation"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors resize-none"
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <button
+                  type="button"
+                  className="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold px-8 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(132,36,232,0.28)] hover:brightness-110 transition-all"
+                >
+                  Review My Case
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden pb-24">
+        <div className="pointer-events-none absolute -top-10 left-0 h-52 w-52 rounded-full bg-[#b894ff]/20 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-[#60d8ff]/10 blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="rounded-3xl border border-[#e8e1fb] bg-white/90 backdrop-blur-sm p-7 md:p-10 shadow-[0_18px_44px_rgba(111,30,208,0.12)]">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+              <div className="space-y-3">
+                {COMMON_QUESTIONS.map((item, idx) => (
+                  <details
+                    key={item.q}
+                    className="group rounded-2xl border border-[#e6dcfb] bg-gradient-to-br from-white to-[#faf7ff] open:shadow-[0_12px_30px_rgba(111,30,208,0.12)] transition-all"
+                    open={idx === 0}
+                  >
+                    <summary className="list-none cursor-pointer p-5 md:p-6">
+                      <div className="flex items-start gap-4">
+                        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#7c3aed] to-[#6d28d9] text-white text-xs font-bold">
+                          {idx + 1}
+                        </span>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-extrabold text-[#1f2937] pr-6">{item.q}</h3>
+                        </div>
+                        <span className="mt-1 text-[#6f1ed0] text-lg font-bold transition-transform duration-300 group-open:rotate-45">
+                          +
+                        </span>
+                      </div>
+                    </summary>
+                    <div className="px-5 md:px-6 pb-6 pl-[4.15rem] text-gray-600 leading-relaxed">
+                      {item.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+
+              <div>
+                <span className="inline-flex items-center rounded-full border border-[#d8c5fb] bg-[#f7f2ff] text-[#6f1ed0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 mb-4">
+                  Common Questions
+                </span>
+                <h2 className="text-3xl md:text-4xl font-black text-[#1f1147] leading-tight mb-4">
+                  Still Unsure? Let&apos;s Clear Every Doubt.
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Quick answers to the most asked questions after a loan rejection. No fluff, only practical clarity.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {['No guesswork', 'Honest guidance', 'Student-first'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center rounded-full bg-gradient-to-r from-[#f2eaff] to-[#eef8ff] border border-[#e1d6fb] px-3 py-1.5 text-xs font-semibold text-[#53308d]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-[#e1d7fb] bg-gradient-to-r from-[#f8f3ff] to-[#eef8ff] p-5">
+                  <h3 className="text-lg font-extrabold text-[#2b1f56] mb-3">What You Get After Review</h3>
+                  <div className="space-y-2.5 text-sm text-gray-700">
+                    <p className="flex items-start gap-2"><span className="text-base">🛡️</span><span>Risk report with exact rejection triggers</span></p>
+                    <p className="flex items-start gap-2"><span className="text-base">🧭</span><span>Custom lender direction based on your profile</span></p>
+                    <p className="flex items-start gap-2"><span className="text-base">📈</span><span>Approval-focused checklist for faster comeback</span></p>
+                  </div>
+                </div>
+
+                <p className="mt-5 text-sm text-gray-600 leading-relaxed">
+                  ✨ Real guidance, real timelines, and a practical plan you can act on immediately.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
