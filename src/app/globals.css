@@ -131,3 +131,31 @@ a:focus-visible {
 .animate-marquee-right-fast:hover {
   animation-play-state: paused;
 }
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Auto-scrolling animation for services cards */
+@keyframes services-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-services-scroll {
+  animation: services-scroll 10s linear infinite;
+}
+
+.animate-services-scroll:hover {
+  animation-play-state: paused;
+}
