@@ -5,26 +5,21 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     number: "1",
-    title: "Find the right loan options",
-    description: "Understand your loan eligibility based on your academic profile, chosen university, and financial background. We help you identify the best possible loan options from the start."
-  },
-  {
-    number: "2",
     title: "Connect with Our Experts",
     description: "Speak with our experienced advisors to get personalized guidance and clarity on the best loan solutions for your profile."
   },
   {
-    number: "3",
+    number: "2",
     title: "Documentation & Application",
     description: "Prepare and submit all required documents with our support to ensure a smooth and error-free application process."
   },
   {
-    number: "4",
+    number: "3",
     title: "Compare and choose Best Loan Offer",
     description: "We help you compare multiple lenders and secure the most suitable loan with competitive interest rates and flexible terms."
   },
   {
-    number: "5",
+    number: "4",
     title: "Approval & Disbursement",
     description: "Receive your loan sanction and ensure timely disbursement of funds directly to your university."
   }

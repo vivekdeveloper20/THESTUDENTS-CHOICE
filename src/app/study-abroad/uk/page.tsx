@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CountryPage } from '@/components/layout/CountryPage';
+import { StudyUKPage } from '@/components/study-abroad/StudyUKPage';
 
 export const metadata: Metadata = {
   title: "Study in UK | Student's Choice",
@@ -8,13 +8,24 @@ export const metadata: Metadata = {
 
 export default function UKPage() {
   return (
-    <CountryPage
+    <StudyUKPage
       country="UK"
-      flag="🇬🇧"
-      tagline="The birthplace of modern education — world-renowned degrees, rich history, and a 2-year post-study work visa."
-      description="The United Kingdom is home to some of the world's oldest and most prestigious universities. With shorter course durations (3 years for undergrad, 1 year for PG), the UK offers excellent value. The Graduate Route visa allows 2 years of work post-graduation, making it a top choice for career-focused students."
-      heroGradient="bg-gradient-to-br from-[#0d0d2b] via-[#1a1a6e] to-[#c62828]"
-      accentColor="#0d0d2b"
+      tagline="Your Smart Path to Study in the UK"
+      heroImage="/assets/images/studyabroadcountry/UK Banner.png"
+      introParagraphs={[
+        "The UK continues to be one of the world's most preferred destinations for students who want globally respected education, faster degree completion, and strong career opportunities. It offers a powerful combination of academic excellence, innovation, multicultural exposure, and real-world learning.",
+        "Studying in the UK is more than earning a degree — it is an investment in your future. With internationally recognised universities, industry-focused programs, and post-study opportunities, students gain the skills, confidence, and global exposure needed to succeed in a competitive world."
+      ]}
+      quickInsights={[
+        { key: "Universities & Institutions", value: "200+" },
+        { key: "Globally Ranked Universities", value: "90+" },
+        { key: "International Student Community", value: "600,000+" },
+        { key: "Main Intakes", value: "Jan / Sep / May*" },
+        { key: "Average Tuition Fees", value: "£9,000 – £38,000+ per year" },
+        { key: "Typical IELTS Range", value: "6.0 – 7.0*" },
+        { key: "Part-Time Work Opportunity", value: "Up to 20 hours/week*" },
+        { key: "Post-Study Work Route", value: "Up to 2 years*" }
+      ]}
       stats={[
         { value: '600K+', label: 'International Students' },
         { value: '160+', label: 'Universities' },
