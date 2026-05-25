@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CountryPage } from '@/components/layout/CountryPage';
+import { StudyUSAPage } from '@/components/study-abroad/StudyUSAPage';
 
 export const metadata: Metadata = {
   title: "Study in USA | Student's Choice",
@@ -8,13 +8,24 @@ export const metadata: Metadata = {
 
 export default function USAPage() {
   return (
-    <CountryPage
+    <StudyUSAPage
       country="USA"
-      flag="🇺🇸"
-      tagline="Home to the world's best universities, cutting-edge research, and endless opportunities for international students."
-      description="The United States offers an unparalleled education experience with over 4,000 accredited colleges and universities. From Ivy League institutions to research powerhouses, the USA is the top choice for ambitious students globally. With optional practical training (OPT) and diverse campus cultures, it is the land of opportunity."
-      heroGradient="bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#b71c1c]"
-      accentColor="#1a237e"
+      tagline="Your Smart Path to Study in the USA"
+      heroImage="/assets/images/studyabroadcountry/USA.png"
+      introParagraphs={[
+        "The USA continues to be one of the most preferred destinations for international students because of its academic excellence, flexible education system, advanced research opportunities, and strong career pathways. From globally recognised universities to innovation-driven learning environments, students gain access to world-class education and international exposure.",
+        "Studying in the USA is more than earning a degree — it's an opportunity to build industry-ready skills, connect with global professionals, and prepare for long-term career growth across diverse sectors."
+      ]}
+      quickInsights={[
+        { key: "Universities & Institutions", value: "4,000+" },
+        { key: "Globally Ranked Universities", value: "180+" },
+        { key: "International Student Community", value: "1M+" },
+        { key: "Main Intakes", value: "Fall / Spring / Summer*" },
+        { key: "Average Tuition Fees", value: "$15,000 – $55,000+ / year" },
+        { key: "Typical IELTS Range", value: "6.0 – 7.5*" },
+        { key: "Part-Time Work Opportunity", value: "Up to 20 hrs/week*" },
+        { key: "Post-Study Work Route", value: "OPT / STEM OPT extensions*" }
+      ]}
       stats={[
         { value: '1M+', label: 'International Students' },
         { value: '4,000+', label: 'Universities' },

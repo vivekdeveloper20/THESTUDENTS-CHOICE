@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { PageShell } from '@/components/layout/PageShell';
-import { WhyUKTopChoiceSection } from './WhyUKTopChoiceSection';
-import { UKPopularUniversitiesSection } from './UKPopularUniversitiesSection';
+import { WhyUSATopChoiceSection } from './WhyUSATopChoiceSection';
+import { USAPopularUniversitiesSection } from './USAPopularUniversitiesSection';
 import { RequirementsSection } from './RequirementsSection';
 import { DestinationsSection } from '@/components/home/DestinationsSection';
 import { TestimonialSection } from '@/components/home/TestimonialSection';
@@ -12,7 +12,7 @@ import { JourneySection } from '@/components/home/JourneySection';
 import { FaqSection } from '@/components/home/FaqSection';
 import { CtaBanner } from '@/components/home/CtaBanner';
 
-export interface StudyUKPageProps {
+export interface StudyUSAPageProps {
   country: string;
   tagline: string;
   heroImage: string;
@@ -29,14 +29,13 @@ export interface StudyUKPageProps {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show: (i: number) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as any },
-  }),
+  },
 };
 
-export function StudyUKPage(p: StudyUKPageProps) {
+export function StudyUSAPage(p: StudyUSAPageProps) {
   return (
     <PageShell>
       {/* ── Hero ───────────────────────────────────────── */}
@@ -63,14 +62,14 @@ export function StudyUKPage(p: StudyUKPageProps) {
                 {p.tagline}
               </h1>
               <p className="text-white/70 text-base md:text-xl font-semibold mb-10 max-w-2xl leading-relaxed drop-shadow-md">
-                Discover top universities, compare tuition costs, explore scholarships, and plan your {p.country} journey — all in one place
+                Discover top-ranked universities, explore scholarships, understand tuition costs, and plan your complete {p.country} journey with expert guidance from Students Choice.
               </p>
 
               <Link
-                href="/uk-universities"
+                href="/usa-universities"
                 className="inline-flex items-center bg-white text-[#8424e8] font-extrabold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all text-sm md:text-base group"
               >
-                Explore {p.country} University
+                Explore {p.country} Universities
                 <span className="ml-3 group-hover:translate-x-1 transition-transform text-xl">→</span>
               </Link>
             </motion.div>
@@ -142,15 +141,15 @@ export function StudyUKPage(p: StudyUKPageProps) {
               {/* Rows */}
               <div className="bg-white divide-y divide-purple-50/60">
                 {p.quickInsights.map((item, i) => {
-                  const icons = ['🏛️', '🌍', '👥', '📅', '💷', '📝', '💼', '🎓'];
+                  const icons = ['🏛️', '🌍', '👥', '📅', '💵', '📝', '💼', '🎓'];
                   return (
                     <motion.div
                       key={i}
                       variants={fadeUp}
-                      custom={i}
                       initial="hidden"
                       whileInView="show"
                       viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 0.6 }}
                       className={`grid grid-cols-2 items-center px-6 py-4 group hover:bg-[#faf7ff] transition-colors duration-200 ${i % 2 === 0 ? 'bg-white' : 'bg-[#fdfbff]'}`}
                     >
                       <div className="flex items-center gap-3">
@@ -197,7 +196,7 @@ export function StudyUKPage(p: StudyUKPageProps) {
                 </Link>
               </motion.div>
 
-              {/* Why UK trust list */}
+              {/* Why USA trust list */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -208,11 +207,11 @@ export function StudyUKPage(p: StudyUKPageProps) {
                 <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8] mb-4">Why Students Choose {p.country}</p>
                 <ul className="space-y-2.5">
                   {[
-                    { icon: '⚡', text: 'Faster degrees — 3-yr UG, 1-yr PG' },
-                    { icon: '🌐', text: 'Graduate Route Visa — work 2 years' },
-                    { icon: '🏆', text: '4 of top 10 world universities' },
-                    { icon: '💬', text: 'English-medium, no language barrier' },
-                    { icon: '🤝', text: '600K+ strong international community' },
+                    { icon: '🏆', text: 'Home to MIT, Harvard, Stanford' },
+                    { icon: '🚀', text: '3-year OPT for STEM graduates' },
+                    { icon: '🌐', text: '1M+ international students' },
+                    { icon: '💡', text: 'World\'s #1 innovation hub' },
+                    { icon: '🤝', text: 'Diverse, multicultural campuses' },
                   ].map((pt, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
                       <span className="w-7 h-7 rounded-lg bg-[#f4eeff] flex items-center justify-center text-base flex-shrink-0">{pt.icon}</span>
@@ -235,7 +234,7 @@ export function StudyUKPage(p: StudyUKPageProps) {
                   <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8]">Did You Know?</p>
                 </div>
                 <p className="text-sm text-gray-700 leading-relaxed font-medium">
-                  The UK issues over <strong>450,000 student visas</strong> per year and Indian students are the <strong>#1 international student group</strong> at UK universities.
+                  The USA hosts over <strong>1 million international students</strong> annually and Indian students are the <strong>#2 largest group</strong>, with over 200,000 students studying across American universities.
                 </p>
               </motion.div>
             </div>
@@ -260,10 +259,10 @@ export function StudyUKPage(p: StudyUKPageProps) {
             <motion.div
               key={h.title}
               variants={fadeUp}
-              custom={i}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
               className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all group"
             >
               <span className="text-4xl mb-4 block group-hover:scale-110 transition-transform">{h.icon}</span>
@@ -274,8 +273,8 @@ export function StudyUKPage(p: StudyUKPageProps) {
         </div>
       </section>
 
-      {/* ── Why UK Top Choice ──────────────────────────── */}
-      <WhyUKTopChoiceSection />
+      {/* ── Why USA Top Choice ──────────────────────────── */}
+      <WhyUSATopChoiceSection />
 
       {/* ── Top Universities ───────────────────────────── */}
       <section className="bg-gradient-to-br from-[#faf7ff] to-[#f0e8ff] py-20">
@@ -294,10 +293,10 @@ export function StudyUKPage(p: StudyUKPageProps) {
               <motion.div
                 key={u.name}
                 variants={fadeUp}
-                custom={i}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="bg-white rounded-2xl p-6 border border-[#ede8f7] hover:shadow-xl hover:-translate-y-1.5 transition-all flex items-start gap-4 group"
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
@@ -313,8 +312,8 @@ export function StudyUKPage(p: StudyUKPageProps) {
         </div>
       </section>
 
-      {/* ── UK Popular Universities ────────────────────────────── */}
-      <UKPopularUniversitiesSection />
+      {/* ── USA Popular Universities ────────────────────────────── */}
+      <USAPopularUniversitiesSection />
 
       {/* ── Requirements ───────────────────────────────── */}
       <RequirementsSection
