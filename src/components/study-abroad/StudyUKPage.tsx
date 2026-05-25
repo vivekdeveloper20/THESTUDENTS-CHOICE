@@ -40,8 +40,8 @@ export function StudyUKPage(p: StudyUKPageProps) {
   return (
     <PageShell>
       {/* ── Hero ───────────────────────────────────────── */}
-      <section className="relative pt-10 pb-20 px-3 md:px-5">
-        <div 
+      <section className="relative pt-10 pb-6 px-3 md:px-5">
+        <div
           className="max-w-[1400px] mx-auto rounded-[28px] overflow-hidden relative min-h-[340px] md:min-h-[420px] flex items-center shadow-2xl transition-all hover:shadow-purple-500/30"
           style={{
             backgroundImage: `url('${p.heroImage}')`,
@@ -65,12 +65,12 @@ export function StudyUKPage(p: StudyUKPageProps) {
               <p className="text-white/95 text-lg md:text-2xl font-semibold mb-12 max-w-2xl leading-relaxed drop-shadow-md">
                 Discover top universities, compare tuition costs, explore scholarships, and plan your {p.country} journey — all in one place
               </p>
-              
+
               <Link
                 href="/uk-universities"
                 className="inline-flex items-center bg-white text-[#8424e8] font-extrabold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all text-base md:text-lg group"
               >
-                Explore {p.country} University 
+                Explore {p.country} University
                 <span className="ml-3 group-hover:translate-x-1 transition-transform text-xl">→</span>
               </Link>
             </motion.div>
@@ -79,7 +79,7 @@ export function StudyUKPage(p: StudyUKPageProps) {
       </section>
 
       {/* ── Intro ──────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-8 md:py-10">
+      <section className="max-w-6xl mx-auto px-6 pt-4 md:pt-6 pb-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -95,53 +95,154 @@ export function StudyUKPage(p: StudyUKPageProps) {
       </section>
 
       {/* ── Quick Insights ─────────────────────────────── */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl">✨</span>
-          <h2 className="text-2xl font-bold text-gray-900">
-            Quick Insights About Studying in the {p.country}
-          </h2>
-        </div>
+      <section className="relative py-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#faf7ff] via-white to-[#f3eeff]" />
+        {/* Decorative blob */}
+        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-[#8424e8]/6 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none" />
 
-        <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm bg-white">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-white border-b border-gray-100">
-                <th className="py-4 px-6 text-sm font-bold text-gray-900 border-r border-gray-100 text-center w-1/2">Key Insight</th>
-                <th className="py-4 px-6 text-sm font-bold text-gray-900 text-center w-1/2">Details</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-50">
-              {p.quickInsights.map((item, i) => (
-                <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                  <td className="py-4 px-6 text-sm font-medium text-gray-600 border-r border-gray-50 text-center">{item.key}</td>
-                  <td className="py-4 px-6 text-sm font-bold text-gray-900 text-center">{item.value}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+        <div className="max-w-6xl mx-auto relative z-10">
 
-      {/* ── Stats bar ──────────────────────────────────── */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <div className="bg-[#fcfaff] rounded-2xl border border-purple-50 grid grid-cols-2 md:grid-cols-4 divide-x divide-purple-50">
-          {p.stats.map((s, i) => (
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="flex items-center gap-3 mb-10"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8424e8] to-[#a855f7] flex items-center justify-center text-lg shadow-md shadow-purple-200">
+              ✨
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8424e8] mb-0.5">At a Glance</p>
+              <h2 className="text-2xl font-extrabold text-gray-900">
+                Quick Insights About Studying in the{' '}
+                <span className="bg-gradient-to-r from-[#8424e8] to-[#6c47ff] bg-clip-text text-transparent">{p.country}</span>
+              </h2>
+            </div>
+          </motion.div>
+
+          {/* Two-column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 items-start">
+
+            {/* LEFT — Table */}
             <motion.div
-              key={s.label}
-              variants={fadeUp}
-              custom={i}
-              initial="hidden"
-              whileInView="show"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center py-8 px-4 text-center"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="rounded-2xl overflow-hidden border border-purple-100 shadow-lg shadow-purple-500/5"
             >
-              <span className="text-2xl md:text-3xl font-extrabold text-[#8424e8]">{s.value}</span>
-              <span className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">{s.label}</span>
+              {/* Header */}
+              <div className="grid grid-cols-2 bg-gradient-to-r from-[#8424e8] to-[#6c47ff] px-6 py-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/80">Key Insight</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/80 text-right">Details</p>
+              </div>
+
+              {/* Rows */}
+              <div className="bg-white divide-y divide-purple-50/60">
+                {p.quickInsights.map((item, i) => {
+                  const icons = ['🏛️', '🌍', '👥', '📅', '💷', '📝', '💼', '🎓'];
+                  return (
+                    <motion.div
+                      key={i}
+                      variants={fadeUp}
+                      custom={i}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                      className={`grid grid-cols-2 items-center px-6 py-4 group hover:bg-[#faf7ff] transition-colors duration-200 ${i % 2 === 0 ? 'bg-white' : 'bg-[#fdfbff]'}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-lg flex-shrink-0">{icons[i % icons.length]}</span>
+                        <span className="text-sm font-semibold text-[#6b21a8] group-hover:text-[#8424e8] transition-colors">{item.key}</span>
+                      </div>
+                      <div className="text-right">
+                        <span className="inline-block bg-[#f4eeff] text-[#7c3aed] text-sm font-extrabold px-3 py-1 rounded-lg group-hover:bg-[#8424e8] group-hover:text-white transition-all duration-200">
+                          {item.value}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Footer note */}
+              <div className="bg-gradient-to-r from-[#8424e8]/5 to-[#6c47ff]/5 px-6 py-3 border-t border-purple-100">
+                <p className="text-[11px] text-gray-400 font-medium">* Values are indicative and may vary. Verify with institutions directly.</p>
+              </div>
             </motion.div>
-          ))}
+
+            {/* RIGHT — Side Panel */}
+            <div className="flex flex-col gap-5">
+
+              {/* CTA Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#8424e8] to-[#6c47ff] p-6 text-white shadow-xl shadow-purple-500/20"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4" />
+                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Ready to move?</p>
+                <h3 className="text-xl font-extrabold leading-snug mb-3">Start Your {p.country} Study Journey Today</h3>
+                <p className="text-sm text-white/70 mb-5 leading-relaxed">Get personalised guidance from our expert consultants — completely free.</p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-white text-[#8424e8] font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-yellow-50 hover:scale-105 transition-all shadow-md"
+                >
+                  Book Free Consultation
+                  <span className="text-base">→</span>
+                </Link>
+              </motion.div>
+
+              {/* Why UK trust list */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-2xl bg-white border border-purple-100 shadow-md shadow-purple-500/5 p-5"
+              >
+                <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8] mb-4">Why Students Choose {p.country}</p>
+                <ul className="space-y-2.5">
+                  {[
+                    { icon: '⚡', text: 'Faster degrees — 3-yr UG, 1-yr PG' },
+                    { icon: '🌐', text: 'Graduate Route Visa — work 2 years' },
+                    { icon: '🏆', text: '4 of top 10 world universities' },
+                    { icon: '💬', text: 'English-medium, no language barrier' },
+                    { icon: '🤝', text: '600K+ strong international community' },
+                  ].map((pt, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                      <span className="w-7 h-7 rounded-lg bg-[#f4eeff] flex items-center justify-center text-base flex-shrink-0">{pt.icon}</span>
+                      {pt.text}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Did you know */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="rounded-2xl bg-gradient-to-br from-[#fdf4ff] to-[#f0e8ff] border border-purple-100 p-5"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xl">💡</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8]">Did You Know?</p>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  The UK issues over <strong>450,000 student visas</strong> per year and Indian students are the <strong>#1 international student group</strong> at UK universities.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* ── Highlights Grid ────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -153,7 +254,7 @@ export function StudyUKPage(p: StudyUKPageProps) {
             Unparalleled Academic Excellence
           </h2>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {p.highlights.map((h, i) => (
             <motion.div
