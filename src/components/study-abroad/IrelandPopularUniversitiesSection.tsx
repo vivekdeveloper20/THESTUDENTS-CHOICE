@@ -122,14 +122,9 @@ export function IrelandPopularUniversitiesSection() {
                         key={colIdx}
                         className="border-r border-gray-200 px-6 py-5 text-center last:border-r-0 align-middle"
                       >
-                        <div className="flex items-center justify-center gap-2">
-                          <span className="w-6 h-6 rounded-lg bg-[#8424e8]/10 flex items-center justify-center text-[#8424e8] font-black text-xs flex-shrink-0">
-                            {rowIdx + 1}
-                          </span>
-                          <p className="text-gray-900 font-semibold text-sm md:text-base">
-                            {cat.universities[rowIdx]}
-                          </p>
-                        </div>
+                        <p className="text-gray-900 font-semibold text-sm md:text-base">
+                          {cat.universities[rowIdx]}
+                        </p>
                       </td>
                     ))}
                   </tr>
