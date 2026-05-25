@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CountryPage } from '@/components/layout/CountryPage';
+import { StudyIrelandPage } from '@/components/study-abroad/StudyIrelandPage';
 
 export const metadata: Metadata = {
   title: "Study in Ireland | Student's Choice",
@@ -8,13 +8,24 @@ export const metadata: Metadata = {
 
 export default function IrelandPage() {
   return (
-    <CountryPage
+    <StudyIrelandPage
       country="Ireland"
-      flag="🇮🇪"
-      tagline="Europe's Silicon Valley — Ireland is home to Google, Meta, and Apple European HQs, offering tech careers of the future."
-      description="Ireland is rapidly becoming one of the top study destinations in Europe, housing the European headquarters of Google, Meta, Apple, and LinkedIn. With a 2-year post-study work permit and English as the primary language, Ireland offers Indian students a seamless transition to European professional life."
-      heroGradient="bg-gradient-to-br from-[#1b5e20] via-[#388e3c] to-[#ff8f00]"
-      accentColor="#1b5e20"
+      tagline="Your Smart Path to Study in Ireland"
+      heroImage="/assets/images/studyabroadcountry/IRELAND.png"
+      introParagraphs={[
+        "Ireland has become one of the top destinations for international students seeking globally recognised education, industry-focused programs, and excellent post-study opportunities. Known for its innovation-driven economy and welcoming environment, Ireland offers students the perfect balance of academic quality and career growth.",
+        "As an English-speaking country and home to many global companies, Ireland attracts students from around the world who want practical learning, international exposure, and strong employability outcomes after graduation."
+      ]}
+      quickInsights={[
+        { key: "Universities & Institutions", value: "30+" },
+        { key: "International Student Community", value: "35,000+" },
+        { key: "Main Intakes", value: "Sep / Jan*" },
+        { key: "Average Tuition Fees", value: "€10,000 – €35,000+ per year" },
+        { key: "Typical IELTS Requirement", value: "6.0 – 6.5*" },
+        { key: "Part-Time Work Opportunity", value: "Up to 20 hrs/week during term*" },
+        { key: "Post-Study Work Opportunities", value: "Up to 2 years*" },
+        { key: "Popular Student Cities", value: "Dublin, Cork, Galway, Limerick" }
+      ]}
       stats={[
         { value: '35K+', label: 'International Students' },
         { value: '2 Years', label: 'Stay Back Permit' },
@@ -43,7 +54,7 @@ export default function IrelandPage() {
         'Proof of funds: €7,000–€10,000 for the first year',
         'Private medical insurance during stay',
       ]}
-      avgCost="₹15–25 L/yr"
+      avgCost="€10–25K/yr"
       workPermit="2 Yrs TLGS"
       processingTime="4–8 Weeks"
     />
