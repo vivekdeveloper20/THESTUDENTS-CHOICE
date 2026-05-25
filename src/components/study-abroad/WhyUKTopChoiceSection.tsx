@@ -80,11 +80,10 @@ const reasonPoints: ReasonPoint[] = [
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show: (i: number) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.05, duration: 0.5, ease: 'easeOut' },
-  }),
+  },
 };
 
 export function WhyUKTopChoiceSection() {
@@ -129,10 +128,10 @@ export function WhyUKTopChoiceSection() {
             <motion.div
               key={point.number}
               variants={fadeUp}
-              custom={i}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
+              transition={{ delay: i * 0.05, duration: 0.5 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="group bg-white/60 backdrop-blur-md border border-white p-7 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300"
             >
