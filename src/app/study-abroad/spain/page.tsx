@@ -1,50 +1,61 @@
 import type { Metadata } from 'next';
-import { CountryPage } from '@/components/layout/CountryPage';
+import { StudySpainPage } from '@/components/study-abroad/StudySpainPage';
 
 export const metadata: Metadata = {
   title: "Study in Spain | Student's Choice",
-  description: 'Explore top Spanish universities, affordable tuition, vibrant culture, and career opportunities in Spain.',
+  description: 'Explore top Spanish universities, affordable education, vibrant student life, and exciting career opportunities in one of Europe\'s most culturally rich study destinations.',
 };
 
 export default function SpainPage() {
   return (
-    <CountryPage
+    <StudySpainPage
       country="Spain"
-      flag="🇪🇸"
-      tagline="Vibrant culture, sun-soaked cities, and world-class business schools make Spain an unforgettable study destination."
-      description="Spain is an increasingly popular destination for international students, offering a mix of high-quality education, rich culture, and affordable living. Home to some of Europe's top business schools like IE and IESE, Spain is especially popular for MBA programs. With friendly immigration policies and a dynamic job market, it is a great long-term option."
-      heroGradient="bg-gradient-to-br from-[#b71c1c] via-[#c62828] to-[#f9a825]"
-      accentColor="#b71c1c"
+      tagline="Your Smart Path to Study in Spain"
+      heroImage="/assets/images/studyabroadcountry/SPAIN.png"
+      introParagraphs={[
+        "Spain has become an increasingly popular destination for international students seeking quality education, affordable living, and a globally connected lifestyle. Known for its modern universities, welcoming culture, strong tourism and business industries, and relaxed Mediterranean lifestyle, Spain offers students a unique balance of academics and life experience.",
+        "As one of Europe's leading education destinations, Spain attracts students from around the world who want internationally recognised degrees, multicultural exposure, and access to opportunities across Europe."
+      ]}
+      quickInsights={[
+        { key: "Universities & Institutions", value: "80+" },
+        { key: "International Student Community", value: "200,000+" },
+        { key: "Main Intakes", value: "Sep / Feb*" },
+        { key: "Average Tuition Fees", value: "€3,000 – €20,000+ per year" },
+        { key: "Typical IELTS Requirement", value: "6.0 – 6.5*" },
+        { key: "Part-Time Work Opportunity", value: "Up to 30 hrs/week*" },
+        { key: "Post-Study Work Opportunities", value: "Available for eligible graduates*" },
+        { key: "Popular Student Cities", value: "Barcelona, Madrid, Valencia, Seville" }
+      ]}
       stats={[
-        { value: '150K+', label: 'International Students' },
-        { value: '€680–1,800', label: 'Annual Public Fees' },
-        { value: '1 Year', label: 'Job Seeker Permit' },
-        { value: '#2', label: 'Best in Europe Life' },
+        { value: '200K+', label: 'International Students' },
+        { value: '80+', label: 'Universities' },
+        { value: 'Sep/Feb', label: 'Main Intakes' },
+        { value: 'Europe', label: 'Gateway Destination' },
       ]}
       highlights={[
-        { icon: '☀️', title: 'Sunny Lifestyle', desc: 'Barcelona, Madrid — among Europe\'s most vibrant cities.' },
-        { icon: '💼', title: 'Top Business Schools', desc: 'IE Business School and IESE rank among global top 10 MBAs.' },
-        { icon: '🗣️', title: 'Learn Spanish', desc: 'Spanish is the 2nd most spoken language in the world.' },
-        { icon: '💰', title: 'Affordable Living', desc: 'Cost of living 30–40% lower than UK, Germany, or France.' },
+        { icon: '🏛️', title: 'World-Class Business Schools', desc: 'IE Business School & ESADE rank among the world\'s top business schools.' },
+        { icon: '💶', title: 'Affordable Education', desc: 'Tuition fees significantly lower than UK, Germany, or France.' },
+        { icon: '☀️', title: 'Vibrant Student Life', desc: 'Barcelona, Madrid, Valencia — among Europe\'s most exciting cities.' },
+        { icon: '🌍', title: 'Gateway to Europe', desc: 'Access to European opportunities, travel, and multicultural exposure.' },
       ]}
       universities={[
         { name: 'IE Business School', rank: 'FT MBA Rank #1 Spain' },
-        { name: 'IESE Business School', rank: 'FT MBA Rank #2 Spain' },
-        { name: 'Universitat Autònoma de Barcelona', rank: 'QS World Rank #165' },
-        { name: 'University Complutense of Madrid', rank: 'QS World Rank #209' },
         { name: 'University of Barcelona', rank: 'QS World Rank #181' },
-        { name: 'University of Valencia', rank: 'QS World Rank #401' },
+        { name: 'Autonomous University of Madrid', rank: 'QS World Rank #206' },
+        { name: 'Complutense University of Madrid', rank: 'QS World Rank #209' },
+        { name: 'ESADE Business School', rank: 'FT MBA Rank #2 Spain' },
+        { name: 'Universitat Pompeu Fabra', rank: 'QS World Rank #301' },
       ]}
       requirements={[
-        '12th pass (UG) or Bachelor\'s degree (PG)',
-        'Spanish (B2) OR English proficiency IELTS 6.0+ for English programs',
+        '12th pass with 60%+ (UG) or Bachelor\'s degree (PG)',
+        'IELTS 6.0–6.5 or equivalent English proficiency (for English programs)',
         'Spain Long-Term Student Visa from Spanish Consulate',
         'Apostilled educational documents',
         'Proof of funds: €600/month',
         'Medical certificate and criminal record (apostilled)',
       ]}
-      avgCost="₹8–20 L/yr"
-      workPermit="1 Yr Seeker"
+      avgCost="€3–20K/yr"
+      workPermit="30 Hrs/Week"
       processingTime="2–3 Months"
     />
   );

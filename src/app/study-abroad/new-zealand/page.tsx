@@ -1,31 +1,42 @@
 import type { Metadata } from 'next';
-import { CountryPage } from '@/components/layout/CountryPage';
+import { StudyNewZealandPage } from '@/components/study-abroad/StudyNewZealandPage';
 
 export const metadata: Metadata = {
   title: "Study in New Zealand | Student's Choice",
-  description: 'Explore top NZ universities, post-study work visas, and New Zealand\'s stunning natural landscape.',
+  description: "Explore globally respected universities, practical learning, safe student-friendly cities, and strong post-study career opportunities in New Zealand.",
 };
 
 export default function NewZealandPage() {
   return (
-    <CountryPage
+    <StudyNewZealandPage
       country="New Zealand"
-      flag="🇳🇿"
-      tagline="Fresh air, world-class education, and one of the most student-friendly visa policies in the Southern Hemisphere."
-      description="New Zealand is a peaceful, stunning destination that offers high-quality education from globally ranked universities. With the Post Study Work Visa of up to 3 years and a welcoming immigration system, New Zealand is becoming increasingly popular. Its safe environment, multicultural society, and outdoor lifestyle make it ideal for Indian students."
-      heroGradient="bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#1b5e20]"
-      accentColor="#1a237e"
+      tagline="Your Smart Path to Study in New Zealand"
+      heroImage="/assets/images/studyabroadcountry/NEW ZELAND.png"
+      introParagraphs={[
+        "New Zealand has become one of the most attractive destinations for international students seeking globally recognised education, practical learning, and a balanced lifestyle. Known for its safe cities, welcoming culture, research-focused universities, and strong post-study opportunities, New Zealand offers students a modern education experience with excellent quality of life.",
+        "With internationally respected qualifications and industry-focused programs, New Zealand helps students build strong academic and professional foundations for the future."
+      ]}
+      quickInsights={[
+        { key: "Universities & Institutions", value: "8 Universities + Institutes" },
+        { key: "International Student Community", value: "100,000+" },
+        { key: "Main Intakes", value: "Feb / Jul / Nov*" },
+        { key: "Average Tuition Fees", value: "NZD 22,000 – NZD 45,000+ per year" },
+        { key: "Typical IELTS Requirement", value: "6.0 – 6.5*" },
+        { key: "Part-Time Work Opportunity", value: "Up to 20 hrs/week during term*" },
+        { key: "Post-Study Work Opportunities", value: "Up to 3 years*" },
+        { key: "Popular Student Cities", value: "Auckland, Wellington, Christchurch, Hamilton" }
+      ]}
       stats={[
-        { value: '50K+', label: 'International Students' },
-        { value: '8', label: 'Ranked Universities' },
+        { value: '100K+', label: 'International Students' },
         { value: '3 Years', label: 'Post-Study Visa' },
         { value: '#2', label: 'Global Peace Index' },
+        { value: 'English', label: 'Medium of Study' },
       ]}
       highlights={[
-        { icon: '🌿', title: 'Pristine Environment', desc: 'World-famous natural landscapes and clean, safe cities.' },
-        { icon: '📜', title: '3-Year Work Visa', desc: 'Post Study Work Visa allows 3 years of work rights.' },
-        { icon: '🏉', title: 'Sports & Outdoors', desc: 'Adventure sports, hiking, and outdoor culture thrives here.' },
-        { icon: '🤗', title: 'Welcoming Culture', desc: 'Māori culture and kiwi friendliness make Indians feel at home.' },
+        { icon: '🌿', title: 'Pristine Environment', desc: 'World-famous natural landscapes and clean, safe student-friendly cities.' },
+        { icon: '📜', title: '3-Year Work Visa', desc: 'Post Study Work Visa allows up to 3 years of work rights after graduation.' },
+        { icon: '🔬', title: 'Research-Driven', desc: 'Universities focused on innovation, technology, and applied research.' },
+        { icon: '🤗', title: 'Welcoming Culture', desc: 'Multicultural society with a warm, inclusive environment for international students.' },
       ]}
       universities={[
         { name: 'University of Auckland', rank: 'QS World Rank #65' },
@@ -33,7 +44,7 @@ export default function NewZealandPage() {
         { name: 'Victoria University of Wellington', rank: 'QS World Rank #236' },
         { name: 'University of Canterbury', rank: 'QS World Rank #255' },
         { name: 'Massey University', rank: 'QS World Rank #288' },
-        { name: 'AUT (Auckland University of Technology)', rank: 'QS World Rank #451' },
+        { name: 'Auckland University of Technology', rank: 'QS World Rank #451' },
       ]}
       requirements={[
         '12th pass with 60%+ (UG) or Bachelor\'s degree (PG)',
@@ -43,7 +54,7 @@ export default function NewZealandPage() {
         'Proof of funds: NZD 15,000/year + return ticket',
         'Medical and X-ray certificates if required by visa office',
       ]}
-      avgCost="₹18–30 L/yr"
+      avgCost="NZD 22–45K/yr"
       workPermit="3 Yrs PSWV"
       processingTime="4–6 Weeks"
     />

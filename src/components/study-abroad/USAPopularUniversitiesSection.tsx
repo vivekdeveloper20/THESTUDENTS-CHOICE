@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 interface UniversityCategory {
   icon: string;
   title: string;
@@ -48,94 +46,89 @@ const categories: UniversityCategory[] = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-  },
-};
-
 export function USAPopularUniversitiesSection() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-[#fafbff] via-white to-[#f3eeff] relative overflow-hidden">
-      {/* Decorative blob */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-purple-100/20 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/4" />
-      
+    <section className="py-16 px-6 bg-gradient-to-br from-[#fafbff] via-white to-[#f3eeff] relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-100/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
             Popular USA Universities{' '}
             <span className="text-[#8424e8]">Students Explore</span>
           </h2>
-        </motion.div>
+        </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {categories.map((category, catIdx) => (
-            <motion.div
-              key={catIdx}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: catIdx * 0.15, duration: 0.6 }}
-              className="group"
-            >
-              {/* Card with subtle tilt effect */}
-              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2">
-                {/* Header */}
-                <div className="bg-gradient-to-br from-[#8424e8] to-[#6c47ff] px-6 py-5 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4" />
-                  <div className="flex items-center gap-3 relative z-10">
-                    <span className="text-3xl">{category.icon}</span>
-                    <h3 className="font-black text-white text-lg leading-tight">
-                      {category.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Universities List */}
-                <div className="p-6 space-y-3">
-                  {category.universities.map((uni, idx) => (
-                    <motion.div
+        {/* Table with subtle shadow and rounded corners */}
+        <div className="overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-xl">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              {/* Header Row with gradient */}
+              <thead>
+                <tr className="border-b-2 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
+                  {categories.map((cat, idx) => (
+                    <th
                       key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: catIdx * 0.15 + idx * 0.08, duration: 0.4 }}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#faf7ff] transition-colors group/item"
+                      className="border-r-2 border-gray-200 px-6 py-6 text-left last:border-r-0 relative"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#8424e8]/10 to-[#6c47ff]/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform">
-                        <span className="text-[#8424e8] font-black text-sm">
-                          {idx + 1}
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8424e8] to-[#6c47ff] flex items-center justify-center text-xl shadow-md">
+                          {cat.icon}
+                        </div>
+                        <span className="font-black text-gray-900 text-sm md:text-base leading-tight">
+                          {cat.title}
                         </span>
                       </div>
-                      <p className="text-gray-800 font-semibold text-sm leading-snug group-hover/item:text-[#8424e8] transition-colors">
-                        {uni}
-                      </p>
-                    </motion.div>
+                    </th>
                   ))}
-                </div>
+                </tr>
+              </thead>
 
-                {/* Best For Footer */}
-                <div className="bg-gradient-to-br from-[#faf7ff] to-[#f3eeff] px-6 py-5 border-t border-purple-100">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8] mb-2">
-                    Best For
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                    {category.bestFor}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              {/* University Rows with hover effects */}
+              <tbody>
+                {[0, 1, 2, 3, 4].map((rowIdx) => (
+                  <tr
+                    key={rowIdx}
+                    className={`border-b border-gray-200 last:border-b-0 transition-colors hover:bg-[#faf7ff] ${
+                      rowIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
+                    }`}
+                  >
+                    {categories.map((cat, colIdx) => (
+                      <td
+                        key={colIdx}
+                        className="border-r border-gray-200 px-6 py-5 text-center last:border-r-0 align-middle"
+                      >
+                        <p className="text-gray-900 font-semibold text-sm md:text-base">
+                          {cat.universities[rowIdx]}
+                        </p>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+
+                {/* Best For Row with gradient background */}
+                <tr className="bg-gradient-to-r from-[#faf7ff] to-[#f3eeff] border-t-2 border-gray-200">
+                  {categories.map((cat, idx) => (
+                    <td
+                      key={idx}
+                      className="border-r border-gray-200 px-6 py-6 last:border-r-0 align-top"
+                    >
+                      <div className="space-y-2">
+                        <p className="text-xs font-black uppercase tracking-widest text-[#8424e8]">
+                          Best For
+                        </p>
+                        <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                          {cat.bestFor}
+                        </p>
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

@@ -12,53 +12,49 @@ const categories: UniversityCategory[] = [
     icon: '🏛️',
     title: 'Elite Global Institutions',
     universities: [
-      'University of Oxford',
-      'University of Cambridge',
-      'Imperial College London',
-      'University College London (UCL)',
-      "King's College London",
+      'ETH Zurich',
+      'University of Zurich',
+      'University of Geneva',
+      'University of Basel',
     ],
-    bestFor: 'Research, global brand value, competitive careers, high academic excellence',
+    bestFor: 'Research excellence, global recognition, academic prestige, competitive careers',
   },
   {
-    icon: '💼',
-    title: 'Career-Focused & Industry Connected',
+    icon: '💻',
+    title: 'Engineering & Technology',
     universities: [
-      'University of Manchester',
-      'University of Warwick',
-      'University of Bristol',
-      'University of Leeds',
-      'Durham University',
+      'EHL Hospitality Business School',
+      'Geneva Business School',
+      'Swiss Hotel Management School',
+      'César Ritz Colleges Switzerland',
     ],
-    bestFor: 'Employability, internships, business, engineering, strong alumni networks',
+    bestFor: 'Hospitality, Business, Hotel Management, Luxury industry programs',
   },
   {
-    icon: '📘',
-    title: 'STEM, Tech & Innovation',
+    icon: '📈',
+    title: 'Career-Focused Options',
     universities: [
-      'University of Edinburgh',
-      'University of Southampton',
-      'University of Glasgow',
-      'Newcastle University',
-      'University of Birmingham',
+      'EPFL Lausanne',
+      'University of Lausanne',
+      'ETH Zurich',
+      'EPFL Lausanne',
     ],
-    bestFor: 'Computer Science, Data Science, AI, Engineering, innovation-led programs',
+    bestFor: 'Engineering, Technology, Science, Finance, strong employability focus',
   },
   {
     icon: '💰',
     title: 'Value + Quality + ROI',
     universities: [
-      'Queen Mary University of London',
-      'Coventry University',
-      'Northumbria University',
-      'University of Portsmouth',
-      'Nottingham Trent University',
+      'University of Basel',
+      'University of Bern',
+      'University of Fribourg',
+      'Zurich University of Applied Sciences',
     ],
-    bestFor: 'Affordable options, strong student support, practical learning, career value',
+    bestFor: 'Affordable tuition, strong ROI, flexible programs, career support',
   },
 ];
 
-export function UKPopularUniversitiesSection() {
+export function SwitzerlandPopularUniversitiesSection() {
   return (
     <section className="py-16 px-6 bg-gradient-to-br from-[#fafbff] via-white to-[#f3eeff] relative overflow-hidden">
       {/* Decorative elements */}
@@ -68,7 +64,7 @@ export function UKPopularUniversitiesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
-            Popular UK Universities{' '}
+            Popular Switzerland Universities{' '}
             <span className="text-[#8424e8]">Students Explore</span>
           </h2>
         </div>
@@ -100,7 +96,7 @@ export function UKPopularUniversitiesSection() {
 
               {/* University Rows with hover effects */}
               <tbody>
-                {[0, 1, 2, 3, 4].map((rowIdx) => (
+                {[0, 1, 2, 3].map((rowIdx) => (
                   <tr
                     key={rowIdx}
                     className={`border-b border-gray-200 last:border-b-0 transition-colors hover:bg-[#faf7ff] ${

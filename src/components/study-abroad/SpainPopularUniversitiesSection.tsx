@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 interface UniversityCategory {
   icon: string;
   title: string;
@@ -12,53 +14,57 @@ const categories: UniversityCategory[] = [
     icon: '🏛️',
     title: 'Elite Global Institutions',
     universities: [
-      'University of Oxford',
-      'University of Cambridge',
-      'Imperial College London',
-      'University College London (UCL)',
-      "King's College London",
+      'University of Barcelona',
+      'Autonomous University of Madrid',
+      'Complutense University of Madrid',
+      'University of Salamanca',
     ],
-    bestFor: 'Research, global brand value, competitive careers, high academic excellence',
+    bestFor: 'Research excellence, global recognition, academic prestige, competitive careers',
   },
   {
-    icon: '💼',
-    title: 'Career-Focused & Industry Connected',
+    icon: '💻',
+    title: 'Engineering & Technology',
     universities: [
-      'University of Manchester',
-      'University of Warwick',
-      'University of Bristol',
-      'University of Leeds',
-      'Durham University',
+      'IE Business School',
+      'ESADE Business School',
+      'EAE Business School',
+      'EU Business School Barcelona',
     ],
-    bestFor: 'Employability, internships, business, engineering, strong alumni networks',
+    bestFor: 'Engineering, Technology, Innovation, Data Science, industry-linked programs',
   },
   {
-    icon: '📘',
-    title: 'STEM, Tech & Innovation',
+    icon: '📈',
+    title: 'Career-Focused Options',
     universities: [
-      'University of Edinburgh',
-      'University of Southampton',
-      'University of Glasgow',
-      'Newcastle University',
-      'University of Birmingham',
+      'Universitat Pompeu Fabra',
+      'University of Navarra',
+      'Polytechnic University of Catalonia',
+      'Carlos III University of Madrid',
     ],
-    bestFor: 'Computer Science, Data Science, AI, Engineering, innovation-led programs',
+    bestFor: 'Business, Management, International Relations, strong employability focus',
   },
   {
     icon: '💰',
     title: 'Value + Quality + ROI',
     universities: [
-      'Queen Mary University of London',
-      'Coventry University',
-      'Northumbria University',
-      'University of Portsmouth',
-      'Nottingham Trent University',
+      'University of Valencia',
+      'University of Seville',
+      'University of Granada',
+      'University of Malaga',
     ],
-    bestFor: 'Affordable options, strong student support, practical learning, career value',
+    bestFor: 'Affordable tuition, strong ROI, flexible programs, career support',
   },
 ];
 
-export function UKPopularUniversitiesSection() {
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+export function SpainPopularUniversitiesSection() {
   return (
     <section className="py-16 px-6 bg-gradient-to-br from-[#fafbff] via-white to-[#f3eeff] relative overflow-hidden">
       {/* Decorative elements */}
@@ -68,7 +74,7 @@ export function UKPopularUniversitiesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
-            Popular UK Universities{' '}
+            Popular Spain Universities{' '}
             <span className="text-[#8424e8]">Students Explore</span>
           </h2>
         </div>
@@ -100,7 +106,7 @@ export function UKPopularUniversitiesSection() {
 
               {/* University Rows with hover effects */}
               <tbody>
-                {[0, 1, 2, 3, 4].map((rowIdx) => (
+                {[0, 1, 2, 3].map((rowIdx) => (
                   <tr
                     key={rowIdx}
                     className={`border-b border-gray-200 last:border-b-0 transition-colors hover:bg-[#faf7ff] ${

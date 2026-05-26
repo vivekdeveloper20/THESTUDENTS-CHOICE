@@ -1,0 +1,153 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+interface ReasonPoint {
+  number: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const reasonPoints: ReasonPoint[] = [
+  {
+    number: 1,
+    title: 'Globally Recognised Universities',
+    icon: '🎓',
+    description: 'The UAE hosts international branch campuses and respected universities offering globally accepted degrees and modern academic infrastructure.',
+  },
+  {
+    number: 2,
+    title: 'Innovation & Business Hub',
+    icon: '🏙️',
+    description: 'Dubai and Abu Dhabi are global centres for business, technology, tourism, aviation, finance, and entrepreneurship.',
+  },
+  {
+    number: 3,
+    title: 'Career-Focused Education',
+    icon: '💼',
+    description: 'Programs are designed around employability, practical learning, internships, and industry collaboration.',
+  },
+  {
+    number: 4,
+    title: 'International Student Environment',
+    icon: '🌍',
+    description: 'Students from across the world study in the UAE, creating a multicultural and globally connected learning experience.',
+  },
+  {
+    number: 5,
+    title: 'Safe & Modern Lifestyle',
+    icon: '🏗️',
+    description: 'The UAE is known for modern infrastructure, excellent transportation, student-friendly cities, and a high standard of safety.',
+  },
+  {
+    number: 6,
+    title: 'Strong Industry Exposure',
+    icon: '🤝',
+    description: 'Students benefit from networking opportunities, corporate events, internships, and exposure to global companies.',
+  },
+  {
+    number: 7,
+    title: 'English-Taught Programs',
+    icon: '🗣️',
+    description: 'Most universities offer programs in English, making it convenient for international students.',
+  },
+  {
+    number: 8,
+    title: 'Strategic Global Location',
+    icon: '✈️',
+    description: 'The UAE offers easy international connectivity between Asia, Europe, and Africa.',
+  },
+  {
+    number: 9,
+    title: 'Scholarships & Financial Support',
+    icon: '💰',
+    description: 'Several universities provide scholarships, grants, and tuition support for eligible students.',
+  },
+  {
+    number: 10,
+    title: 'End-to-End Guidance with Students Choice',
+    icon: '🧭',
+    description: 'From university shortlisting to education loans, visa guidance, and pre-departure support — Students Choice assists students through every stage.',
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
+export function WhyUAETopChoiceSection() {
+  return (
+    <section className="relative py-24 px-6 overflow-hidden bg-[#fafbff]">
+      {/* Background Decorative Blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-100/30 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-100/30 rounded-full blur-[100px] -z-10" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-black text-gray-900 mb-8 max-w-4xl mx-auto leading-tight"
+          >
+            Why UAE Continues to Be a{' '}
+            <span className="text-[#8424e8]">Top Choice</span> for Students
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 text-lg leading-relaxed max-w-5xl mx-auto text-left"
+          >
+            <p className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/60 shadow-sm">
+              Choosing the UAE means gaining access to globally connected education, modern campuses, industry-focused learning, and strong international exposure.
+            </p>
+            <p className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/60 shadow-sm">
+              With world-class cities like Dubai and Abu Dhabi, students gain access to international exposure, industry connections, and a high standard of living while studying.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Grid-based Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reasonPoints.map((point, i) => (
+            <motion.div
+              key={point.number}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05, duration: 0.5 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="group bg-white/60 backdrop-blur-md border border-white p-7 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300"
+            >
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8424e8]/5 to-[#6c47ff]/5 border border-[#8424e8]/10 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 flex-shrink-0">
+                  {point.icon}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-black text-[#8424e8]/40 tracking-tighter">
+                      {point.number.toString().padStart(2, '0')}
+                    </span>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#8424e8] transition-colors">
+                      {point.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {point.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
