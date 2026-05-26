@@ -275,7 +275,6 @@ export function WorldMapDropdown() {
                   coordinates={pin.coords}
                   onMouseEnter={() => setHoveredPin(pin.label)}
                   onMouseLeave={() => setHoveredPin(null)}
-                  style={{ cursor: 'pointer' }}
                 >
                   {/* Connector line from dot to card */}
                   <line
