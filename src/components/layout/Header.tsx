@@ -2,9 +2,19 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Button, Burger, Drawer, Stack } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
-import { WorldMapDropdown } from './WorldMapDropdown';
+
+const WorldMapDropdown = dynamic(
+  () => import('./WorldMapDropdown').then((m) => m.WorldMapDropdown),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="mx-4 mb-3 rounded-xl bg-[#1a0a4a] animate-pulse" style={{ height: '215px' }} />
+    ),
+  }
+);
 
 /* ─── Icon helpers ───────────────────────────────────────────── */
 const ChevronDown = ({ open }: { open?: boolean }) => (
