@@ -28,37 +28,29 @@ const studyAbroadGroups = [
   {
     heading: '🌎 Popular Destinations',
     items: [
-      { label: 'USA', href: '/study-abroad/usa', flag: '🇺🇸' },
-      { label: 'UK', href: '/study-abroad/uk', flag: '🇬🇧' },
-      { label: 'Canada', href: '/study-abroad/canada', flag: '🇨🇦' },
-      { label: 'Australia', href: '/study-abroad/australia', flag: '🇦🇺' },
+      { label: 'USA', href: '/study-abroad/usa', flag: 'us' },
+      { label: 'UK', href: '/study-abroad/uk', flag: 'gb' },
+      { label: 'Canada', href: '/study-abroad/canada', flag: 'ca' },
+      { label: 'Australia', href: '/study-abroad/australia', flag: 'au' },
     ],
   },
   {
     heading: '🏰 Europe',
     items: [
-      { label: 'Germany', href: '/study-abroad/germany', flag: '🇩🇪' },
-      { label: 'France', href: '/study-abroad/france', flag: '🇫🇷' },
-      { label: 'Ireland', href: '/study-abroad/ireland', flag: '🇮🇪' },
-      { label: 'Italy', href: '/study-abroad/italy', flag: '🇮🇹' },
-      { label: 'Spain', href: '/study-abroad/spain', flag: '🇪🇸' },
-      { label: 'Switzerland', href: '/study-abroad/switzerland', flag: '🇨🇭' },
+      { label: 'Germany', href: '/study-abroad/germany', flag: 'de' },
+      { label: 'France', href: '/study-abroad/france', flag: 'fr' },
+      { label: 'Ireland', href: '/study-abroad/ireland', flag: 'ie' },
+      { label: 'Italy', href: '/study-abroad/italy', flag: 'it' },
+      { label: 'Spain', href: '/study-abroad/spain', flag: 'es' },
+      { label: 'Switzerland', href: '/study-abroad/switzerland', flag: 'ch' },
     ],
   },
   {
     heading: '🌏 Asia & Others',
     items: [
-      { label: 'Singapore', href: '/study-abroad/singapore', flag: '🇸🇬' },
-      { label: 'UAE', href: '/study-abroad/uae', flag: '🇦🇪' },
-      { label: 'New Zealand', href: '/study-abroad/new-zealand', flag: '🇳🇿' },
-      { label: 'India', href: '/study-abroad/india', flag: '🇮🇳' },
-    ],
-  },
-  {
-    heading: '✨ Extras',
-    items: [
-      { label: 'Not Sure? Get Free Counseling', href: '/contact-us?type=counseling', flag: '🤔' },
-      { label: 'Talk to Expert', href: '/contact-us?type=expert', flag: '👨‍💼' },
+      { label: 'Singapore', href: '/study-abroad/singapore', flag: 'sg' },
+      { label: 'UAE', href: '/study-abroad/uae', flag: 'ae' },
+      { label: 'New Zealand', href: '/study-abroad/new-zealand', flag: 'nz' },
     ],
   },
 ];
@@ -85,12 +77,23 @@ const contactItems: DropdownItem[] = [
 /* ─── Study Abroad Mega-menu (Desktop) ───────────────────────── */
 function StudyAbroadMega() {
   const [open, setOpen] = useState(false);
+  const closeTimer = useState<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimer[0]) clearTimeout(closeTimer[0]);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timer = setTimeout(() => setOpen(false), 300);
+    closeTimer[1](timer);
+  };
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         className="flex items-center text-black font-semibold text-[15px] transition-colors hover:text-[#8424e8] focus:outline-none"
@@ -131,9 +134,13 @@ function StudyAbroadMega() {
                   href={item.href}
                   className="flex items-center gap-2 px-2 py-[7px] rounded-lg text-[13.5px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#8424e8] transition-colors group"
                 >
-                  <span className="text-[16px] group-hover:scale-110 transition-transform leading-none">
-                    {item.flag}
-                  </span>
+                  <img
+                    src={`https://flagcdn.com/20x15/${item.flag}.png`}
+                    width={20}
+                    height={15}
+                    alt={item.label}
+                    className="rounded-[2px] flex-shrink-0 group-hover:scale-110 transition-transform"
+                  />
                   {item.label}
                 </Link>
               ))}
@@ -161,12 +168,23 @@ function StudyAbroadMega() {
 /* ─── Simple dropdown (Desktop) ──────────────────────────────── */
 function DesktopDropdown({ label, items }: { label: string; items: DropdownItem[] }) {
   const [open, setOpen] = useState(false);
+  const closeTimer = useState<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimer[0]) clearTimeout(closeTimer[0]);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timer = setTimeout(() => setOpen(false), 300);
+    closeTimer[1](timer);
+  };
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         className="flex items-center text-black font-semibold text-[15px] transition-colors hover:text-[#8424e8] focus:outline-none"
@@ -326,7 +344,13 @@ export function Header() {
                     onClick={close}
                     className="flex items-center gap-2 px-3 py-2 rounded-xl text-[14px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#8424e8] transition-colors"
                   >
-                    <span>{item.flag}</span>
+                    <img
+                      src={`https://flagcdn.com/20x15/${item.flag}.png`}
+                      width={20}
+                      height={15}
+                      alt={item.label}
+                      className="rounded-[2px] flex-shrink-0"
+                    />
                     {item.label}
                   </Link>
                 ))}
