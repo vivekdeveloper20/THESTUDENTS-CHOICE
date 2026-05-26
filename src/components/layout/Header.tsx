@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button, Burger, Drawer, Stack } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { WorldMapDropdown } from './WorldMapDropdown';
 
 /* ─── Icon helpers ───────────────────────────────────────────── */
 const ChevronDown = ({ open }: { open?: boolean }) => (
@@ -23,33 +24,33 @@ const ChevronDown = ({ open }: { open?: boolean }) => (
   </svg>
 );
 
-/* ─── Study Abroad mega-menu data ────────────────────────────── */
+/* ─── Study Abroad mega-menu data (mobile only) ──────────────── */
 const studyAbroadGroups = [
   {
     heading: '🌎 Popular Destinations',
     items: [
-      { label: 'USA', href: '/study-abroad/usa', flag: 'us' },
-      { label: 'UK', href: '/study-abroad/uk', flag: 'gb' },
-      { label: 'Canada', href: '/study-abroad/canada', flag: 'ca' },
-      { label: 'Australia', href: '/study-abroad/australia', flag: 'au' },
+      { label: 'USA',       href: '/study-abroad/usa',         flag: 'us' },
+      { label: 'UK',        href: '/study-abroad/uk',          flag: 'gb' },
+      { label: 'Canada',    href: '/study-abroad/canada',      flag: 'ca' },
+      { label: 'Australia', href: '/study-abroad/australia',   flag: 'au' },
     ],
   },
   {
     heading: '🏰 Europe',
     items: [
-      { label: 'Germany', href: '/study-abroad/germany', flag: 'de' },
-      { label: 'France', href: '/study-abroad/france', flag: 'fr' },
-      { label: 'Ireland', href: '/study-abroad/ireland', flag: 'ie' },
-      { label: 'Italy', href: '/study-abroad/italy', flag: 'it' },
-      { label: 'Spain', href: '/study-abroad/spain', flag: 'es' },
+      { label: 'Germany',     href: '/study-abroad/germany',     flag: 'de' },
+      { label: 'France',      href: '/study-abroad/france',      flag: 'fr' },
+      { label: 'Ireland',     href: '/study-abroad/ireland',     flag: 'ie' },
+      { label: 'Italy',       href: '/study-abroad/italy',       flag: 'it' },
+      { label: 'Spain',       href: '/study-abroad/spain',       flag: 'es' },
       { label: 'Switzerland', href: '/study-abroad/switzerland', flag: 'ch' },
     ],
   },
   {
     heading: '🌏 Asia & Others',
     items: [
-      { label: 'Singapore', href: '/study-abroad/singapore', flag: 'sg' },
-      { label: 'UAE', href: '/study-abroad/uae', flag: 'ae' },
+      { label: 'Singapore',   href: '/study-abroad/singapore',   flag: 'sg' },
+      { label: 'UAE',         href: '/study-abroad/uae',         flag: 'ae' },
       { label: 'New Zealand', href: '/study-abroad/new-zealand', flag: 'nz' },
     ],
   },
@@ -105,7 +106,7 @@ function StudyAbroadMega() {
 
       {/* Mega panel */}
       <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[720px] bg-white rounded-2xl shadow-[0_24px_70px_rgba(132,36,232,0.16)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
+        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[880px] bg-white rounded-2xl shadow-[0_24px_70px_rgba(132,36,232,0.18)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
           open
             ? 'opacity-100 scale-100 pointer-events-auto translate-y-0'
             : 'opacity-0 scale-95 pointer-events-none -translate-y-2'
@@ -121,37 +122,13 @@ function StudyAbroadMega() {
           </p>
         </div>
 
-        {/* Grid of groups */}
-        <div className="grid grid-cols-4 gap-0 p-2">
-          {studyAbroadGroups.map((group) => (
-            <div key={group.heading} className="px-3 py-3">
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2 px-2">
-                {group.heading}
-              </p>
-              {group.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center gap-2 px-2 py-[7px] rounded-lg text-[13.5px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#8424e8] transition-colors group"
-                >
-                  <img
-                    src={`https://flagcdn.com/20x15/${item.flag}.png`}
-                    width={20}
-                    height={15}
-                    alt={item.label}
-                    className="rounded-[2px] flex-shrink-0 group-hover:scale-110 transition-transform"
-                  />
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          ))}
-        </div>
+        {/* World map + country lists */}
+        <WorldMapDropdown />
 
         {/* Footer CTA */}
         <div className="px-6 py-3 bg-gradient-to-r from-[#8424e8] to-[#a855f7] flex items-center justify-between">
           <span className="text-white text-[13px] font-medium">
-            Not sure where to study? We&apos;ll help you decide!
+            💡 Not sure where to study? We&apos;ll help you decide!
           </span>
           <Link
             href="/contact-us?type=counseling"
