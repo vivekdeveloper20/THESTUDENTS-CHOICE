@@ -1,5 +1,5 @@
 import { Header } from '@/components/layout/Header';
-import { PreFooter } from '@/components/layout/PreFooter';
+// import { PreFooter } from '@/components/layout/PreFooter';
 import { Footer } from '@/components/layout/Footer';
 
 export function PageShell({ children }: { children: React.ReactNode }) {
@@ -7,7 +7,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     <main className="min-h-screen bg-white">
       <Header />
       {children}
-      <PreFooter />
+      {/* <PreFooter /> */}
       <Footer />
     </main>
   );

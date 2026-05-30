@@ -9,7 +9,7 @@ import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { JourneySection } from "@/components/home/JourneySection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { PreFooter } from "@/components/layout/PreFooter";
+// import { PreFooter } from "@/components/layout/PreFooter";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
       <JourneySection />
       <FaqSection />
       <CtaBanner />
-      <PreFooter />
+      {/* <PreFooter /> */}
       <Footer />
     </main>
   );

@@ -14,13 +14,13 @@ const APPROVAL_BADGES = [
 
 const TRUST_CHIPS = ['100% Free Guidance', 'Collateral-Free Options', 'Fast Approvals', '15+ Lender Partners'];
 
-const COUNTRY_FLAGS = [
+/* const COUNTRY_FLAGS = [
   { flag: 'https://flagcdn.com/w80/gb.png', label: 'UK' },
   { flag: 'https://flagcdn.com/w80/de.png', label: 'Germany' },
   { flag: 'https://flagcdn.com/w80/us.png', label: 'USA' },
   { flag: 'https://flagcdn.com/w80/au.png', label: 'Australia' },
   { flag: 'https://flagcdn.com/w80/ca.png', label: 'Canada' },
-];
+]; */
 
 export function EduLoanHero() {
   const [badgeIndex, setBadgeIndex] = useState(0);
@@ -168,14 +168,14 @@ export function EduLoanHero() {
             </div>
           </motion.div>
 
-          {/* Right: Hero image + country flags */}
+          {/* Right: Hero image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: 'easeOut' }}
             className="w-full lg:w-[45%] relative flex justify-center items-center min-h-[500px]"
           >
-            {/* Floating country flags */}
+            {/* Floating country flags — commented out, restore to re-enable
             <div className="absolute top-4 right-0 flex flex-col gap-3 z-20">
               {COUNTRY_FLAGS.slice(0, 4).map((c, i) => (
                 <motion.div
@@ -189,17 +189,17 @@ export function EduLoanHero() {
                 </motion.div>
               ))}
             </div>
-
+            */}
             {/* Glow orb behind image */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-72 h-72 rounded-full bg-[#8424e8]/15 blur-3xl" />
+              <div className="w-80 h-80 rounded-full bg-[#8424e8]/15 blur-3xl" />
             </div>
 
             {/* Hero Image */}
-            <div className="relative z-10 w-full max-w-[460px]">
+            <div className="relative z-10 w-full max-w-[540px]">
               <div className="absolute inset-8 rounded-[50%] bg-gradient-to-br from-[#8424e8]/20 to-fuchsia-300/20 blur-2xl" />
               <img
-                src="/assets/images/student-with-backback.png"
+                src="/assets/images/Girl.png"
                 alt="Student applying for Education Loan"
                 className="relative w-full h-auto object-contain drop-shadow-2xl animate-float"
                 draggable="false"
@@ -220,7 +220,7 @@ export function EduLoanHero() {
               </div>
             </motion.div>
 
-            {/* WhatsApp button */}
+            {/* WhatsApp button — commented out, restore to re-enable
             <motion.a
               href="https://wa.me/918888888888"
               initial={{ opacity: 0 }}
@@ -231,6 +231,7 @@ export function EduLoanHero() {
               <IconBrandWhatsapp size={18} />
               WhatsApp
             </motion.a>
+            */}
           </motion.div>
         </div>
       </div>

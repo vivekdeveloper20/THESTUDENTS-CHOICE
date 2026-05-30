@@ -2,15 +2,6 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker,
-  ZoomableGroup,
-} from 'react-simple-maps';
-
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
 const studyAbroadGroups = [
   {
@@ -43,75 +34,22 @@ const studyAbroadGroups = [
   },
 ];
 
+// Pin positions as % of SVG viewBox (0-100)
 const mapPins = [
-  { flag: 'us', label: 'USA',       sub: ['Top Universities', 'High Visa Success'],        href: '/study-abroad/usa',       coords: [-100, 40] as [number, number], cardDir: 'right' },
-  { flag: 'ca', label: 'Canada',    sub: ['PR Friendly', 'Great Opportunities'],           href: '/study-abroad/canada',    coords: [-96, 56]  as [number, number], cardDir: 'right' },
-  { flag: 'gb', label: 'UK',        sub: ['World-Class Education', 'Diverse Culture'],     href: '/study-abroad/uk',        coords: [-2, 54]   as [number, number], cardDir: 'right' },
-  { flag: 'ie', label: 'Ireland',   sub: ['Affordable Education', 'Post Study Work Visa'], href: '/study-abroad/ireland',   coords: [-8, 48]   as [number, number], cardDir: 'left'  },
-  { flag: 'de', label: 'Germany',   sub: ['Low Tuition Fees', 'Excellent Opportunities'],  href: '/study-abroad/germany',   coords: [10, 51]   as [number, number], cardDir: 'right' },
-  { flag: 'au', label: 'Australia', sub: ['Quality Education', 'Work Opportunities'],      href: '/study-abroad/australia', coords: [134, -25] as [number, number], cardDir: 'left'  },
+  { flag: 'us', label: 'USA',       sub: ['Top Universities', 'High Visa Success'],        href: '/study-abroad/usa',       x: 18,  y: 38, cardDir: 'right' },
+  { flag: 'ca', label: 'Canada',    sub: ['PR Friendly', 'Great Opportunities'],           href: '/study-abroad/canada',    x: 17,  y: 28, cardDir: 'right' },
+  { flag: 'gb', label: 'UK',        sub: ['World-Class Education', 'Diverse Culture'],     href: '/study-abroad/uk',        x: 46,  y: 28, cardDir: 'right' },
+  { flag: 'ie', label: 'Ireland',   sub: ['Affordable Education', 'Post Study Work Visa'], href: '/study-abroad/ireland',   x: 43,  y: 30, cardDir: 'left'  },
+  { flag: 'de', label: 'Germany',   sub: ['Low Tuition Fees', 'Excellent Opportunities'],  href: '/study-abroad/germany',   x: 51,  y: 27, cardDir: 'right' },
+  { flag: 'au', label: 'Australia', sub: ['Quality Education', 'Work Opportunities'],      href: '/study-abroad/australia', x: 82,  y: 72, cardDir: 'left'  },
 ];
-
-/* ── Animated glow marker rendered in SVG ── */
-function GlowMarker({ hovered }: { hovered: boolean }) {
-  return (
-    <g>
-      {/* Outermost ripple — slowest */}
-      <circle r={18} fill="none" stroke="#c084fc" strokeWidth={0.6} opacity={hovered ? 0.5 : 0.25}>
-        <animate attributeName="r" values="14;22;14" dur="2.4s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Middle ripple */}
-      <circle r={12} fill="none" stroke="#a855f7" strokeWidth={0.8} opacity={hovered ? 0.6 : 0.35}>
-        <animate attributeName="r" values="9;16;9" dur="1.8s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.45;0;0.45" dur="1.8s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Inner ripple — fastest */}
-      <circle r={7} fill="none" stroke="#e879f9" strokeWidth={1} opacity={hovered ? 0.8 : 0.5}>
-        <animate attributeName="r" values="5;10;5" dur="1.2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.6;0;0.6" dur="1.2s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Purple outer glow ring — static */}
-      <circle
-        r={5}
-        fill="none"
-        stroke={hovered ? '#e879f9' : '#a855f7'}
-        strokeWidth={1.5}
-        style={{ filter: 'drop-shadow(0 0 4px #a855f7)' }}
-      />
-
-      {/* Soft blur halo */}
-      <circle
-        r={4}
-        fill={hovered ? '#c084fc' : '#8b5cf6'}
-        opacity={0.4}
-        style={{ filter: 'blur(2px)' }}
-      />
-
-      {/* White center core */}
-      <circle
-        r={2.5}
-        fill={hovered ? '#ffffff' : '#e9d5ff'}
-        style={{ filter: hovered ? 'drop-shadow(0 0 5px #fff) drop-shadow(0 0 8px #c084fc)' : 'drop-shadow(0 0 3px #a855f7)' }}
-      >
-        {hovered && (
-          <animate attributeName="r" values="2;3;2" dur="0.8s" repeatCount="indefinite" />
-        )}
-      </circle>
-    </g>
-  );
-}
 
 export function WorldMapDropdown() {
   const [zoom, setZoom] = useState(1);
-  const [center, setCenter] = useState<[number, number]>([20, 10]);
   const [hoveredPin, setHoveredPin] = useState<string | null>(null);
 
-  const handleZoomIn  = useCallback(() => setZoom((z) => Math.min(z * 1.5, 6)), []);
-  const handleZoomOut = useCallback(() => setZoom((z) => Math.max(z / 1.5, 1)), []);
+  const handleZoomIn  = useCallback(() => setZoom((z) => Math.min(z + 0.3, 2.5)), []);
+  const handleZoomOut = useCallback(() => setZoom((z) => Math.max(z - 0.3, 1)), []);
 
   return (
     <>
@@ -147,7 +85,7 @@ export function WorldMapDropdown() {
             <p className="text-[14px] font-black text-gray-900 leading-snug mb-1">
               Choose Your <span className="text-[#8424e8]">Dream Country</span> 🌍
             </p>
-            <p className="text-[11px] text-gray-500 leading-relaxed mb-2">
+            <p className="text-[11px] text-gray-500 leading-relaxed">
               Hover over the map or select a country to know more about studying there.
             </p>
           </div>
@@ -168,22 +106,37 @@ export function WorldMapDropdown() {
         </div>
       </div>
 
-      {/* World Map */}
+      {/* World Map — image background with SVG pins overlay */}
       <div
-        className="mx-4 mb-3 rounded-xl overflow-hidden relative"
+        className="mx-4 mb-3 rounded-xl overflow-hidden relative select-none"
         style={{
           background: 'linear-gradient(135deg, #0f0528 0%, #1e0a5c 35%, #2d1080 65%, #0f0528 100%)',
           height: '215px',
         }}
       >
-        {/* Subtle grid overlay */}
+        {/* World Map SVG — inlined for crisp rendering */}
+        <div
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ transform: `scale(${zoom})`, transformOrigin: 'center center', transition: 'transform 0.3s ease', opacity: 0.55 }}
+        >
+          <img
+            src="/assets/images/studyabroadcountry/World.svg"
+            alt="World Map"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Dark overlay for contrast */}
+        <div className="absolute inset-0 bg-[#0f0528]/40 pointer-events-none" />
+
+        {/* Grid overlay */}
         <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+            <pattern id="mgrid" width="30" height="30" patternUnits="userSpaceOnUse">
               <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#a855f7" strokeWidth="0.4"/>
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#mgrid)" />
         </svg>
 
         {/* Label */}
@@ -193,161 +146,124 @@ export function WorldMapDropdown() {
 
         {/* Zoom controls */}
         <div className="absolute top-8 left-3 z-20 flex flex-col gap-1">
-          <button
-            onClick={handleZoomIn}
-            className="w-6 h-6 bg-[#1e0a5c]/90 border border-[#7c3aed]/70 text-white/90 rounded flex items-center justify-center text-sm font-bold hover:bg-[#7c3aed] hover:border-[#c084fc] transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]"
-            aria-label="Zoom in"
-          >
-            +
-          </button>
-          <button
-            onClick={handleZoomOut}
-            className="w-6 h-6 bg-[#1e0a5c]/90 border border-[#7c3aed]/70 text-white/90 rounded flex items-center justify-center text-sm font-bold hover:bg-[#7c3aed] hover:border-[#c084fc] transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]"
-            aria-label="Zoom out"
-          >
-            −
-          </button>
+          <button onClick={handleZoomIn}
+            className="w-6 h-6 bg-[#1e0a5c]/90 border border-[#7c3aed]/70 text-white/90 rounded flex items-center justify-center text-sm font-bold hover:bg-[#7c3aed] transition-all"
+            aria-label="Zoom in">+</button>
+          <button onClick={handleZoomOut}
+            className="w-6 h-6 bg-[#1e0a5c]/90 border border-[#7c3aed]/70 text-white/90 rounded flex items-center justify-center text-sm font-bold hover:bg-[#7c3aed] transition-all"
+            aria-label="Zoom out">−</button>
         </div>
 
-        {/* Map */}
-        <ComposableMap
-          projection="geoMercator"
-          projectionConfig={{ scale: 120, center: [20, 10] }}
-          style={{ width: '100%', height: '100%' }}
+        {/* SVG pins overlay */}
+        <svg
+          viewBox="0 0 1000 500"
+          className="absolute inset-0 w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          {/* SVG defs for filters */}
           <defs>
-            <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="blur1" />
-              <feGaussianBlur stdDeviation="6" result="blur2" />
-              <feMerge>
-                <feMergeNode in="blur2" />
-                <feMergeNode in="blur1" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
+            <filter id="mglow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
-            <filter id="glow-soft" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="2" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
+            <filter id="mglowstrong">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
 
-          <ZoomableGroup
-            zoom={zoom}
-            center={center}
-            onMoveEnd={({ coordinates, zoom: z }) => {
-              setCenter(coordinates as [number, number]);
-              setZoom(z);
-            }}
-          >
-            {/* Countries */}
-            <Geographies geography={GEO_URL}>
-              {({ geographies }) =>
-                geographies.map((geo) => (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill="#2e1065"
-                    stroke="#5b21b6"
-                    strokeWidth={0.35}
-                    style={{
-                      default: { outline: 'none' },
-                      hover:   { fill: '#4c1d95', outline: 'none' },
-                      pressed: { outline: 'none' },
-                    }}
-                  />
-                ))
-              }
-            </Geographies>
+          {/* Pins */}
+          {mapPins.map((pin) => {
+            const px = (pin.x / 100) * 1000;
+            const py = (pin.y / 100) * 500;
+            const isHovered = hoveredPin === pin.label;
+            const cardW = 108;
+            const cardH = 46;
+            const cardX = pin.cardDir === 'right' ? px + 12 : px - cardW - 12;
+            const cardY = py - cardH / 2;
+            const lineX2 = pin.cardDir === 'right' ? px + 12 : px - 12;
 
-            {/* Pins */}
-            {mapPins.map((pin) => {
-              const isHovered = hoveredPin === pin.label;
-              const cardX = pin.cardDir === 'right' ? 10 : -115;
-              const cardY = -28;
+            return (
+              <g key={pin.href}
+                onMouseEnter={() => setHoveredPin(pin.label)}
+                onMouseLeave={() => setHoveredPin(null)}
+                style={{ cursor: 'pointer' }}
+              >
+                {/* Dashed connector line */}
+                <line
+                  x1={px} y1={py}
+                  x2={lineX2} y2={py}
+                  stroke={isHovered ? '#e879f9' : '#a855f7'}
+                  strokeWidth={0.7}
+                  strokeDasharray="3,2"
+                  opacity={isHovered ? 1 : 0.55}
+                />
 
-              return (
-                <Marker
-                  key={pin.href}
-                  coordinates={pin.coords}
-                  onMouseEnter={() => setHoveredPin(pin.label)}
-                  onMouseLeave={() => setHoveredPin(null)}
+                {/* Outermost ripple */}
+                <circle cx={px} cy={py} r="0" fill="none" stroke="#c084fc" strokeWidth="0.5">
+                  <animate attributeName="r" values="4;20;4" dur="2.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.4;0;0.4" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+                {/* Mid ripple */}
+                <circle cx={px} cy={py} r="0" fill="none" stroke="#a855f7" strokeWidth="0.8">
+                  <animate attributeName="r" values="3;13;3" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+                  <animate attributeName="opacity" values="0.5;0;0.5" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+                </circle>
+                {/* Inner ripple */}
+                <circle cx={px} cy={py} r="0" fill="none" stroke="#e879f9" strokeWidth="1">
+                  <animate attributeName="r" values="2;8;2" dur="1.2s" repeatCount="indefinite" begin="0.6s"/>
+                  <animate attributeName="opacity" values="0.6;0;0.6" dur="1.2s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+
+                {/* Purple glow ring */}
+                <circle cx={px} cy={py} r="5" fill="none"
+                  stroke={isHovered ? '#e879f9' : '#a855f7'} strokeWidth="1.5"
+                  filter="url(#mglow)"
+                  opacity={isHovered ? 1 : 0.8}
+                />
+                {/* Soft halo */}
+                <circle cx={px} cy={py} r="4" fill={isHovered ? '#c084fc' : '#8b5cf6'} opacity="0.35" filter="url(#mglow)"/>
+                {/* White core */}
+                <circle cx={px} cy={py} r={isHovered ? 3 : 2.5}
+                  fill={isHovered ? '#ffffff' : '#e9d5ff'}
+                  filter={isHovered ? 'url(#mglowstrong)' : 'url(#mglow)'}
                 >
-                  {/* Connector line from dot to card */}
-                  <line
-                    x1={0}
-                    y1={0}
-                    x2={pin.cardDir === 'right' ? 10 : -10}
-                    y2={-20}
-                    stroke={isHovered ? '#e879f9' : '#a855f7'}
-                    strokeWidth={0.6}
-                    strokeDasharray="2,2"
-                    opacity={isHovered ? 0.9 : 0.5}
-                    style={{ filter: isHovered ? 'drop-shadow(0 0 2px #e879f9)' : 'none' }}
-                  />
+                  {isHovered && <animate attributeName="r" values="2.5;3.5;2.5" dur="0.8s" repeatCount="indefinite"/>}
+                </circle>
 
-                  {/* Glowing marker */}
-                  <GlowMarker hovered={isHovered} />
-
-                  {/* Info card */}
-                  <foreignObject
-                    x={cardX}
-                    y={cardY}
-                    width={108}
-                    height={54}
-                    style={{ overflow: 'visible', pointerEvents: 'all' }}
-                  >
-                    <Link href={pin.href}>
-                      <div
-                        style={{
-                          background: isHovered
-                            ? 'rgba(88,28,220,0.92)'
-                            : 'rgba(20,8,60,0.85)',
-                          border: isHovered
-                            ? '1px solid rgba(232,121,249,0.8)'
-                            : '1px solid rgba(139,92,246,0.45)',
-                          borderRadius: '8px',
-                          padding: '4px 6px',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '5px',
-                          backdropFilter: 'blur(8px)',
-                          boxShadow: isHovered
-                            ? '0 0 12px rgba(232,121,249,0.5), 0 0 24px rgba(139,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
-                            : '0 0 6px rgba(139,92,246,0.25), inset 0 1px 0 rgba(255,255,255,0.05)',
-                          transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-                          transition: 'all 0.2s ease',
-                          minWidth: '100px',
-                        }}
-                      >
-                        <img
-                          src={`https://flagcdn.com/20x15/${pin.flag}.png`}
-                          width={14}
-                          height={10}
-                          alt={pin.label}
-                          style={{ borderRadius: '2px', flexShrink: 0, marginTop: '2px' }}
-                        />
-                        <div>
-                          <p style={{ color: '#fff', fontSize: '10px', fontWeight: 700, lineHeight: 1.2, margin: 0 }}>
-                            {pin.label}
-                          </p>
-                          {pin.sub.map((line, i) => (
-                            <p key={i} style={{ color: isHovered ? 'rgba(233,213,255,0.85)' : 'rgba(196,181,253,0.6)', fontSize: '8px', lineHeight: 1.3, margin: 0 }}>
-                              {line}
-                            </p>
-                          ))}
-                        </div>
+                {/* Glassmorphism info card */}
+                <foreignObject x={cardX} y={cardY} width={cardW} height={cardH + 10} style={{ overflow: 'visible' }}>
+                  <Link href={pin.href}>
+                    <div style={{
+                      background: isHovered ? 'rgba(88,28,220,0.92)' : 'rgba(15,5,40,0.82)',
+                      border: `1px solid ${isHovered ? 'rgba(232,121,249,0.8)' : 'rgba(139,92,246,0.4)'}`,
+                      borderRadius: '8px',
+                      padding: '5px 7px',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '5px',
+                      backdropFilter: 'blur(10px)',
+                      boxShadow: isHovered
+                        ? '0 0 14px rgba(232,121,249,0.55), 0 0 28px rgba(139,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.12)'
+                        : '0 0 8px rgba(139,92,246,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
+                      transform: isHovered ? 'scale(1.06)' : 'scale(1)',
+                      transition: 'all 0.2s ease',
+                      minWidth: `${cardW}px`,
+                    }}>
+                      <img src={`https://flagcdn.com/20x15/${pin.flag}.png`} width={14} height={10} alt={pin.label}
+                        style={{ borderRadius: '2px', flexShrink: 0, marginTop: '3px' }}/>
+                      <div>
+                        <p style={{ color: '#fff', fontSize: '10px', fontWeight: 700, lineHeight: 1.3, margin: 0 }}>{pin.label}</p>
+                        {pin.sub.map((line, i) => (
+                          <p key={i} style={{ color: isHovered ? 'rgba(233,213,255,0.9)' : 'rgba(196,181,253,0.6)', fontSize: '8px', lineHeight: 1.3, margin: 0 }}>{line}</p>
+                        ))}
                       </div>
-                    </Link>
-                  </foreignObject>
-                </Marker>
-              );
-            })}
-          </ZoomableGroup>
-        </ComposableMap>
+                    </div>
+                  </Link>
+                </foreignObject>
+              </g>
+            );
+          })}
+        </svg>
       </div>
     </>
   );

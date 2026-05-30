@@ -8,8 +8,12 @@ import { EduLoanWhyUs } from '@/components/education-loan/EduLoanWhyUs';
 import { EduLoanProcess } from '@/components/education-loan/EduLoanProcess';
 import { EduLoanTypes } from '@/components/education-loan/EduLoanTypes';
 import { EduLoanEligibility } from '@/components/education-loan/EduLoanEligibility';
-import { EduLoanCTA } from '@/components/education-loan/EduLoanCTA';
-import { EduLoanFAQ } from '@/components/education-loan/EduLoanFAQ';
+import { DestinationsSection } from '@/components/home/DestinationsSection';
+import { ReferFriendSection } from '@/components/home/ReferFriendSection';
+import { TestimonialSection } from '@/components/home/TestimonialSection';
+import { JourneySection } from '@/components/home/JourneySection';
+import { FaqSection } from '@/components/home/FaqSection';
+import { CtaBanner } from '@/components/home/CtaBanner';
 
 export const metadata: Metadata = {
   title: "Education Loan | Student's Choice - Fund Your Global Education",
@@ -28,8 +32,12 @@ export default function EducationLoanPage() {
       <EduLoanProcess />
       <EduLoanTypes />
       <EduLoanEligibility />
-      <EduLoanFAQ />
-      <EduLoanCTA />
+      <DestinationsSection />
+      <ReferFriendSection />
+      <TestimonialSection />
+      <JourneySection />
+      <FaqSection />
+      <CtaBanner />
     </PageShell>
   );
 }

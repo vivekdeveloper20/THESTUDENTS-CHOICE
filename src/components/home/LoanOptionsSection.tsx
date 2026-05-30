@@ -3,17 +3,21 @@
 import { motion } from 'framer-motion';
 
 const leftBanks = [
-  { name: "ICICI Bank", logo: "/assets/images/banks/ICICI.png" },
-  { name: "Union Bank", logo: "/assets/images/banks/Union.png" },
-  { name: "PNB", logo: "/assets/images/banks/PNB.png" },
-  { name: "IDFC First Bank", logo: "/assets/images/banks/IDFC.png" }
+  { name: "Bank 2",  logo: "/assets/images/banks/2.svg"  },
+  { name: "Bank 3",  logo: "/assets/images/banks/3.svg"  },
+  { name: "Bank 4",  logo: "/assets/images/banks/4.svg"  },
+  { name: "Bank 5",  logo: "/assets/images/banks/5.svg"  },
+  { name: "Bank 6",  logo: "/assets/images/banks/6.svg"  },
+  { name: "Bank 7",  logo: "/assets/images/banks/7.svg"  },
 ];
 
 const rightBanks = [
-  { name: "Credila", logo: "/assets/images/banks/Credila.png" },
-  { name: "Tata Capital", logo: "/assets/images/banks/Tata.png" },
-  { name: "Poonawalla Fincorp", logo: "/assets/images/banks/Poonawalla.png" },
-  { name: "Avanse", logo: "/assets/images/banks/Avanse.png" }
+  { name: "Bank 8",  logo: "/assets/images/banks/8.svg"  },
+  { name: "Bank 9",  logo: "/assets/images/banks/9.svg"  },
+  { name: "Bank 10", logo: "/assets/images/banks/10.svg" },
+  { name: "Bank 11", logo: "/assets/images/banks/11.svg" },
+  { name: "Bank 12", logo: "/assets/images/banks/12.svg" },
+  { name: "Bank 13", logo: "/assets/images/banks/13.svg" },
 ];
 
 const containerVariants = {
@@ -43,7 +47,7 @@ function renderBankCard(bank: { name: string; logo: string }, key: string) {
       <img
         src={bank.logo}
         alt={bank.name}
-        className="max-h-[70%] w-full object-cover"
+        className="max-h-full w-full object-contain"
       />
     </motion.div>
   );

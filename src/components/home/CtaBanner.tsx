@@ -13,26 +13,29 @@ export function CtaBanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="relative w-full rounded-2xl bg-gradient-to-r from-[#3273F6] to-[#0D40BA] flex flex-col md:flex-row items-stretch min-h-[320px] mt-24 shadow-2xl shadow-blue-200"
+          style={{ overflow: 'visible' }}
         >
           
           {/* Background circles (clipped to banner) */}
           <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
             {/* Concentric rings */}
-            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full border-[1.5px] border-white/10"></div>
-            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full border-[1.5px] border-white/10 bg-white/[0.02]"></div>
-            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[350px] h-[350px] rounded-full border-[1.5px] border-white/10 bg-white/[0.03]"></div>
-            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[200px] h-[200px] rounded-full border-[1.5px] border-white/10 bg-white/[0.04]"></div>
+            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full border-[1.5px] border-white/20"></div>
+            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full border-[1.5px] border-white/20 bg-white/[0.03]"></div>
+            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[350px] h-[350px] rounded-full border-[1.5px] border-white/25 bg-white/[0.04]"></div>
+            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[200px] h-[200px] rounded-full border-[1.5px] border-white/30 bg-white/[0.05]"></div>
+            <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[100px] h-[100px] rounded-full border-[1.5px] border-white/35 bg-white/[0.06]"></div>
           </div>
 
-          {/* Left Column: Image (Bursting out top) */}
-          <div className="relative w-full md:w-[35%] flex justify-center order-2 md:order-1 h-48 md:h-auto">
+          {/* Left Column: Image bursting out top */}
+          <div className="relative w-full md:w-[35%] flex justify-center order-2 md:order-1" style={{ overflow: 'visible' }}>
             <motion.img 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               src="/assets/images/student-with-backback.png" 
               alt="Student with backpack and phone" 
-              className="absolute bottom-0 z-10 w-auto object-contain object-bottom h-[130%] drop-shadow-[10px_0_30px_rgba(0,0,0,0.15)] pointer-events-none" 
+              className="absolute bottom-0 z-10 w-auto object-contain object-bottom drop-shadow-[10px_0_30px_rgba(0,0,0,0.15)] pointer-events-none"
+              style={{ height: '130%' }}
             />
           </div>
 
