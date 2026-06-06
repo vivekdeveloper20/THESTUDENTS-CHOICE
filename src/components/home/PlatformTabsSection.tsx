@@ -1,78 +1,160 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@mantine/core';
-import { IconArrowRight } from '@tabler/icons-react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
+/* ─── Tab Data ─────────────────────────────────────────────────── */
 const tabData = [
   {
     id: 'university',
     label: 'University Selection',
-    title: 'Get Your Perfect University Shortlist in Minutes',
-    description: 'We analyze your academic profile, budget, and career goals to create a personalized shortlist of universities that best match your future — no guesswork, only smart decisions.',
+    badge: '⭐  Smart Counseling. Better Choices. Brighter Future.',
+    title: 'Get Your Perfect',
+    highlight: 'University Shortlist',
+    titleEnd: 'in Minutes',
+    description:
+      'We analyze your academic profile, budget, and career goals to create a personalized shortlist of universities that best match your future — no guesswork, only smart decisions.',
     buttonText: 'Create Your Shortlist',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80'
+    buttonIcon: '📋',
+    image: '/assets/images/20.png',
+    stats: { count: '1000+ Students', sub: 'Already Shortlisted' },
+    features: [
+      {
+        icon: '🎓',
+        title: 'Personalized for You',
+        desc: 'Tailored to your profile and aspirations',
+      },
+      {
+        icon: '⏱️',
+        title: 'Save Time & Effort',
+        desc: 'Get the best matches instantly',
+      },
+      {
+        icon: '🛡️',
+        title: 'Better Decisions',
+        desc: 'Shortlist universities that fit your goals',
+      },
+    ],
   },
   {
     id: 'loan',
     label: 'Education Loan',
-    title: 'Secure Your Education Loan with Confidence',
-    description: 'Get connected with the right lenders based on your profile. Compare offers, find the best options, and apply with confidence — with expert guidance at every step.',
+    badge: '🛡️  Expert Guidance. Better Options. Bright Future.',
+    title: 'Secure Your',
+    highlight: 'Education Loan',
+    titleEnd: 'with Confidence',
+    description:
+      'Get connected with the right lenders based on your profile. Compare offers, find the best options, and apply with confidence — with expert guidance at every step.',
     buttonText: 'Apply Now',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80'
+    buttonIcon: '→',
+    image: '/assets/images/18.png',
+    stats: { count: '15,000+ Students', sub: 'Trusted Our Guidance' },
+    features: [
+      {
+        icon: '🛡️',
+        title: 'Trusted Lenders',
+        desc: 'Verified and reliable partners',
+      },
+      {
+        icon: '⇄',
+        title: 'Compare & Choose',
+        desc: 'Multiple offers, one smart choice',
+      },
+      {
+        icon: '📄',
+        title: 'Easy Application',
+        desc: 'Simple process, maximum support',
+      },
+      {
+        icon: '🎧',
+        title: 'Expert Support',
+        desc: 'Guidance at every step',
+      },
+    ],
+    whatsapp: true,
   },
   {
     id: 'insurance',
     label: 'Insurance',
-    title: 'Secure Your Health Coverage Before You Fly',
-    description: 'Get comprehensive health insurance plans designed for international students. We compare top plans and help you get the best coverage at the lowest cost.',
-    buttonText: 'Explore Plan',
-    image: 'https://images.unsplash.com/photo-1505751172107-1bc9ba880006?auto=format&fit=crop&w=600&q=80'
-  }
+    badge: '🛡️  Health Covered. Journey Secured.',
+    title: 'Secure Your',
+    highlight: 'Health Coverage',
+    titleEnd: 'Before You Fly',
+    description:
+      'Get comprehensive health insurance plans designed for international students. We compare top plans and help you get the best coverage at the lowest cost.',
+    buttonText: 'Explore Plans',
+    buttonIcon: '→',
+    image: '/assets/images/19.png',
+    stats: { count: 'Trusted by 10,000+ Students', sub: 'Your Health, Our Priority' },
+    features: [
+      {
+        icon: '➕',
+        title: 'Wide Coverage',
+        desc: 'Protection for illness, accidents & more',
+      },
+      {
+        icon: '💼',
+        title: 'Affordable Plans',
+        desc: 'Compare & save on premium',
+      },
+      {
+        icon: '🌐',
+        title: 'Global Support',
+        desc: 'Cashless treatment in 100+ countries',
+      },
+      {
+        icon: '🎧',
+        title: '24/7 Assistance',
+        desc: 'Dedicated support anytime, anywhere',
+      },
+    ],
+  },
 ];
 
+/* ─── Component ─────────────────────────────────────────────────── */
 export function PlatformTabsSection() {
   const [activeTab, setActiveTab] = useState('university');
-
-  const activeContent = tabData.find(t => t.id === activeTab) || tabData[0];
+  const active = tabData.find((t) => t.id === activeTab) || tabData[0];
+  const isUniversity = active.id === 'university';
 
   return (
     <section className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Title Area */}
-        <motion.div 
+
+        {/* ── Heading ── */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p className="text-[20px] md:text-[24px] font-bold text-[#8424e8] mb-2">
+          <p className="text-[18px] md:text-[22px] font-bold text-[#8424e8] mb-2">
             Your All-in One Platform for Studying Abroad
           </p>
-          <h2 className="text-[36px] md:text-[54px] font-extrabold text-[#520cbd] leading-tight">
+          <h2 className="text-[34px] md:text-[52px] font-extrabold text-[#1a0040] leading-tight">
             Plan, and Apply with Student&apos;s Choice
           </h2>
         </motion.div>
 
-        {/* Tabs Bar (Capsule) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+        {/* ── Tab Pills ── */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           className="flex justify-center mb-10"
         >
-          <div className="inline-flex bg-white border border-gray-100 shadow-sm rounded-full p-2 gap-2">
+          <div className="inline-flex bg-[#f5f0ff] rounded-full p-1.5 gap-1 shadow-sm">
             {tabData.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-3 rounded-full text-[15px] md:text-[16px] font-bold transition-all duration-300 ${
-                  activeTab === tab.id 
-                    ? 'bg-[#8424e8] text-white shadow-lg' 
-                    : 'text-gray-500 hover:text-[#8424e8] hover:bg-purple-50'
+                className={`px-7 py-2.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? 'bg-[#7c3aed] text-white shadow-md'
+                    : 'text-[#7c3aed] hover:bg-purple-100'
                 }`}
               >
                 {tab.label}
@@ -81,62 +163,145 @@ export function PlatformTabsSection() {
           </div>
         </motion.div>
 
-        {/* Content Box with Gradient */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="relative w-full min-h-[500px] rounded-[40px] overflow-hidden bg-gradient-to-br from-[#520cbd] via-[#c666f5] to-[#f8f0ff] p-10 md:p-20 shadow-xl flex flex-col lg:flex-row items-center gap-10"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="flex flex-col lg:flex-row items-center gap-12 w-full"
+        {/* ── Card ── */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="relative w-full rounded-[32px] overflow-hidden bg-[#f5f0ff] shadow-lg"
+            style={{ minHeight: 400 }}
+          >
+            <div
+              className={`flex flex-col ${
+                isUniversity ? 'lg:flex-row' : 'lg:flex-row'
+              } items-stretch`}
             >
-              {/* Text Area */}
-              <div className="flex flex-col items-start gap-6 w-full lg:w-[60%]">
-                <h3 className="text-[32px] md:text-[48px] font-extrabold text-white leading-[1.1] mb-2 tracking-tight">
-                  {activeContent.title}
+
+              {/* ── Left: Text Content ── */}
+              <div className="flex flex-col justify-center gap-5 p-8 md:p-12 lg:p-14 w-full lg:w-[55%]">
+                {/* Badge */}
+                <span className="inline-flex items-center gap-2 self-start bg-[#ede9fe] text-[#7c3aed] text-[13px] font-semibold px-4 py-1.5 rounded-full">
+                  {active.badge}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-[30px] md:text-[40px] font-extrabold text-[#1a0040] leading-[1.15] tracking-tight">
+                  {active.title}{' '}
+                  <span className="text-[#7c3aed]">{active.highlight}</span>
+                  {active.titleEnd && (
+                    <>
+                      <br />
+                      {active.titleEnd}
+                    </>
+                  )}
                 </h3>
-                
-                <p className="text-[16px] md:text-[18px] text-white/90 leading-relaxed mb-6 font-medium">
-                  {activeContent.description}
+
+                {/* Divider */}
+                <div className="w-12 h-1 bg-[#7c3aed] rounded-full" />
+
+                {/* Description */}
+                <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+                  {active.description}
                 </p>
 
-                <Button
-                  variant="outline"
-                  color="white"
-                  size="lg"
-                  radius="xl"
-                  rightSection={<IconArrowRight size={20} />}
-                  className="hover:bg-white hover:text-[#8424e8] border-white text-white font-bold h-14 px-8 transition-all hover:scale-105 mt-auto"
-                >
-                  {activeContent.buttonText}
-                </Button>
-              </div>
+                {/* Features */}
+                {isUniversity ? (
+                  /* University: vertical cards in middle col (done below) — here just features for loan/insurance */
+                  null
+                ) : (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2">
+                    {active.features?.map((f, i) => (
+                      <div key={i} className="flex flex-col items-start gap-1">
+                        <div className="w-10 h-10 rounded-xl bg-[#ede9fe] flex items-center justify-center text-[18px] mb-1">
+                          {f.icon}
+                        </div>
+                        <p className="text-[13px] font-bold text-[#1a0040]">{f.title}</p>
+                        <p className="text-[12px] text-gray-500 leading-snug">{f.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-              {/* Image Area */}
-              <div className="w-full lg:w-[40%] flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-[350px] aspect-square rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/20">
-                  <img 
-                    src={activeContent.image} 
-                    alt={activeContent.label} 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <button className="inline-flex items-center gap-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold text-[15px] px-7 py-3.5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
+                    {active.buttonIcon && (
+                      <span className="text-[16px]">{active.buttonIcon}</span>
+                    )}
+                    {active.buttonText}
+                  </button>
+                  {(active as typeof tabData[1]).whatsapp && (
+                    <button className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#1a0040] font-semibold text-[15px] px-7 py-3.5 rounded-full border border-gray-200 shadow-sm transition-all hover:scale-105 active:scale-95">
+                      <span>💬</span> Chat on WhatsApp
+                    </button>
+                  )}
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
 
-          {/* Background Decorative Flare */}
-          <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-white opacity-20 blur-[100px] rounded-full -z-10"></div>
-        </motion.div>
+              {/* ── Middle: Feature Cards (University only) ── */}
+              {isUniversity && (
+                <div className="hidden lg:flex flex-col justify-center gap-4 py-14 px-4 w-[25%]">
+                  {active.features?.map((f, i) => (
+                    <div
+                      key={i}
+                      className="bg-white rounded-2xl p-4 shadow-sm flex items-start gap-3 relative"
+                    >
+                      {i < active.features!.length - 1 && (
+                        <div className="absolute left-[27px] -bottom-5 h-5 w-[2px] bg-gray-200 z-0" />
+                      )}
+                      <div className="w-10 h-10 rounded-xl bg-[#ede9fe] flex items-center justify-center text-[18px] shrink-0 z-10">
+                        {f.icon}
+                      </div>
+                      <div>
+                        <p className="text-[13px] font-bold text-[#1a0040]">{f.title}</p>
+                        <p className="text-[12px] text-gray-500 leading-snug">{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* ── Right: Image ── */}
+              <div
+                className={`relative w-full ${
+                  isUniversity ? 'lg:w-[45%]' : 'lg:w-[45%]'
+                } min-h-[320px] lg:min-h-[460px]`}
+              >
+                <Image
+                  src={active.image}
+                  alt={active.label}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+
+                {/* Stats Badge */}
+                <div className="absolute bottom-6 right-6 bg-white rounded-2xl shadow-xl px-5 py-3 flex items-center gap-3 z-10">
+                  <div className="w-10 h-10 rounded-full bg-[#ede9fe] flex items-center justify-center text-[20px]">
+                    {active.id === 'insurance' ? '🛡️' : '👥'}
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-extrabold text-[#7c3aed] leading-tight">
+                      {active.stats.count}
+                    </p>
+                    <p className="text-[11px] text-gray-500">{active.stats.sub}</p>
+                    <div className="flex gap-0.5 mt-1">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <span key={s} className="text-[#f59e0b] text-[12px]">★</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
       </div>
     </section>
   );
