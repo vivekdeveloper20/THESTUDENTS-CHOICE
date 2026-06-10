@@ -3,151 +3,136 @@
 import { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import '@mantine/carousel/styles.css';
 
-const testimonials = [
+type Testimonial = {
+  content: string;
+  author: string;
+  role: string;
+  rating: number;
+  loan: string;
+  days: string;
+  bank: string;
+};
+
+const testimonials: Testimonial[] = [
   {
-    type: 'text',
-    content: "I had the best experience with GradRight, they helped me throughout the process and were always available to resolve my queries.",
-    author: "Tejas Rane",
-    role: "Study Abroad Aspirant",
-    location: "United States",
-    rotation: -2
+    content: "I was at a point where it felt like I had exhausted all my options for securing an education loan, and that's when I turned to Students Choice for help. They got my sanction in just 14 days, and the process was smoother than I ever imagined.",
+    author: 'Hans Nizam Shmiski',
+    role: 'MS in Data Science, USA',
+    rating: 5,
+    loan: '₹42 Lakhs',
+    days: '14 days',
+    bank: '/assets/images/banks/Credila.png',
   },
   {
-    type: 'text',
-    content: "I had a great experience with the GradRight team. I'm incredibly grateful to Varun for helping me throughout this journey, and to Ayushi for all her support!",
-    author: "Ramandeep",
-    role: "Study Abroad Aspirant",
-    location: "United States",
-    rotation: 2
+    content: 'Had a smooth experience getting my education loan sanctioned with Students Choice. All thanks to Ritu, who guided and supported me from the start to the very end. Truly student-first service.',
+    author: 'Ayushi Bansal',
+    role: 'MSc Finance, UK',
+    rating: 5,
+    loan: '₹38 Lakhs',
+    days: '9 days',
+    bank: '/assets/images/banks/Avanse.png',
   },
   {
-    type: 'video',
-    thumbnail: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80",
-    author: "Ananya",
-    role: "Washington University",
-    subRole: "MS in Analytics",
-    rotation: -1
+    content: 'It was a great experience applying for my education loan for her further studies abroad. I was associated with Students Choice, who were extremely polite and helpful. They understood our needs and gave us the best plan.',
+    author: 'Chandra Sekhar',
+    role: 'MS in CS, Canada',
+    rating: 5,
+    loan: '₹55 Lakhs',
+    days: '12 days',
+    bank: '/assets/images/banks/Axis.png',
   },
   {
-    type: 'video',
-    thumbnail: "/assets/images/student-trust.png",
-    author: "David",
-    role: "Washington University",
-    rotation: 1
+    content: 'The loan process was so much easier than I expected. The team handled all the paperwork and I received my sanction letter quickly, with complete transparency at every step.',
+    author: 'Siddharth Rao',
+    role: 'MEng, Germany',
+    rating: 5,
+    loan: '₹30 Lakhs',
+    days: '7 days',
+    bank: '/assets/images/banks/ICICI.png',
   },
   {
-    type: 'text',
-    content: "The loan process was so much easier than I expected. They handled all the paperwork and I got my sanction letter in just 3 days!",
-    author: "Siddharth",
-    role: "International Student",
-    location: "Canada",
-    rotation: -1.5
-  }
+    content: "I'm incredibly grateful for the support I received throughout this journey. From document review to lender matching, everything was handled professionally and on time.",
+    author: 'Ramandeep Kaur',
+    role: 'MBA, Ireland',
+    rating: 5,
+    loan: '₹47 Lakhs',
+    days: '11 days',
+    bank: '/assets/images/banks/IDFC.png',
+  },
 ];
+
+function Stars({ count }: { count: number }) {
+  return (
+    <span className="text-[#f5b301] text-sm tracking-tight">
+      {'★'.repeat(count)}<span className="text-gray-300">{'★'.repeat(5 - count)}</span>
+    </span>
+  );
+}
 
 export function TestimonialSection() {
   const autoplay = useRef(
-    Autoplay({
-      delay: 2200,
-      stopOnInteraction: false,
-      stopOnMouseEnter: false
-    })
+    Autoplay({ delay: 2600, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
-    <section className="w-full bg-white pt-24 pb-16 relative overflow-hidden">
-      {/* Dotted Background Pattern */}
-      <div 
-        className="absolute inset-0 opacity-20 pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(#8424e8 1px, transparent 1px)', 
-          backgroundSize: '24px 24px' 
-        }}
-      ></div>
-      <div className="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-      <div className="absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
-
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <h2 className="text-center text-[38px] md:text-[46px] font-bold text-[#8424e8] mb-16 tracking-tight">
-          What Students Say About Us !
+    <section className="w-full bg-white pt-20 pb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-[32px] md:text-[44px] font-black mb-10 tracking-tight">
+          What <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">Students Say</span> About Us !
         </h2>
 
-        <Carousel
-          slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
-          slideGap="xl"
-          withControls={false}
-          emblaOptions={{
-            align: 'start',
-            loop: true,
-            dragFree: true,
-            slidesToScroll: 1,
-            duration: 28
-          }}
-          plugins={[autoplay.current]}
-          classNames={{
-            viewport: '!overflow-visible',
-          }}
-          className="pb-10"
-        >
-          {testimonials.map((t, index) => (
-            <Carousel.Slide key={index} className="pt-10 px-4">
-              <div 
-                className="bg-white p-8 rounded-sm border border-[#f0e8ff] shadow-[0_12px_32px_rgba(132,36,232,0.12)] relative h-full flex flex-col transition-transform duration-300 hover:scale-[1.03]"
-                style={{ 
-                  transform: `rotate(${t.rotation}deg)`,
-                  transformOrigin: 'center center'
-                }}
-              >
-                {/* Tape Effect */}
-                <div 
-                  className="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-8 bg-blue-100/60 -rotate-3 mix-blend-multiply border border-blue-200/20"
-                  style={{ backdropFilter: 'blur(1px)' }}
-                ></div>
+        <div className="relative rounded-[28px] bg-gradient-to-br from-[#9b30f0] via-[#8424e8] to-[#6a16c9] p-6 md:p-10 shadow-[0_30px_70px_rgba(132,36,232,0.30)] overflow-hidden">
+          {/* concentric rings */}
+          <div className="pointer-events-none absolute -top-16 -right-16 w-72 h-72 rounded-full border border-white/10" />
+          <div className="pointer-events-none absolute -bottom-20 -left-10 w-80 h-80 rounded-full border border-white/10" />
 
-                {t.type === 'text' ? (
-                  <div className="flex-grow mb-8">
-                    <p className="text-gray-700 text-lg leading-relaxed font-medium">
-                      &quot;{t.content}&quot;
-                    </p>
-                  </div>
-                ) : (
-                  <div className="flex-grow mb-8 overflow-hidden rounded-lg relative group cursor-pointer">
-                    <img 
-                      src={t.thumbnail} 
-                      alt={t.author} 
-                      className="w-full h-48 object-cover transition-transform group-hover:scale-110" 
-                    />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center text-[#8424e8] shadow-lg">
-                        <IconPlayerPlayFilled size={24} />
-                      </div>
+          <Carousel
+            slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
+            slideGap="lg"
+            withControls={false}
+            emblaOptions={{ align: 'start', loop: true, dragFree: true, slidesToScroll: 1, duration: 28 }}
+            plugins={[autoplay.current]}
+            className="relative z-10"
+          >
+            {testimonials.map((t, index) => (
+              <Carousel.Slide key={index} className="py-2">
+                <div className="bg-white rounded-2xl p-6 h-full flex flex-col shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+                  {/* head */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                      {t.author.charAt(0)}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-gray-900 leading-tight truncate">{t.author}</h4>
+                      <p className="text-[#8424e8] text-xs">{t.role}</p>
                     </div>
                   </div>
-                )}
 
-                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-[#f3edff] flex items-center justify-center text-[#8424e8] font-bold text-lg overflow-hidden">
-                    {t.type === 'video' ? (
-                        <img src={t.thumbnail} alt={t.author} className="w-full h-full object-cover" />
-                    ) : (
-                        t.author.charAt(0)
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 leading-tight">
-                      {t.author} <span className="font-normal text-gray-400">|</span> <span className="text-[#8424e8] text-sm">{t.role}</span>
-                    </h4>
-                    {t.location && <p className="text-gray-500 text-sm mt-0.5">{t.location}</p>}
-                    {t.subRole && <p className="text-gray-500 text-sm mt-0.5">{t.subRole}</p>}
+                  <div className="mt-3"><Stars count={t.rating} /></div>
+
+                  <p className="text-gray-600 text-[14px] leading-relaxed mt-3 flex-grow">
+                    &quot;{t.content}&quot;
+                  </p>
+
+                  {/* footer */}
+                  <div className="mt-5 pt-4 border-t border-gray-100">
+                    <img src={t.bank} alt="Lender" className="h-6 w-auto object-contain mb-3" />
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-lg bg-[#f3ecff] text-[#6f1ed0] text-[11px] font-semibold px-2.5 py-1">
+                        Loan Amount: {t.loan}
+                      </span>
+                      <span className="inline-flex items-center rounded-lg bg-[#eafff1] text-[#1f7a47] text-[11px] font-semibold px-2.5 py-1">
+                        Disbursed in {t.days}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Carousel.Slide>
-          ))}
-        </Carousel>
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </section>
   );

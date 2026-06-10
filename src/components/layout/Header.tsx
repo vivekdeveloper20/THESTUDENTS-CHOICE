@@ -77,14 +77,6 @@ const toolsItems: DropdownItem[] = [
   { label: 'About Us', href: '/about-us', icon: '🏫' },
 ];
 
-const contactItems: DropdownItem[] = [
-  { label: 'Book Free Consultation', href: '/contact-us?type=consultation', icon: '📅' },
-  { label: 'Call Us', href: 'tel:+918888888888', icon: '📞' },
-  { label: 'WhatsApp Support', href: 'https://wa.me/918888888888', icon: '💬' },
-  { label: 'Email Support', href: 'mailto:hello@studentschoice.in', icon: '✉️' },
-  { label: 'Become a Partner', href: '/partner', icon: '🤝' },
-];
-
 /* ─── Study Abroad Mega-menu (Desktop) ───────────────────────── */
 function StudyAbroadMega() {
   const [open, setOpen] = useState(false);
@@ -251,7 +243,7 @@ export function Header() {
             <img
               src="/assets/images/header-logo.png"
               alt="Student's Choice"
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </Link>
 
@@ -274,7 +266,13 @@ export function Header() {
             </Link>
 
             <DesktopDropdown label="Tools" items={toolsItems} />
-            <DesktopDropdown label="Contact Us" items={contactItems} />
+
+            <Link
+              href="/contact-us"
+              className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* CTA */}
@@ -310,7 +308,7 @@ export function Header() {
           <img
             src="/assets/images/header-logo.png"
             alt="Student's Choice"
-            className="h-12 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         }
         className="md:hidden"
@@ -378,22 +376,14 @@ export function Header() {
             </div>
           </MobileAccordion>
 
-          {/* Contact Us accordion */}
-          <MobileAccordion label="Contact Us">
-            <div className="flex flex-col gap-1">
-              {contactItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={close}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[15px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#8424e8] transition-colors"
-                >
-                  <span className="text-[18px]">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </MobileAccordion>
+          {/* Contact Us link */}
+          <Link
+            href="/contact-us"
+            onClick={close}
+            className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4 pt-2"
+          >
+            Contact Us
+          </Link>
 
           <Button
             radius="xl"

@@ -17,7 +17,7 @@ const tabData = [
       'We analyze your academic profile, budget, and career goals to create a personalized shortlist of universities that best match your future — no guesswork, only smart decisions.',
     buttonText: 'Create Your Shortlist',
     buttonIcon: '📋',
-    image: '/assets/images/20.png',
+    image: '/assets/images/University.svg',
     stats: { count: '1000+ Students', sub: 'Already Shortlisted' },
     features: [
       {
@@ -48,7 +48,7 @@ const tabData = [
       'Get connected with the right lenders based on your profile. Compare offers, find the best options, and apply with confidence — with expert guidance at every step.',
     buttonText: 'Apply Now',
     buttonIcon: '→',
-    image: '/assets/images/18.png',
+    image: '/assets/images/Education.svg',
     stats: { count: '15,000+ Students', sub: 'Trusted Our Guidance' },
     features: [
       {
@@ -85,7 +85,7 @@ const tabData = [
       'Get comprehensive health insurance plans designed for international students. We compare top plans and help you get the best coverage at the lowest cost.',
     buttonText: 'Explore Plans',
     buttonIcon: '→',
-    image: '/assets/images/19.png',
+    image: '/assets/images/Insurance.svg',
     stats: { count: 'Trusted by 10,000+ Students', sub: 'Your Health, Our Priority' },
     features: [
       {
@@ -151,7 +151,7 @@ export function PlatformTabsSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-7 py-2.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 ${
+                className={`px-7 py-2.5 rounded-full text-[14px] md:text-[15px] font-bold transition-all duration-300 ${
                   activeTab === tab.id
                     ? 'bg-[#7c3aed] text-white shadow-md'
                     : 'text-[#7c3aed] hover:bg-purple-100'

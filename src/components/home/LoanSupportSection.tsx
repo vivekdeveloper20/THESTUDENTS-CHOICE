@@ -72,7 +72,6 @@ export function LoanSupportSection() {
             viewport={{ once: true }}
             className="w-full lg:w-[60%] flex flex-col gap-6 lg:gap-0 lg:pr-3 relative"
           >
-            <div className="hidden lg:block absolute left-[1.05rem] top-14 bottom-10 w-[2px] bg-gradient-to-b from-[#8424e8]/20 via-[#8424e8]/55 to-[#8424e8]/20"></div>
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -83,7 +82,7 @@ export function LoanSupportSection() {
                 viewport={{ once: false, amount: 0.55 }}
                 className="flex items-start gap-6 group relative lg:sticky"
                 style={{
-                  top: '6.25rem',
+                  top: `calc(6.25rem + ${idx * 1.75}rem)`,
                   zIndex: idx + 1
                 }}
               >
@@ -132,18 +131,11 @@ export function LoanSupportSection() {
             {/* Decorative Purple Shape (Abstract) */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] aspect-square bg-[#8424e8] rounded-full opacity-90 -z-10 animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 70%' }}></div>
 
-            {/* Dotted Airplane Path (Simplified SVG) */}
-            <div className="absolute top-[5%] left-[-10%] z-0 max-w-[350px] opacity-40 hidden md:block">
-                <svg width="250" height="250" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-pulse">
-                    <path d="M10 150Q70 20 190 100" stroke="#8424e8" strokeWidth="2" strokeDasharray="6 6" fill="none" />
-                    <path d="M190 100L185 90M190 100L180 105" stroke="#8424e8" strokeWidth="2" />
-                </svg>
-            </div>
 
             {/* Main Image */}
-            <div className="relative z-10 w-full max-w-[550px] lg:translate-x-10">
+            <div className="relative z-10 w-full max-w-[460px] lg:-translate-x-6">
               <img 
-                src="/assets/images/girl-photo.png" 
+                src="/assets/images/Overseas education.svg" 
                 alt="Student Overseas Support" 
                 className="w-full h-auto drop-shadow-2xl object-contain"
               />

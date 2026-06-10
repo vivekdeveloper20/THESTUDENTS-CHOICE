@@ -11,7 +11,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
+    <footer className="w-full bg-white pt-16 pb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto">
 
         {/* Card Wrapper with absolute plane */}
@@ -25,12 +25,10 @@ export function Footer() {
             <style>{`
               @keyframes fly-plane {
                 0% {
-                  left: 0%;
-                  transform: translate(-100%, -95%);
+                  transform: translate(-160px, -72%);
                 }
                 100% {
-                  left: 105%;
-                  transform: translate(0%, -95%);
+                  transform: translate(calc(100vw + 160px), -72%);
                 }
               }
             `}</style>
@@ -41,7 +39,7 @@ export function Footer() {
               <img
                 src="/assets/images/Plane PNG.png"
                 alt="Airplane"
-                className="h-[48px] md:h-[60px] w-auto select-none"
+                className="h-[120px] md:h-[155px] w-auto select-none"
               />
             </div>
           </div>
@@ -75,7 +73,7 @@ export function Footer() {
                   <img
                     src="/assets/images/header-logo.png"
                     alt="Student's Choice"
-                    className="h-12 w-auto object-contain"
+                    className="h-20 w-auto object-contain"
                   />
                 </div>
 
@@ -139,7 +137,7 @@ export function Footer() {
               </div>
 
               {/* Column 3 (Study Abroad Links) */}
-              <div className="lg:col-span-3 flex flex-col gap-4">
+              <div className="lg:col-span-2 flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Study Abroad</h3>
                 <div className="flex flex-col gap-2.5">
                   <Link href="/study-abroad/usa" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in USA</Link>
@@ -158,7 +156,7 @@ export function Footer() {
               </div>
 
               {/* Column 4 (Education Loan Links) */}
-              <div className="lg:col-span-3 flex flex-col gap-4">
+              <div className="lg:col-span-2 flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Education Loan</h3>
                 <div className="flex flex-col gap-2.5">
                   <Link href="/loans/icici" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Icici Education Loan</Link>

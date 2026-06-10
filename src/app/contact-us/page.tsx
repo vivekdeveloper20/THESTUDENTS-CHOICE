@@ -4,140 +4,283 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PageShell } from '@/components/layout/PageShell';
 
-const METHODS = [
-  { icon: '📅', label: 'Book Free Consultation', desc: 'Schedule a 1-on-1 session with our expert counselors.', color: 'from-[#8424e8] to-[#6f1ed0]' },
-  { icon: '📞', label: 'Call Us', desc: '+91 88888 88888 — Mon-Sat 9am to 8pm.', color: 'from-[#1565c0] to-[#0d47a1]' },
-  { icon: '💬', label: 'WhatsApp Support', desc: 'Chat with us 24/7 on WhatsApp for instant replies.', color: 'from-[#1b5e20] to-[#2e7d32]' },
-  { icon: '✉️', label: 'Email Support', desc: 'hello@studentschoice.in — We reply within 4 hours.', color: 'from-[#e65100] to-[#ff6f00]' },
+/* ─── Inline line icons ──────────────────────────────────────── */
+const cx = 'w-5 h-5';
+const IconPhone = () => (
+  <svg className={cx} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+);
+const IconPin = () => (
+  <svg className={cx} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+);
+const IconChat = () => (
+  <svg className={cx} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+);
+const IconMail = () => (
+  <svg className={cx} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 5L2 7" /></svg>
+);
+const IconUser = () => (
+  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+);
+const IconArrow = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+);
+const IconBolt = () => (
+  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+);
+const IconShield = () => (
+  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+);
+const IconLock = () => (
+  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+);
+const IconChevron = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+);
+
+/* ─── Contact detail rows ────────────────────────────────────── */
+const DETAILS = [
+  { icon: <IconPin />,   title: 'Head Office',     value: 'WZ - 113/4, Subhash Nagar, Meenakshi Garden, Ashok Nagar, New Delhi, Delhi, 110018', note: 'Visit us during business hours' },
+  { icon: <IconPhone />, title: 'Phone Support',   value: '+91 980 182 1680',          note: 'Mon-Sat, 10 AM - 7 PM' },
+  { icon: <IconChat />,  title: 'WhatsApp Chat',   value: '+91 980 182 1680',          note: 'Available 24/7 for quick response' },
+  { icon: <IconMail />,  title: 'Email Support',   value: 'Contact@studentschoice.in', note: 'Response within 1 business day' },
 ];
 
-export default function ContactUsPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', destination: '', message: '', type: 'consultation' });
-  const [submitted, setSubmitted] = useState(false);
+const BADGES = [
+  { icon: <IconBolt />,   title: 'Quick Response',    sub: 'Under 5 Minutes' },
+  { icon: <IconShield />, title: 'Expert Counselors', sub: '5 Year Experience' },
+  { icon: <IconLock />,   title: '100% Secure',       sub: 'Your Data is Safe' },
+];
 
-  function handleSubmit(e: React.FormEvent) {
+const CATEGORIES = ['Education Loan', 'Admission Assistance', 'Become a Partner'];
+
+const fieldCls =
+  'w-full pl-11 pr-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors';
+
+export default function ContactUsPage() {
+  const [booking, setBooking] = useState({
+    name: '', phone: '', email: '', category: '', description: '',
+  });
+  const [bookingDone, setBookingDone] = useState(false);
+
+  function handleBookingSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setBookingDone(true);
   }
 
   return (
     <PageShell>
-      {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#8424e8] via-[#7c3aed] to-[#4a0fa0]">
-        <div className="pointer-events-none absolute -top-20 right-0 w-80 h-80 rounded-full bg-white/10 blur-3xl" />
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <div className="text-6xl mb-5">📬</div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-5">Get in Touch</h1>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Whether you are just exploring options or ready to apply — we are here to help you every step of the way.
-          </p>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-          <svg viewBox="0 0 1440 60" className="w-full fill-white"><path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" /></svg>
+      {/* ── Hero: Get in Touch ───────────────────────────────── */}
+      <section className="relative overflow-hidden bg-white pt-14 pb-10">
+        <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#f3ecff] blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Left copy */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              <h1 className="text-3xl md:text-[40px] leading-tight font-extrabold text-gray-900">
+                Get in Touch with Students Choice
+              </h1>
+              <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-600 max-w-xl">
+                <p>At Students Choice, we don&apos;t just help students secure education loans—we help them unlock opportunities, achieve ambitions, and build successful futures.</p>
+                <p>As a trusted education financing and student advisory platform, we provide expert support for education loans, admissions guidance, financial planning, and study abroad aspirations. Our mission is to simplify the entire process and empower students to make informed decisions with confidence. Thousands of students and families trust Students Choice because of our transparent approach, personalized solutions, and commitment to delivering exceptional service at every stage of the educational journey.</p>
+                <p>Whether you&apos;re exploring universities, comparing loan options, or seeking professional guidance, our experts are ready to assist you.</p>
+                <p>Connect with Students Choice today and take the first step toward your academic success.</p>
+              </div>
+              <button className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(132,36,232,0.35)] hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(132,36,232,0.45)] transition-all">
+                Talk to Counsellor <IconArrow />
+              </button>
+            </motion.div>
+
+            {/* Right image */}
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}
+              className="relative">
+              <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-[#8424e8]/15 to-transparent blur-2xl" />
+              <div className="relative rounded-[28px] overflow-hidden shadow-[0_30px_70px_rgba(132,36,232,0.22)] ring-1 ring-[#ece5f9] bg-[#f3ecff]">
+                <img
+                  src="/assets/images/contact-us-girl.jpg"
+                  alt="Talk to a Students Choice counsellor"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Contact pills bar */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 max-w-4xl mx-auto rounded-2xl bg-white border border-[#e7ddfa] shadow-[0_18px_50px_rgba(132,36,232,0.10)] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#efe8fb] overflow-hidden">
+            {[
+              { big: '+91 980 182 1680', small: 'Call Us' },
+              { big: 'contact@studentschoice.in', small: 'Email Us' },
+              { big: 'studentschoice', small: 'Stalk Us' },
+            ].map((p) => (
+              <div key={p.small} className="px-6 py-5 text-center">
+                <p className="font-extrabold text-gray-900 text-[15px] md:text-base break-words">{p.big}</p>
+                <p className="text-sm text-gray-400 mt-0.5">{p.small}</p>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact methods */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-          {METHODS.map((m, i) => (
-            <motion.div key={m.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`bg-gradient-to-br ${m.color} rounded-2xl p-6 text-white hover:scale-[1.02] transition-transform cursor-pointer shadow-lg`}>
-              <span className="text-3xl mb-3 block">{m.icon}</span>
-              <h3 className="font-extrabold mb-1">{m.label}</h3>
-              <p className="text-white/75 text-sm">{m.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+      {/* ── Connect heading ──────────────────────────────────── */}
+      <section className="text-center px-4 pt-10 pb-6">
+        <h2 className="text-3xl md:text-[40px] font-extrabold text-gray-900">
+          Connect with{' '}
+          <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">
+            Students Choice
+          </span>
+        </h2>
+        <p className="mt-2 text-gray-500 text-lg">Reach out to start your global study abroad education journey.</p>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Form */}
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Send Us a Message</h2>
+      {/* ── Contact Details + Booking form ───────────────────── */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+        <div className="grid lg:grid-cols-2 gap-7">
+          {/* Contact Details card */}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(132,36,232,0.10)] p-7 md:p-8">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#8424e8]"><IconPhone /></span>
+              <h3 className="text-2xl font-extrabold text-gray-900">Contact Details</h3>
+            </div>
+            <p className="text-gray-500 mt-3 text-[15px]">Reach out via phone, WhatsApp, email, or visit us in person.</p>
 
-            {submitted ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
+            <div className="mt-6 space-y-3.5">
+              {DETAILS.map((d) => (
+                <div key={d.title}
+                  className="flex gap-4 rounded-2xl border border-[#f0eafa] bg-[#fbf9ff] p-4 hover:border-[#d9c7f7] hover:shadow-[0_10px_24px_rgba(132,36,232,0.10)] transition-all">
+                  <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#8424e8]">{d.icon}</span>
+                  <div className="min-w-0">
+                    <p className="font-bold text-gray-900">{d.title}</p>
+                    <p className="text-gray-700 text-[14px] mt-0.5 break-words">{d.value}</p>
+                    <p className="text-gray-400 text-[12px] mt-1 italic">{d.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Booking form card */}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(132,36,232,0.10)] p-7 md:p-8">
+            <h3 className="text-2xl font-extrabold text-gray-900">Book Free Consultation</h3>
+            <p className="text-gray-500 mt-1 text-[15px]">Schedule a 1-on-1 session with our expert counselors</p>
+
+            {bookingDone ? (
+              <div className="mt-6 bg-[#f3ffe9] border border-green-200 rounded-2xl p-8 text-center">
                 <div className="text-5xl mb-3">🎉</div>
-                <h3 className="font-extrabold text-green-800 text-lg">Message Sent!</h3>
-                <p className="text-green-700 mt-2">We will get back to you within 4 hours. Check your email!</p>
+                <h4 className="font-extrabold text-green-800 text-lg">Request Received!</h4>
+                <p className="text-green-700 mt-2">Our counselor will reach out to you in under 5 minutes.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              <form onSubmit={handleBookingSubmit} className="mt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-semibold text-gray-700 block mb-1.5">Full Name *</label>
-                    <input required value={form.name} onChange={e => setForm({...form, name: e.target.value})}
-                      placeholder="Your name"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Full Name<span className="text-[#8424e8]">*</span></label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconUser /></span>
+                      <input required value={booking.name} onChange={e => setBooking({ ...booking, name: e.target.value })}
+                        placeholder="Pankaj Sharma" className={fieldCls} />
+                    </div>
                   </div>
                   <div>
-                    <label className="text-sm font-semibold text-gray-700 block mb-1.5">Phone *</label>
-                    <input required type="tel" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})}
-                      placeholder="+91 XXXXX XXXXX"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Phone<span className="text-[#8424e8]">*</span></label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconPhone /></span>
+                      <input required type="tel" value={booking.phone} onChange={e => setBooking({ ...booking, phone: e.target.value })}
+                        placeholder="+91 980 182 1680" className={fieldCls} />
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-1.5">Email Address *</label>
-                  <input required type="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})}
-                    placeholder="you@email.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+
+                <div className="mt-4">
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Email Address<span className="text-[#8424e8]">*</span></label>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconMail /></span>
+                    <input required type="email" value={booking.email} onChange={e => setBooking({ ...booking, email: e.target.value })}
+                      placeholder="Pankaj@studentschoice.in" className={fieldCls} />
+                  </div>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-1.5">Preferred Destination</label>
-                  <select value={form.destination} onChange={e => setForm({...form, destination: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors bg-white">
-                    <option value="">Select a country...</option>
-                    {['USA 🇺🇸', 'UK 🇬🇧', 'Canada 🇨🇦', 'Australia 🇦🇺', 'Germany 🇩🇪', 'France 🇫🇷', 'Ireland 🇮🇪', 'Singapore 🇸🇬', 'UAE 🇦🇪', 'Others'].map(c => (
-                      <option key={c} value={c}>{c}</option>
-                    ))}
-                  </select>
+
+                <div className="mt-4">
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Category<span className="text-[#8424e8]">*</span></label>
+                  <div className="relative">
+                    <select required value={booking.category} onChange={e => setBooking({ ...booking, category: e.target.value })}
+                      className={`w-full px-4 py-3 pr-11 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors appearance-none ${booking.category ? 'text-gray-800' : 'text-gray-400'}`}>
+                      <option value="" disabled hidden>Select a category</option>
+                      {CATEGORIES.map(c => (
+                        <option key={c} value={c} className="text-gray-800">{c}</option>
+                      ))}
+                    </select>
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"><IconChevron /></span>
+                  </div>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-1.5">Your Message</label>
-                  <textarea value={form.message} onChange={e => setForm({...form, message: e.target.value})}
-                    placeholder="Tell us about your study plans, questions, or loan requirements..."
-                    rows={4}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors resize-none" />
+
+                <div className="mt-4">
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Description<span className="text-[#8424e8]">*</span></label>
+                  <textarea required rows={4} value={booking.description} onChange={e => setBooking({ ...booking, description: e.target.value })}
+                    placeholder="Tell us how we can help you..."
+                    className="w-full px-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors resize-none" />
                 </div>
+
                 <button type="submit"
-                  className="w-full bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg shadow-purple-200">
-                  Send Message →
+                  className="mt-6 w-full bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-extrabold py-3.5 rounded-xl shadow-[0_12px_30px_rgba(132,36,232,0.35)] hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(132,36,232,0.45)] transition-all">
+                  Continue
                 </button>
+
+                <div className="mt-6 grid grid-cols-3 gap-2 text-center">
+                  {BADGES.map((b) => (
+                    <div key={b.title} className="flex flex-col items-center gap-1.5">
+                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f3ecff] text-[#8424e8]">{b.icon}</span>
+                      <span className="text-gray-800 text-[11px] font-bold leading-tight">{b.title}</span>
+                      <span className="text-gray-400 text-[10px] leading-tight">{b.sub}</span>
+                    </div>
+                  ))}
+                </div>
               </form>
             )}
           </motion.div>
+        </div>
+      </section>
 
-          {/* Info panel */}
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-            className="space-y-5">
-            <div className="bg-gradient-to-br from-[#faf7ff] to-[#f4eeff] rounded-2xl border border-[#ede8f7] p-6">
-              <h3 className="font-extrabold text-gray-900 mb-4">Office Details</h3>
-              <div className="space-y-3 text-gray-700">
-                <p className="flex gap-3"><span>📍</span> 101, Plaza Tower, Bandra West, Mumbai – 400050</p>
-                <p className="flex gap-3"><span>📞</span> +91 88888 88888</p>
-                <p className="flex gap-3"><span>✉️</span> hello@studentschoice.in</p>
-                <p className="flex gap-3"><span>🕐</span> Mon – Sat: 9:00 AM – 8:00 PM IST</p>
-              </div>
+      {/* ── Loan approval banner (purple) ────────────────────── */}
+      <section className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative w-full rounded-[24px] bg-gradient-to-r from-[#9b30f0] via-[#8424e8] to-[#6a16c9] flex flex-col md:flex-row items-stretch min-h-[300px] mt-12 shadow-[0_30px_70px_rgba(132,36,232,0.30)]"
+            style={{ overflow: 'visible' }}>
+            {/* concentric rings */}
+            <div className="absolute inset-0 rounded-[24px] overflow-hidden pointer-events-none">
+              <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[620px] h-[620px] rounded-full border border-white/20" />
+              <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full border border-white/20 bg-white/[0.03]" />
+              <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[320px] h-[320px] rounded-full border border-white/25 bg-white/[0.04]" />
+              <div className="absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 w-[190px] h-[190px] rounded-full border border-white/30 bg-white/[0.05]" />
             </div>
 
-            <div className="bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] rounded-2xl p-6 text-white">
-              <h3 className="font-extrabold mb-2">Free Consultation</h3>
-              <p className="text-white/80 text-sm mb-4">Book a 30-minute free counseling call with our study abroad expert today.</p>
-              <div className="flex items-center gap-2 text-sm">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-white/90">Experts available now</span>
-              </div>
+            {/* image */}
+            <div className="relative w-full md:w-[35%] flex justify-center order-2 md:order-1" style={{ overflow: 'visible' }}>
+              <motion.img initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.6 }}
+                src="/assets/images/student-with-backback.png" alt="Student with backpack and phone"
+                className="absolute bottom-0 z-10 w-auto object-contain object-bottom drop-shadow-[10px_0_30px_rgba(0,0,0,0.18)] pointer-events-none"
+                style={{ height: '128%' }} />
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-2xl p-6">
-              <h3 className="font-extrabold text-gray-900 mb-3">Why Choose Us?</h3>
-              {['Free counseling with no obligations', '98% visa success rate', 'Loan approvals from 15+ banks', 'End-to-end support till you land'].map(p => (
-                <div key={p} className="flex items-start gap-2 mb-2.5 text-sm text-gray-700">
-                  <span className="text-[#8424e8] font-bold mt-0.5">✓</span>{p}
-                </div>
-              ))}
+            {/* content */}
+            <div className="w-full md:w-[65%] flex flex-col justify-center py-10 px-8 lg:pr-20 md:pl-0 z-10 order-1 md:order-2">
+              <h2 className="text-white text-[28px] md:text-[38px] font-extrabold leading-[1.2]">
+                Don&apos;t worry, your loan can be approved faster than you think
+              </h2>
+              <p className="text-white/90 mt-4 text-[16px] md:text-[18px]">
+                Just share your documents and get the approval in 48 hours.
+              </p>
+              <div className="mt-8">
+                <button className="inline-flex items-center gap-2 bg-white text-[#7a1fd6] font-bold px-7 py-3.5 rounded-xl shadow-sm hover:bg-[#f4eeff] transition-colors">
+                  Start your journey <IconArrow />
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>
