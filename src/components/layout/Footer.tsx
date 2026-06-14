@@ -156,7 +156,7 @@ export function Footer() {
               </div>
 
               {/* Column 4 (Education Loan Links) */}
-              <div className="lg:col-span-2 flex flex-col gap-4">
+              <div className="lg:col-span-2ca flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Education Loan</h3>
                 <div className="flex flex-col gap-2.5">
                   <Link href="/loans/icici" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Icici Education Loan</Link>

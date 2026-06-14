@@ -13,7 +13,6 @@ import { ReferFriendSection } from '@/components/home/ReferFriendSection';
 import { TestimonialSection } from '@/components/home/TestimonialSection';
 import { JourneySection } from '@/components/home/JourneySection';
 import { FaqSection } from '@/components/home/FaqSection';
-import { CtaBanner } from '@/components/home/CtaBanner';
 
 export const metadata: Metadata = {
   title: "Education Loan | Student's Choice - Fund Your Global Education",
@@ -37,7 +36,6 @@ export default function EducationLoanPage() {
       <TestimonialSection />
       <JourneySection />
       <FaqSection />
-      <CtaBanner />
     </PageShell>
   );
 }

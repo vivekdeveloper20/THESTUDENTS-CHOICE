@@ -8,7 +8,7 @@ import { DestinationsSection } from "@/components/home/DestinationsSection";
 import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { JourneySection } from "@/components/home/JourneySection";
 import { FaqSection } from "@/components/home/FaqSection";
-import { CtaBanner } from "@/components/home/CtaBanner";
+import { LoanApprovalBanner } from "@/components/layout/LoanApprovalBanner";
 // import { PreFooter } from "@/components/layout/PreFooter";
 import { Footer } from "@/components/layout/Footer";
 
@@ -26,7 +26,7 @@ export default function Home() {
       <TestimonialSection />
       <JourneySection />
       <FaqSection />
-      <CtaBanner />
+      <LoanApprovalBanner />
       {/* <PreFooter /> */}
       <Footer />
     </main>
