@@ -80,10 +80,10 @@ export function TestimonialSection() {
     <section className="w-full bg-white pt-20 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-[32px] md:text-[44px] font-black mb-10 tracking-tight">
-          What <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">Students Say</span> About Us !
+          What <span className="bg-gradient-to-r from-[#6E00E0] to-[#b14bf0] bg-clip-text text-transparent">Students Say</span> About Us !
         </h2>
 
-        <div className="relative rounded-[28px] bg-gradient-to-br from-[#9b30f0] via-[#8424e8] to-[#6a16c9] p-6 md:p-10 shadow-[0_30px_70px_rgba(132,36,232,0.30)] overflow-hidden">
+        <div className="relative rounded-[28px] bg-gradient-to-br from-[#9b30f0] via-[#6E00E0] to-[#6a16c9] p-6 md:p-10 shadow-[0_30px_70px_rgba(110,0,224,0.30)] overflow-hidden">
           {/* concentric rings */}
           <div className="pointer-events-none absolute -top-16 -right-16 w-72 h-72 rounded-full border border-white/10" />
           <div className="pointer-events-none absolute -bottom-20 -left-10 w-80 h-80 rounded-full border border-white/10" />
@@ -101,12 +101,12 @@ export function TestimonialSection() {
                 <div className="bg-white rounded-2xl p-6 h-full flex flex-col shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
                   {/* head */}
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                       {t.author.charAt(0)}
                     </div>
                     <div className="min-w-0">
                       <h4 className="font-bold text-gray-900 leading-tight truncate">{t.author}</h4>
-                      <p className="text-[#8424e8] text-xs">{t.role}</p>
+                      <p className="text-[#6E00E0] text-xs">{t.role}</p>
                     </div>
                   </div>
 

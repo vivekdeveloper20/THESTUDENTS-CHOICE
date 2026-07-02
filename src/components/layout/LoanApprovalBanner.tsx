@@ -15,7 +15,7 @@ export function LoanApprovalBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative w-full rounded-[24px] bg-gradient-to-r from-[#9b30f0] via-[#8424e8] to-[#6a16c9] flex flex-col md:flex-row items-stretch min-h-[300px]"
+          className="relative w-full rounded-[24px] bg-gradient-to-r from-[#9b30f0] via-[#6E00E0] to-[#6a16c9] flex flex-col md:flex-row items-stretch min-h-[300px]"
           style={{ overflow: 'visible' }}
         >
           {/* concentric rings */}

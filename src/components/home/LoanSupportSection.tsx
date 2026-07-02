@@ -57,7 +57,7 @@ export function LoanSupportSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-[32px] md:text-[38px] font-bold text-[#8424e8] mb-16"
+          className="text-center text-[32px] md:text-[38px] font-bold text-[#6E00E0] mb-16"
         >
           End-to-End Overseas Education Loan Support
         </motion.h2>
@@ -88,16 +88,16 @@ export function LoanSupportSection() {
               >
                 {/* Step Number */}
                 <div className="w-8 shrink-0 pt-1.5 relative z-10">
-                  <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border border-[#ded0ff] text-[22px] md:text-[26px] font-bold text-[#8424e8] leading-none shadow-[0_6px_16px_rgba(132,36,232,0.18)]">
+                  <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border border-[#ded0ff] text-[22px] md:text-[26px] font-bold text-[#6E00E0] leading-none shadow-[0_6px_16px_rgba(110,0,224,0.18)]">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Step Content Box */}
-                <div className="flex-1 bg-[#F5F5F5] rounded-[24px] p-6 md:p-8 shadow-[0_8px_20px_rgba(132,36,232,0.08)] border border-[#ebe1ff] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] relative overflow-hidden">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#8424e8] via-[#a855f7] to-[#8424e8]"></div>
-                  <div className="absolute -right-10 -top-10 w-28 h-28 rounded-full bg-[#8424e8]/8 blur-2xl pointer-events-none"></div>
-                  <h3 className="text-[20px] md:text-[22px] font-bold text-[#8424e8] mb-3">
+                <div className="flex-1 bg-[#F5F5F5] rounded-[24px] p-6 md:p-8 shadow-[0_8px_20px_rgba(110,0,224,0.08)] border border-[#ebe1ff] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] relative overflow-hidden">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#6E00E0] via-[#a855f7] to-[#6E00E0]"></div>
+                  <div className="absolute -right-10 -top-10 w-28 h-28 rounded-full bg-[#6E00E0]/8 blur-2xl pointer-events-none"></div>
+                  <h3 className="text-[20px] md:text-[22px] font-bold text-[#6E00E0] mb-3">
                     {step.title}
                   </h3>
                   <p className="text-[14px] md:text-[16px] text-gray-600 leading-relaxed">
@@ -106,7 +106,7 @@ export function LoanSupportSection() {
                   <div className="mt-5">
                     <button
                       type="button"
-                      className="inline-flex items-center gap-2 rounded-full bg-[#8424e8] px-5 py-2.5 text-[13px] md:text-sm font-semibold text-white shadow-[0_8px_18px_rgba(132,36,232,0.35)] transition-all duration-300 hover:bg-[#6f1ed0] hover:-translate-y-0.5"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#6E00E0] px-5 py-2.5 text-[13px] md:text-sm font-semibold text-white shadow-[0_8px_18px_rgba(110,0,224,0.35)] transition-all duration-300 hover:bg-[#6f1ed0] hover:-translate-y-0.5"
                     >
                       Free Expert Consultation
                       <span aria-hidden="true" className="text-base leading-none">↗</span>
@@ -126,10 +126,10 @@ export function LoanSupportSection() {
             className="w-full lg:w-[45%] relative flex justify-center items-end min-h-[500px]"
           >
             {/* Background Decorative Element (Purple Shape/Glow) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[550px] aspect-square bg-[#8424e8] rounded-full filter blur-[120px] opacity-10 -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[550px] aspect-square bg-[#6E00E0] rounded-full filter blur-[120px] opacity-10 -z-10"></div>
             
             {/* Decorative Purple Shape (Abstract) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] aspect-square bg-[#8424e8] rounded-full opacity-90 -z-10 animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 70%' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] aspect-square bg-[#6E00E0] rounded-full opacity-90 -z-10 animate-pulse" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 70%' }}></div>
 
 
             {/* Main Image */}

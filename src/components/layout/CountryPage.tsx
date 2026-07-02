@@ -67,7 +67,7 @@ export function CountryPage(p: CountryPageProps) {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact-us?type=consultation"
-                className="bg-white text-[#8424e8] font-bold px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+                className="bg-white text-[#6E00E0] font-bold px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               >
                 Book Free Consultation
               </Link>
@@ -102,7 +102,7 @@ export function CountryPage(p: CountryPageProps) {
               viewport={{ once: true }}
               className="flex flex-col items-center py-6 px-4 text-center hover:bg-purple-50/50 transition-colors"
             >
-              <span className="text-2xl md:text-3xl font-extrabold text-[#8424e8]">{s.value}</span>
+              <span className="text-2xl md:text-3xl font-extrabold text-[#6E00E0]">{s.value}</span>
               <span className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">{s.label}</span>
             </motion.div>
           ))}
@@ -118,7 +118,7 @@ export function CountryPage(p: CountryPageProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
               Why {p.country}?
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
@@ -134,7 +134,7 @@ export function CountryPage(p: CountryPageProps) {
                 { label: 'Processing', value: p.processingTime },
               ].map((fact) => (
                 <div key={fact.label} className="bg-[#f9f5ff] rounded-xl p-4 text-center border border-[#ede8f7]">
-                  <p className="font-extrabold text-[#8424e8] text-sm">{fact.value}</p>
+                  <p className="font-extrabold text-[#6E00E0] text-sm">{fact.value}</p>
                   <p className="text-[11px] text-gray-500 mt-1 font-medium">{fact.label}</p>
                 </div>
               ))}
@@ -151,7 +151,7 @@ export function CountryPage(p: CountryPageProps) {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-[0_8px_30px_rgba(132,36,232,0.10)] hover:-translate-y-1 transition-all group"
+                className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-[0_8px_30px_rgba(110,0,224,0.10)] hover:-translate-y-1 transition-all group"
               >
                 <span className="text-3xl mb-3 block group-hover:scale-110 transition-transform">{h.icon}</span>
                 <h3 className="font-bold text-gray-900 text-sm mb-1">{h.title}</h3>
@@ -166,7 +166,7 @@ export function CountryPage(p: CountryPageProps) {
       <section className="bg-gradient-to-br from-[#faf7ff] to-[#f0e8ff] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+            <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Top Universities
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -183,14 +183,14 @@ export function CountryPage(p: CountryPageProps) {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 border border-[#ede8f7] hover:shadow-[0_12px_40px_rgba(132,36,232,0.12)] hover:-translate-y-1.5 transition-all flex items-start gap-4 group"
+                className="bg-white rounded-2xl p-6 border border-[#ede8f7] hover:shadow-[0_12px_40px_rgba(110,0,224,0.12)] hover:-translate-y-1.5 transition-all flex items-start gap-4 group"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
                   #{i + 1}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-[#8424e8] transition-colors">{u.name}</h3>
-                  <p className="text-xs text-[#8424e8] font-semibold mt-0.5">{u.rank}</p>
+                  <h3 className="font-bold text-gray-900 group-hover:text-[#6E00E0] transition-colors">{u.name}</h3>
+                  <p className="text-xs text-[#6E00E0] font-semibold mt-0.5">{u.rank}</p>
                 </div>
               </motion.div>
             ))}
@@ -202,7 +202,7 @@ export function CountryPage(p: CountryPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+            <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Eligibility
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -218,9 +218,9 @@ export function CountryPage(p: CountryPageProps) {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex items-start gap-4 bg-white border border-gray-100 rounded-xl px-5 py-4 hover:border-[#8424e8]/30 hover:shadow-md transition-all"
+                className="flex items-start gap-4 bg-white border border-gray-100 rounded-xl px-5 py-4 hover:border-[#6E00E0]/30 hover:shadow-md transition-all"
               >
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#8424e8] text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#6E00E0] text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   {i + 1}
                 </span>
                 <p className="text-gray-700 font-medium">{req}</p>
@@ -242,7 +242,7 @@ export function CountryPage(p: CountryPageProps) {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/contact-us?type=consultation"
-              className="bg-white text-[#8424e8] font-bold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition-all"
+              className="bg-white text-[#6E00E0] font-bold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition-all"
             >
               Get Free Counseling
             </Link>

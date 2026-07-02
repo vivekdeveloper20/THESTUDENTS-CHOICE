@@ -199,7 +199,7 @@ export default function StudentLoanCalculatorPage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#8424e8] via-[#6f1ed0] to-[#4a0fa0]">
+      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#6E00E0] via-[#6f1ed0] to-[#4a0fa0]">
         <div className="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
@@ -225,7 +225,7 @@ export default function StudentLoanCalculatorPage() {
         <div className="grid lg:grid-cols-[380px_1fr] gap-8">
           {/* Inputs */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-            className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(132,36,232,0.08)] p-7 h-fit lg:sticky lg:top-6">
+            className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(110,0,224,0.08)] p-7 h-fit lg:sticky lg:top-6">
             <h2 className="text-xl font-extrabold text-gray-900 mb-6">Loan Details</h2>
 
             <NumberSlider label="Loan Amount" value={loanAmount} onChange={setLoanAmount}
@@ -251,20 +251,20 @@ export default function StudentLoanCalculatorPage() {
             <div className="mt-2 rounded-2xl bg-[#faf7ff] border border-[#ede8f7] p-4 text-sm text-[#5b4a7e]">
               <div className="flex justify-between mb-1">
                 <span>Total moratorium</span>
-                <span className="font-bold text-[#8424e8]">{moratoriumMonths} months</span>
+                <span className="font-bold text-[#6E00E0]">{moratoriumMonths} months</span>
               </div>
               <div className="flex justify-between mb-1">
                 <span>Monthly simple interest</span>
-                <span className="font-bold text-[#8424e8]">{formatINR(monthlySI)}</span>
+                <span className="font-bold text-[#6E00E0]">{formatINR(monthlySI)}</span>
               </div>
               <div className="flex justify-between">
                 <span>EMI starts after</span>
-                <span className="font-bold text-[#8424e8]">{moratoriumMonths} months</span>
+                <span className="font-bold text-[#6E00E0]">{moratoriumMonths} months</span>
               </div>
             </div>
 
             <Link href="/contact-us?type=consultation"
-              className="mt-6 block w-full text-center bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg shadow-purple-200">
+              className="mt-6 block w-full text-center bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg shadow-purple-200">
               Apply for Education Loan →
             </Link>
           </motion.div>
@@ -285,7 +285,7 @@ export default function StudentLoanCalculatorPage() {
                       viewport={{ once: true }}
                       className={`rounded-3xl p-6 border transition-all ${
                         isCheapest
-                          ? 'border-[#8424e8] bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] text-white shadow-[0_20px_50px_rgba(132,36,232,0.3)]'
+                          ? 'border-[#6E00E0] bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] text-white shadow-[0_20px_50px_rgba(110,0,224,0.3)]'
                           : 'border-gray-100 bg-white shadow-sm hover:shadow-md'
                       }`}>
                       <div className="flex items-start justify-between gap-2">
@@ -327,7 +327,7 @@ export default function StudentLoanCalculatorPage() {
             </div>
 
             {/* Detailed schedule */}
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(132,36,232,0.06)] p-6">
+            <div className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(110,0,224,0.06)] p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
                 <h2 className="text-xl font-extrabold text-gray-900">Full Repayment Structure</h2>
                 <div className="flex flex-wrap gap-2">
@@ -335,8 +335,8 @@ export default function StudentLoanCalculatorPage() {
                     <button key={m.key} onClick={() => setScheduleMethod(m.key)}
                       className={`text-xs font-semibold px-3 py-2 rounded-xl border transition-all ${
                         scheduleMethod === m.key
-                          ? 'bg-[#8424e8] border-[#8424e8] text-white'
-                          : 'bg-white border-gray-200 text-gray-600 hover:border-[#8424e8]'
+                          ? 'bg-[#6E00E0] border-[#6E00E0] text-white'
+                          : 'bg-white border-gray-200 text-gray-600 hover:border-[#6E00E0]'
                       }`}>
                       {m.key === 'psi' ? 'PSI' : m.name}
                     </button>
@@ -370,7 +370,7 @@ export default function StudentLoanCalculatorPage() {
                         <td className="py-2 pr-3 font-medium text-gray-700">{row.year}</td>
                         <td className="py-2 px-3">
                           <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
-                            row.phase === 'Moratorium' ? 'bg-[#ede8f7] text-[#8424e8]' : 'bg-green-50 text-green-700'
+                            row.phase === 'Moratorium' ? 'bg-[#ede8f7] text-[#6E00E0]' : 'bg-green-50 text-green-700'
                           }`}>
                             {row.phase}
                           </span>
@@ -410,7 +410,7 @@ function Row({ label, value, bold, light }: { label: string; value: string; bold
 
 function Stat({ label, value, sub, highlight }: { label: string; value: string; sub: string; highlight?: boolean }) {
   return (
-    <div className={`rounded-2xl p-4 border ${highlight ? 'bg-[#8424e8] border-[#8424e8] text-white' : 'bg-[#faf7ff] border-[#ede8f7]'}`}>
+    <div className={`rounded-2xl p-4 border ${highlight ? 'bg-[#6E00E0] border-[#6E00E0] text-white' : 'bg-[#faf7ff] border-[#ede8f7]'}`}>
       <p className={`text-[11px] uppercase tracking-wide ${highlight ? 'text-white/70' : 'text-gray-400'}`}>{label}</p>
       <p className={`text-lg font-extrabold ${highlight ? 'text-white' : 'text-gray-900'}`}>{value}</p>
       <p className={`text-[11px] ${highlight ? 'text-white/70' : 'text-gray-400'}`}>{sub}</p>
@@ -445,15 +445,15 @@ function NumberSlider({
             const v = e.target.value === '' ? min : +e.target.value;
             onChange(Math.min(max, Math.max(min, v)));
           }}
-          className="w-28 text-right text-sm font-bold text-[#8424e8] bg-[#faf7ff] border border-[#ede8f7] rounded-lg px-2 py-1 focus:outline-none focus:border-[#8424e8]"
+          className="w-28 text-right text-sm font-bold text-[#6E00E0] bg-[#faf7ff] border border-[#ede8f7] rounded-lg px-2 py-1 focus:outline-none focus:border-[#6E00E0]"
         />
       </div>
       <input type="range" min={min} max={max} step={step} value={value}
         onChange={(e) => onChange(+e.target.value)}
-        className="w-full accent-[#8424e8] h-2 rounded-full" />
+        className="w-full accent-[#6E00E0] h-2 rounded-full" />
       <div className="flex justify-between text-xs text-gray-400 mt-1">
         <span>{minLabel}</span>
-        <span className="text-[#8424e8] font-semibold">{display}</span>
+        <span className="text-[#6E00E0] font-semibold">{display}</span>
         <span>{maxLabel}</span>
       </div>
     </div>

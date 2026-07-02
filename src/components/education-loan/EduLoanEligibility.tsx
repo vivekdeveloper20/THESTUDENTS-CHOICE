@@ -32,13 +32,13 @@ export function EduLoanEligibility() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="inline-block bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Eligibility & Documents
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-[#1f1147]">
             Who Can Apply &
             <br />
-            <span className="text-[#8424e8]">What Do You Need?</span>
+            <span className="text-[#6E00E0]">What Do You Need?</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
             Most students are eligible. Check the basic criteria and start gathering your documents today.
@@ -57,7 +57,7 @@ export function EduLoanEligibility() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
-                  className="group rounded-2xl border border-[#ebe4fb] bg-white p-5 hover:shadow-[0_8px_24px_rgba(132,36,232,0.12)] hover:-translate-y-1 transition-all duration-300"
+                  className="group rounded-2xl border border-[#ebe4fb] bg-white p-5 hover:shadow-[0_8px_24px_rgba(110,0,224,0.12)] hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="text-2xl mb-2">{item.icon}</div>
                   <h4 className="font-extrabold text-[#1f2937] text-sm mb-1">{item.title}</h4>
@@ -69,12 +69,12 @@ export function EduLoanEligibility() {
 
           {/* Documents checklist + form */}
           <div className="space-y-6">
-            <div className="rounded-3xl border border-[#ebe4fb] bg-white p-7 shadow-[0_8px_24px_rgba(132,36,232,0.07)]">
+            <div className="rounded-3xl border border-[#ebe4fb] bg-white p-7 shadow-[0_8px_24px_rgba(110,0,224,0.07)]">
               <h3 className="text-xl font-extrabold text-[#1f2937] mb-5">Documents Required</h3>
               <ul className="flex flex-col gap-3">
                 {DOCS.map((doc) => (
                   <li key={doc} className="flex items-start gap-3">
-                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] text-white text-xs font-bold">
+                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] text-white text-xs font-bold">
                       ✓
                     </span>
                     <span className="text-gray-700 text-sm leading-relaxed">{doc}</span>
@@ -84,7 +84,7 @@ export function EduLoanEligibility() {
             </div>
 
             {/* Quick apply form */}
-            <div className="rounded-3xl border border-[#ebe4fb] bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] p-7 shadow-[0_12px_30px_rgba(132,36,232,0.25)]">
+            <div className="rounded-3xl border border-[#ebe4fb] bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] p-7 shadow-[0_12px_30px_rgba(110,0,224,0.25)]">
               <h3 className="text-xl font-extrabold text-white mb-1">Not Sure About Eligibility?</h3>
               <p className="text-white/80 text-sm mb-5">Fill in basic details and our expert will call you within 24 hours.</p>
               <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
@@ -115,7 +115,7 @@ export function EduLoanEligibility() {
                 <button
                   type="submit"
                   id="edu-loan-eligibility-submit"
-                  className="w-full bg-white text-[#8424e8] font-bold py-3 rounded-xl hover:bg-[#f3ebff] transition shadow-md"
+                  className="w-full bg-white text-[#6E00E0] font-bold py-3 rounded-xl hover:bg-[#f3ebff] transition shadow-md"
                 >
                   Check My Eligibility Free →
                 </button>

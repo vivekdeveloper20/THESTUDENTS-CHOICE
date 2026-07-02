@@ -11,7 +11,7 @@ export default function IrelandPage() {
     <StudyIrelandPage
       country="Ireland"
       tagline="Your Smart Path to Study in Ireland"
-      heroImage="/assets/images/studyabroadcountry/IRELAND.png"
+      heroImage="/assets/images/Ireland%20Banner.svg"
       introParagraphs={[
         "Ireland has become one of the top destinations for international students seeking globally recognised education, industry-focused programs, and excellent post-study opportunities. Known for its innovation-driven economy and welcoming environment, Ireland offers students the perfect balance of academic quality and career growth.",
         "As an English-speaking country and home to many global companies, Ireland attracts students from around the world who want practical learning, international exposure, and strong employability outcomes after graduation."

@@ -37,9 +37,9 @@ export function EduLoanHero() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#faf7ff] via-white to-[#f3ebff] pt-10 pb-20">
       {/* BG Orbs */}
-      <div className="pointer-events-none absolute -top-28 -left-24 w-96 h-96 rounded-full bg-[#8424e8]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-28 -left-24 w-96 h-96 rounded-full bg-[#6E00E0]/10 blur-3xl" />
       <div className="pointer-events-none absolute top-40 right-0 w-80 h-80 rounded-full bg-fuchsia-200/30 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-[#8424e8]/05 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-[#6E00E0]/05 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 min-h-[580px]">
@@ -59,7 +59,7 @@ export function EduLoanHero() {
               className="flex items-center gap-2 mb-5"
             >
               <IconStarFilled className="text-yellow-400" size={18} />
-              <span className="text-[#8424e8] font-bold text-sm uppercase tracking-wider">
+              <span className="text-[#6E00E0] font-bold text-sm uppercase tracking-wider">
                 Fund Your Future with Confidence
               </span>
             </motion.div>
@@ -69,7 +69,7 @@ export function EduLoanHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl lg:text-[58px] font-extrabold text-[#8424e8] leading-[1.1] mb-5"
+              className="text-4xl lg:text-[58px] font-extrabold text-[#6E00E0] leading-[1.1] mb-5"
             >
               The Smarter Way to
               <br />
@@ -118,14 +118,14 @@ export function EduLoanHero() {
               <Link
                 href="/contact-us?type=consultation"
                 id="edu-loan-apply-btn"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold px-8 py-3.5 rounded-full shadow-[0_12px_30px_rgba(132,36,232,0.35)] hover:brightness-110 hover:scale-105 transition-all"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white font-bold px-8 py-3.5 rounded-full shadow-[0_12px_30px_rgba(110,0,224,0.35)] hover:brightness-110 hover:scale-105 transition-all"
               >
                 Apply for Education Loan
               </Link>
               <Link
                 href="/tools/loan-eligibility"
                 id="edu-loan-eligibility-btn"
-                className="inline-flex items-center justify-center border-2 border-[#8424e8] text-[#8424e8] font-bold px-8 py-3.5 rounded-full hover:bg-[#f3ebff] transition-all"
+                className="inline-flex items-center justify-center border-2 border-[#6E00E0] text-[#6E00E0] font-bold px-8 py-3.5 rounded-full hover:bg-[#f3ebff] transition-all"
               >
                 Check My Eligibility →
               </Link>
@@ -140,11 +140,11 @@ export function EduLoanHero() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.85 }}
                   transition={{ duration: 0.45 }}
-                  className="bg-white border-2 border-[#8424e8] rounded-full pl-5 pr-4 py-2 flex items-center gap-4 shadow-xl min-w-[280px]"
+                  className="bg-white border-2 border-[#6E00E0] rounded-full pl-5 pr-4 py-2 flex items-center gap-4 shadow-xl min-w-[280px]"
                 >
                   <img src={badge.flag} alt={badge.country} className="w-9 h-6 rounded object-cover border border-gray-100" />
                   <div className="flex flex-col">
-                    <span className="text-[#8424e8] font-extrabold text-[14px]">{badge.name}</span>
+                    <span className="text-[#6E00E0] font-extrabold text-[14px]">{badge.name}</span>
                     <div className="flex items-baseline gap-2">
                       <span className="font-black text-[17px] text-gray-900">{badge.amount}</span>
                       <span className="text-[11px] font-bold text-emerald-600 uppercase tracking-tight">✓ Approved</span>
@@ -160,7 +160,7 @@ export function EduLoanHero() {
                 className="absolute -top-14 -left-8 w-40 h-32 opacity-25 pointer-events-none"
                 style={{
                   backgroundImage:
-                    'radial-gradient(circle, #facc15 3px, transparent 3px), radial-gradient(circle, #8424e8 3px, transparent 3px), radial-gradient(circle, #3b82f6 3px, transparent 3px)',
+                    'radial-gradient(circle, #facc15 3px, transparent 3px), radial-gradient(circle, #6E00E0 3px, transparent 3px), radial-gradient(circle, #3b82f6 3px, transparent 3px)',
                   backgroundSize: '24px 24px, 30px 30px, 36px 36px',
                   backgroundPosition: '0 0, 12px 12px, 22px 6px',
                 }}
@@ -192,12 +192,12 @@ export function EduLoanHero() {
             */}
             {/* Glow orb behind image */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-80 h-80 rounded-full bg-[#8424e8]/15 blur-3xl" />
+              <div className="w-80 h-80 rounded-full bg-[#6E00E0]/15 blur-3xl" />
             </div>
 
             {/* Hero Image */}
             <div className="relative z-10 w-full max-w-[540px]">
-              <div className="absolute inset-8 rounded-[50%] bg-gradient-to-br from-[#8424e8]/20 to-fuchsia-300/20 blur-2xl" />
+              <div className="absolute inset-8 rounded-[50%] bg-gradient-to-br from-[#6E00E0]/20 to-fuchsia-300/20 blur-2xl" />
               <img
                 src="/assets/images/Girl.png"
                 alt="Student applying for Education Loan"
@@ -211,11 +211,11 @@ export function EduLoanHero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.6 }}
-              className="hidden md:flex absolute bottom-16 left-0 z-20 rounded-2xl bg-white/95 border border-[#eadfff] px-4 py-3 shadow-[0_10px_24px_rgba(132,36,232,0.15)] items-center gap-3"
+              className="hidden md:flex absolute bottom-16 left-0 z-20 rounded-2xl bg-white/95 border border-[#eadfff] px-4 py-3 shadow-[0_10px_24px_rgba(110,0,224,0.15)] items-center gap-3"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <div>
-                <p className="text-[#8424e8] text-xs font-bold uppercase tracking-wide">Expert Available</p>
+                <p className="text-[#6E00E0] text-xs font-bold uppercase tracking-wide">Expert Available</p>
                 <p className="text-gray-700 text-sm font-semibold">Free Loan Guidance</p>
               </div>
             </motion.div>

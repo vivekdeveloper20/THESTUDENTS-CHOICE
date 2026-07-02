@@ -11,7 +11,7 @@ export default function GermanyPage() {
     <StudyGermanyPage
       country="Germany"
       tagline="Your Smart Path to Study in Germany"
-      heroImage="/assets/images/studyabroadcountry/GERMANY.png"
+      heroImage="/assets/images/Germany%20Banner.svg"
       introParagraphs={[
         "Germany has become one of the most preferred destinations for international students who want globally respected education, affordable tuition, and strong career opportunities in Europe. Known for engineering, technology, innovation, and research excellence, Germany offers students a high-quality education system with practical industry exposure.",
         "For many students, Germany is not just a study destination — it is a smart long-term investment for global career growth."

@@ -11,7 +11,7 @@ export default function SingaporePage() {
     <StudySingaporePage
       country="Singapore"
       tagline="Your Smart Path to Study in Singapore"
-      heroImage="/assets/images/studyabroadcountry/SINGAPURE.png"
+      heroImage="/assets/images/Singapore%20Banner.svg"
       introParagraphs={[
         "Singapore has become one of Asia's most preferred destinations for international students seeking globally recognised education, industry-focused learning, and strong career opportunities. Known for its world-class universities, safety, modern infrastructure, and innovation-driven economy, Singapore offers students a premium international education experience close to home.",
         "As one of the world's leading business and technology hubs, Singapore attracts students who want practical learning, global exposure, and excellent employability outcomes after graduation."

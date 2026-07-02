@@ -11,7 +11,7 @@ export default function SpainPage() {
     <StudySpainPage
       country="Spain"
       tagline="Your Smart Path to Study in Spain"
-      heroImage="/assets/images/studyabroadcountry/SPAIN.png"
+      heroImage="/assets/images/Spain%20Banner.svg"
       introParagraphs={[
         "Spain has become an increasingly popular destination for international students seeking quality education, affordable living, and a globally connected lifestyle. Known for its modern universities, welcoming culture, strong tourism and business industries, and relaxed Mediterranean lifestyle, Spain offers students a unique balance of academics and life experience.",
         "As one of Europe's leading education destinations, Spain attracts students from around the world who want internationally recognised degrees, multicultural exposure, and access to opportunities across Europe."

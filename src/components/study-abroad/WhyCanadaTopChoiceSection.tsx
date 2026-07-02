@@ -103,7 +103,7 @@ export function WhyCanadaTopChoiceSection() {
             className="text-4xl md:text-5xl font-black text-gray-900 mb-8 max-w-4xl mx-auto leading-tight"
           >
             Why Canada Continues to Be a{' '}
-            <span className="text-[#8424e8]">Top Choice</span> for Students
+            <span className="text-[#6E00E0]">Top Choice</span> for Students
           </motion.h2>
           
           <motion.div 
@@ -133,15 +133,15 @@ export function WhyCanadaTopChoiceSection() {
               className="group bg-white/60 backdrop-blur-md border border-white p-7 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300"
             >
               <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8424e8]/5 to-[#6c47ff]/5 border border-[#8424e8]/10 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 flex-shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6E00E0]/5 to-[#6c47ff]/5 border border-[#6E00E0]/10 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 flex-shrink-0">
                   {point.icon}
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-black text-[#8424e8]/40 tracking-tighter">
+                    <span className="text-xs font-black text-[#6E00E0]/40 tracking-tighter">
                       {point.number.toString().padStart(2, '0')}
                     </span>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#8424e8] transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#6E00E0] transition-colors">
                       {point.title}
                     </h3>
                   </div>

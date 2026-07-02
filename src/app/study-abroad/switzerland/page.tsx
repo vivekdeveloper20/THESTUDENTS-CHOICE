@@ -11,7 +11,7 @@ export default function SwitzerlandPage() {
     <StudySwitzerlandPage
       country="Switzerland"
       tagline="Your Smart Path to Study in Switzerland"
-      heroImage="/assets/images/studyabroadcountry/SWITZERLAND.png"
+      heroImage="/assets/images/Switzerland%20Banner.svg"
       introParagraphs={[
         "Switzerland has become one of Europe's most prestigious destinations for international students seeking high-quality education, research excellence, and global career opportunities. Known for innovation, hospitality, finance, business, and engineering, Switzerland offers students a premium academic environment combined with outstanding quality of life.",
         "With globally respected universities, multicultural campuses, and strong industry connections, Switzerland attracts ambitious students from around the world who want international exposure and career-focused education."

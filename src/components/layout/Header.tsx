@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Button, Burger, Drawer, Stack } from '@mantine/core';
+import { Burger, Drawer, Stack } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const WorldMapDropdown = dynamic(
   () => import('./WorldMapDropdown').then((m) => m.WorldMapDropdown),
@@ -99,7 +100,7 @@ function StudyAbroadMega() {
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="flex items-center text-black font-semibold text-[15px] transition-colors hover:text-[#8424e8] focus:outline-none"
+        className="flex items-center whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors hover:text-[#6E00E0] focus:outline-none"
         aria-expanded={open}
       >
         Study Abroad
@@ -108,18 +109,18 @@ function StudyAbroadMega() {
 
       {/* Mega panel */}
       <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[880px] bg-white rounded-2xl shadow-[0_24px_70px_rgba(132,36,232,0.18)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
+        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[880px] bg-white rounded-2xl shadow-[0_24px_70px_rgba(110,0,224,0.18)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
           open
             ? 'opacity-100 scale-100 pointer-events-auto translate-y-0'
             : 'opacity-0 scale-95 pointer-events-none -translate-y-2'
         }`}
       >
         {/* Purple top bar */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#8424e8] to-[#b36af5]" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#6E00E0] to-[#b36af5]" />
 
         {/* Header banner */}
         <div className="px-6 py-3 bg-gradient-to-r from-[#f9f5ff] to-[#fdf8ff] border-b border-[#ede8f7]">
-          <p className="text-[13px] font-semibold text-[#8424e8] uppercase tracking-widest">
+          <p className="text-[13px] font-semibold text-[#6E00E0] uppercase tracking-widest">
             🌍 Explore Study Destinations
           </p>
         </div>
@@ -128,13 +129,13 @@ function StudyAbroadMega() {
         <WorldMapDropdown />
 
         {/* Footer CTA */}
-        <div className="px-6 py-3 bg-gradient-to-r from-[#8424e8] to-[#a855f7] flex items-center justify-between">
+        <div className="px-6 py-3 bg-gradient-to-r from-[#6E00E0] to-[#a855f7] flex items-center justify-between">
           <span className="text-white text-[13px] font-medium">
             💡 Not sure where to study? We&apos;ll help you decide!
           </span>
           <Link
             href="/contact-us?type=counseling"
-            className="text-[12px] font-bold bg-white text-[#8424e8] px-4 py-1.5 rounded-full hover:bg-[#f4eeff] transition-colors"
+            className="text-[12px] font-bold bg-white text-[#6E00E0] px-4 py-1.5 rounded-full hover:bg-[#f4eeff] transition-colors"
           >
             Free Counseling →
           </Link>
@@ -166,7 +167,7 @@ function DesktopDropdown({ label, items }: { label: string; items: DropdownItem[
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="flex items-center text-black font-semibold text-[15px] transition-colors hover:text-[#8424e8] focus:outline-none"
+        className="flex items-center whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors hover:text-[#6E00E0] focus:outline-none"
         aria-expanded={open}
       >
         {label}
@@ -174,19 +175,19 @@ function DesktopDropdown({ label, items }: { label: string; items: DropdownItem[
       </button>
 
       <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 min-w-[240px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(132,36,232,0.14)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
+        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 min-w-[240px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(110,0,224,0.14)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
           open
             ? 'opacity-100 scale-100 pointer-events-auto translate-y-0'
             : 'opacity-0 scale-95 pointer-events-none -translate-y-2'
         }`}
       >
-        <div className="h-1 w-full bg-gradient-to-r from-[#8424e8] to-[#b36af5]" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#6E00E0] to-[#b36af5]" />
         <div className="py-2">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center gap-3 px-5 py-3 text-[14px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#8424e8] transition-colors group"
+              className="flex items-center gap-3 px-5 py-3 text-[14px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#6E00E0] transition-colors group"
             >
               <span className="text-[18px] group-hover:scale-110 transition-transform">{item.icon}</span>
               {item.label}
@@ -228,14 +229,14 @@ export function Header() {
   const scrolled = (scroll.y ?? 0) > 8;
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
-        scrolled
-          ? 'border-[#ede8f7] bg-white/88 backdrop-blur-md shadow-[0_10px_40px_rgba(132,36,232,0.09)]'
-          : 'border-gray-200 bg-white'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full pt-3 px-3 sm:px-4 lg:px-5">
+      <div
+        className={`max-w-[1480px] mx-auto rounded-2xl border border-gray-100 border-t-[3px] border-t-[#6E00E0] px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/90 backdrop-blur-md shadow-[0_12px_40px_rgba(110,0,224,0.14)]'
+            : 'bg-white shadow-[0_6px_24px_rgba(110,0,224,0.08)]'
+        }`}
+      >
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
@@ -248,52 +249,47 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             <StudyAbroadMega />
-
             <Link
               href="/beyond-rejection"
-              className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
+              className="relative whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#6E00E0] after:transition-[width] after:duration-300 hover:text-[#6E00E0] hover:after:w-full"
             >
               Beyond Rejection
             </Link>
-
             <Link
               href="/education-loan"
-              className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
+              className="relative whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#6E00E0] after:transition-[width] after:duration-300 hover:text-[#6E00E0] hover:after:w-full"
             >
               Education Loan
             </Link>
-
             <DesktopDropdown label="Tools" items={toolsItems} />
-
             <Link
               href="/contact-us"
-              className="relative text-black font-semibold text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#8424e8] after:transition-[width] after:duration-300 hover:text-[#8424e8] hover:after:w-full"
+              className="relative whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#6E00E0] after:transition-[width] after:duration-300 hover:text-[#6E00E0] hover:after:w-full"
             >
               Contact Us
             </Link>
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center">
-            <Button
-              radius="xl"
-              size="md"
-              bg="#8424e8"
-              className="font-semibold px-8 shadow-[0_6px_20px_rgba(132,36,232,0.28)] transition-all hover:opacity-95 hover:shadow-[0_8px_26px_rgba(132,36,232,0.38)] hover:-translate-y-0.5"
+          <div className="hidden lg:flex items-center shrink-0">
+            <Link
+              href="/contact-us"
+              className="flex items-center gap-2 shrink-0 whitespace-nowrap bg-[#6E00E0] text-white font-semibold text-[14px] px-6 py-2.5 rounded-full shadow-[0_6px_20px_rgba(110,0,224,0.28)] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(110,0,224,0.38)] transition-all"
             >
-              Login
-            </Button>
+              Apply Now
+              <IconArrowRight size={17} className="shrink-0" />
+            </Link>
           </div>
 
           {/* Burger */}
           <Burger
             opened={opened}
             onClick={toggle}
-            className="md:hidden"
+            className="lg:hidden"
             size="sm"
-            color="#8424e8"
+            color="#6E00E0"
           />
         </div>
       </div>
@@ -311,7 +307,7 @@ export function Header() {
             className="h-16 w-auto object-contain"
           />
         }
-        className="md:hidden"
+        className="lg:hidden"
         zIndex={100}
       >
         <Stack gap="xs" mt="md">
@@ -327,7 +323,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={close}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-[14px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#8424e8] transition-colors"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-[14px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#6E00E0] transition-colors"
                   >
                     <img
                       src={`https://flagcdn.com/20x15/${item.flag}.png`}
@@ -367,7 +363,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={close}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[15px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#8424e8] transition-colors"
+                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[15px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#6E00E0] transition-colors"
                 >
                   <span className="text-[18px]">{item.icon}</span>
                   {item.label}
@@ -385,14 +381,13 @@ export function Header() {
             Contact Us
           </Link>
 
-          <Button
-            radius="xl"
-            size="lg"
-            bg="#8424e8"
-            className="mt-4 font-bold h-14"
+          <Link
+            href="/contact-us"
+            onClick={close}
+            className="mt-4 flex items-center justify-center gap-2 bg-[#6E00E0] text-white font-bold h-14 rounded-xl shadow-[0_6px_20px_rgba(110,0,224,0.28)]"
           >
-            Login
-          </Button>
+            Apply Now <IconArrowRight size={18} />
+          </Link>
         </Stack>
       </Drawer>
     </header>

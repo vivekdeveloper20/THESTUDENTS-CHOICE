@@ -20,7 +20,7 @@ const LOAN_TYPES = [
   },
   {
     tag: 'Most Popular',
-    tagColor: 'bg-[#8424e8] text-white',
+    tagColor: 'bg-[#6E00E0] text-white',
     icon: '🏦',
     title: 'Private Bank Loans',
     subtitle: 'ICICI, Axis, IDFC First & more',
@@ -60,13 +60,13 @@ export function EduLoanTypes() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="inline-block bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Loan Options
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-[#1f1147]">
             Explore Loan Options from
             <br />
-            <span className="text-[#8424e8]">Public Banks, Private Banks & NBFCs</span>
+            <span className="text-[#6E00E0]">Public Banks, Private Banks & NBFCs</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
             We compare all options so you get the best interest rate, tenure, and terms for your profile.
@@ -83,8 +83,8 @@ export function EduLoanTypes() {
               transition={{ delay: i * 0.1, duration: 0.55 }}
               className={`relative rounded-3xl border p-7 flex flex-col transition-all duration-300 ${
                 loan.highlight
-                  ? 'bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] border-[#8424e8] shadow-[0_20px_50px_rgba(132,36,232,0.35)] scale-105'
-                  : 'bg-white border-[#ebe4fb] shadow-[0_8px_24px_rgba(132,36,232,0.08)] hover:shadow-[0_16px_36px_rgba(132,36,232,0.15)] hover:-translate-y-1'
+                  ? 'bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] border-[#6E00E0] shadow-[0_20px_50px_rgba(110,0,224,0.35)] scale-105'
+                  : 'bg-white border-[#ebe4fb] shadow-[0_8px_24px_rgba(110,0,224,0.08)] hover:shadow-[0_16px_36px_rgba(110,0,224,0.15)] hover:-translate-y-1'
               }`}
             >
               {/* Tag */}
@@ -106,7 +106,7 @@ export function EduLoanTypes() {
                 <p className={`text-xs font-bold uppercase tracking-wider mb-0.5 ${loan.highlight ? 'text-white/70' : 'text-gray-400'}`}>
                   Interest Rate (p.a.)
                 </p>
-                <p className={`text-2xl font-black ${loan.highlight ? 'text-white' : 'text-[#8424e8]'}`}>
+                <p className={`text-2xl font-black ${loan.highlight ? 'text-white' : 'text-[#6E00E0]'}`}>
                   {loan.rate}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export function EduLoanTypes() {
               <ul className="flex flex-col gap-2.5 flex-1 mb-6">
                 {loan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-bold ${loan.highlight ? 'bg-white/20 text-white' : 'bg-[#f3ebff] text-[#8424e8]'}`}>
+                    <span className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-bold ${loan.highlight ? 'bg-white/20 text-white' : 'bg-[#f3ebff] text-[#6E00E0]'}`}>
                       ✓
                     </span>
                     <span className={`text-sm leading-relaxed ${loan.highlight ? 'text-white/90' : 'text-gray-600'}`}>
@@ -130,8 +130,8 @@ export function EduLoanTypes() {
                 href="/contact-us?type=consultation"
                 className={`inline-flex items-center justify-center font-bold px-6 py-3 rounded-xl transition-all ${
                   loan.highlight
-                    ? 'bg-white text-[#8424e8] hover:bg-[#f3ebff]'
-                    : 'bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white hover:brightness-110'
+                    ? 'bg-white text-[#6E00E0] hover:bg-[#f3ebff]'
+                    : 'bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white hover:brightness-110'
                 }`}
               >
                 Apply Now

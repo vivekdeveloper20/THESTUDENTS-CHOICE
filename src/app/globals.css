@@ -4,8 +4,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --brand: #8424e8;
-  --brand-soft: rgba(132, 36, 232, 0.08);
+  --brand: #6E00E0;
+  --brand-soft: rgba(110,0,224, 0.08);
 }
 
 @theme inline {
@@ -44,6 +44,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Consistent heading tracking for a tighter, more premium feel */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
 }
 
 ::selection {

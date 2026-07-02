@@ -32,7 +32,7 @@ export default function AboutUsPage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#8424e8] via-[#6f1ed0] to-[#4a0fa0]">
+      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#6E00E0] via-[#6f1ed0] to-[#4a0fa0]">
         <div className="pointer-events-none absolute -top-24 -left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
@@ -57,7 +57,7 @@ export default function AboutUsPage() {
             { value: '15+', label: 'Bank Partners' },
           ].map((s, i) => (
             <div key={i} className="flex flex-col items-center py-6 px-4 text-center hover:bg-purple-50/50 transition-colors">
-              <span className="text-2xl md:text-3xl font-extrabold text-[#8424e8]">{s.value}</span>
+              <span className="text-2xl md:text-3xl font-extrabold text-[#6E00E0]">{s.value}</span>
               <span className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">{s.label}</span>
             </div>
           ))}
@@ -68,7 +68,7 @@ export default function AboutUsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Mission</span>
+            <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Mission</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Making Global Education Accessible for Every Indian Student</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Student&apos;s Choice was founded with one belief — every deserving student should have access to world-class education, regardless of their financial background. We bridge the gap between aspiration and reality through expert counseling, education loan facilitation, and end-to-end support.
@@ -80,7 +80,7 @@ export default function AboutUsPage() {
           {/* Values grid */}
           <div className="grid grid-cols-2 gap-4">
             {VALUES.map((v) => (
-              <div key={v.title} className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-[0_8px_30px_rgba(132,36,232,0.1)] hover:-translate-y-1 transition-all">
+              <div key={v.title} className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-[0_8px_30px_rgba(110,0,224,0.1)] hover:-translate-y-1 transition-all">
                 <span className="text-3xl mb-3 block">{v.icon}</span>
                 <h3 className="font-bold text-gray-900 mb-1">{v.title}</h3>
                 <p className="text-gray-500 text-sm">{v.desc}</p>
@@ -94,7 +94,7 @@ export default function AboutUsPage() {
       <section className="bg-gradient-to-br from-[#faf7ff] to-[#f0e8ff] py-20">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Our Journey</span>
+            <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Our Journey</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">10 Years of Excellence</h2>
           </div>
           <div className="relative">
@@ -102,7 +102,7 @@ export default function AboutUsPage() {
             <div className="space-y-8">
               {MILESTONES.map((m, i) => (
                 <div key={m.year} className="relative flex gap-6 items-start pl-16">
-                  <div className="absolute left-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] flex items-center justify-center text-white font-black text-sm shadow-lg">
+                  <div className="absolute left-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#b36af5] flex items-center justify-center text-white font-black text-sm shadow-lg">
                     {m.year}
                   </div>
                   <div className="bg-white rounded-2xl p-6 flex-1 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
@@ -119,15 +119,15 @@ export default function AboutUsPage() {
       {/* Team */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Meet the Team</span>
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Meet the Team</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">The Experts Behind Your Success</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TEAM.map((m) => (
-            <div key={m.name} className="bg-white border border-gray-100 rounded-2xl p-6 text-center hover:shadow-[0_12px_40px_rgba(132,36,232,0.12)] hover:-translate-y-1.5 transition-all">
+            <div key={m.name} className="bg-white border border-gray-100 rounded-2xl p-6 text-center hover:shadow-[0_12px_40px_rgba(110,0,224,0.12)] hover:-translate-y-1.5 transition-all">
               <div className="text-5xl mb-4">{m.emoji}</div>
               <h3 className="font-extrabold text-gray-900">{m.name}</h3>
-              <p className="text-[#8424e8] text-sm font-semibold mt-1">{m.role}</p>
+              <p className="text-[#6E00E0] text-sm font-semibold mt-1">{m.role}</p>
               <p className="text-gray-500 text-xs mt-2">{m.exp}</p>
             </div>
           ))}
@@ -135,13 +135,13 @@ export default function AboutUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] py-20">
+      <section className="bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] py-20">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5">Ready to Start Your Journey?</h2>
           <p className="text-white/80 text-lg mb-8">Join 50,000+ students who trusted us with their global education dreams.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact-us?type=consultation"
-              className="bg-white text-[#8424e8] font-bold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition-all">
+              className="bg-white text-[#6E00E0] font-bold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition-all">
               Book Free Consultation
             </Link>
             <Link href="/partner"

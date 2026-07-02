@@ -64,7 +64,7 @@ export function WorldMapDropdown() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-2 px-2 py-[6px] rounded-lg text-[13px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#8424e8] transition-colors group"
+                className="flex items-center gap-2 px-2 py-[6px] rounded-lg text-[13px] font-medium text-gray-700 hover:bg-[#f4eeff] hover:text-[#6E00E0] transition-colors group"
               >
                 <img
                   src={`https://flagcdn.com/20x15/${item.flag}.png`}
@@ -83,7 +83,7 @@ export function WorldMapDropdown() {
         <div className="bg-[#f4f0ff] rounded-xl p-4 border border-[#e0d4ff] flex flex-col justify-between">
           <div>
             <p className="text-[14px] font-black text-gray-900 leading-snug mb-1">
-              Choose Your <span className="text-[#8424e8]">Dream Country</span> 🌍
+              Choose Your <span className="text-[#6E00E0]">Dream Country</span> 🌍
             </p>
             <p className="text-[11px] text-gray-500 leading-relaxed">
               Hover over the map or select a country to know more about studying there.
@@ -91,15 +91,15 @@ export function WorldMapDropdown() {
           </div>
           <div className="flex items-center gap-2 mt-3 pt-3 border-t border-[#ddd4f7]">
             <div className="text-center flex-1">
-              <p className="text-[12px] font-black text-[#8424e8]">🎓 5000+</p>
+              <p className="text-[12px] font-black text-[#6E00E0]">🎓 5000+</p>
               <p className="text-[9px] text-gray-500">Students Guided</p>
             </div>
             <div className="text-center flex-1">
-              <p className="text-[12px] font-black text-[#8424e8]">🌍 12+</p>
+              <p className="text-[12px] font-black text-[#6E00E0]">🌍 12+</p>
               <p className="text-[9px] text-gray-500">Countries</p>
             </div>
             <div className="text-center flex-1">
-              <p className="text-[12px] font-black text-[#8424e8]">🏆 95%</p>
+              <p className="text-[12px] font-black text-[#6E00E0]">🏆 95%</p>
               <p className="text-[9px] text-gray-500">Visa Success</p>
             </div>
           </div>

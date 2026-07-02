@@ -7,7 +7,7 @@ const WHY_US = [
     icon: '🏦',
     title: '15+ Lending Partners',
     desc: 'Access public banks, private banks & NBFCs — all under one roof. We match you to the right lender.',
-    color: 'from-[#8424e8] to-[#6f1ed0]',
+    color: 'from-[#6E00E0] to-[#6f1ed0]',
   },
   {
     icon: '⚡',
@@ -59,13 +59,13 @@ export function EduLoanWhyUs() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="inline-block bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-[#1f1147] leading-tight">
             Your Trusted Partner for
             <br />
-            <span className="text-[#8424e8]">Overseas Education Loans</span>
+            <span className="text-[#6E00E0]">Overseas Education Loans</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
             We simplify the complex world of education financing so you can focus on what matters — your studies.
@@ -83,7 +83,7 @@ export function EduLoanWhyUs() {
           {STATS.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] p-5 text-center shadow-[0_8px_24px_rgba(132,36,232,0.25)]"
+              className="rounded-2xl bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] p-5 text-center shadow-[0_8px_24px_rgba(110,0,224,0.25)]"
             >
               <p className="text-white font-black text-2xl md:text-3xl">{s.value}</p>
               <p className="text-white/80 text-sm font-medium mt-1">{s.label}</p>
@@ -100,14 +100,14 @@ export function EduLoanWhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.55 }}
-              className="group relative rounded-3xl border border-[#ebe4fb] bg-white p-7 shadow-[0_8px_24px_rgba(132,36,232,0.07)] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(132,36,232,0.15)] hover:border-[#d0b8f8] transition-all duration-300"
+              className="group relative rounded-3xl border border-[#ebe4fb] bg-white p-7 shadow-[0_8px_24px_rgba(110,0,224,0.07)] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(110,0,224,0.15)] hover:border-[#d0b8f8] transition-all duration-300"
             >
               <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-xl shadow-lg transition-transform duration-300 group-hover:scale-110`}>
                 {item.icon}
               </div>
               <h3 className="text-xl font-extrabold text-[#1f2937] mb-2">{item.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-              <div className="absolute inset-x-4 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#8424e8] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+              <div className="absolute inset-x-4 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#6E00E0] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
             </motion.div>
           ))}
         </div>

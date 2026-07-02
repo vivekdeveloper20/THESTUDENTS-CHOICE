@@ -63,7 +63,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
               
               <Link
                 href={p.ctaTarget || "/contact-us"}
-                className="inline-flex items-center bg-white text-[#8424e8] font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base group"
+                className="inline-flex items-center bg-white text-[#6E00E0] font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base group"
               >
                 Explore {p.country} University 
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -145,7 +145,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
               viewport={{ once: true }}
               className="flex flex-col items-center py-8 px-4 text-center"
             >
-              <span className="text-2xl md:text-3xl font-extrabold text-[#8424e8]">{s.value}</span>
+              <span className="text-2xl md:text-3xl font-extrabold text-[#6E00E0]">{s.value}</span>
               <span className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">{s.label}</span>
             </motion.div>
           ))}
@@ -155,7 +155,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
       {/* ── Highlights Grid ────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
             Why {p.country}?
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -186,7 +186,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
       <section className="bg-gradient-to-br from-[#faf7ff] to-[#f0e8ff] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+            <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Top Universities
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -205,12 +205,12 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 border border-[#ede8f7] hover:shadow-xl hover:-translate-y-1.5 transition-all flex items-start gap-4 group"
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
                   #{i + 1}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-[#8424e8] transition-colors">{u.name}</h3>
-                  <p className="text-xs text-[#8424e8] font-semibold mt-1 uppercase tracking-wider">{u.rank}</p>
+                  <h3 className="font-bold text-gray-900 group-hover:text-[#6E00E0] transition-colors">{u.name}</h3>
+                  <p className="text-xs text-[#6E00E0] font-semibold mt-1 uppercase tracking-wider">{u.rank}</p>
                 </div>
               </motion.div>
             ))}
@@ -221,7 +221,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
       {/* ── Requirements ───────────────────────────────── */}
       <section className="max-w-3xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
             Eligibility
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -237,9 +237,9 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#8424e8]/30 hover:shadow-md transition-all"
+              className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#6E00E0]/30 hover:shadow-md transition-all"
             >
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#8424e8] text-white text-sm font-bold flex-shrink-0">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#6E00E0] text-white text-sm font-bold flex-shrink-0">
                 {i + 1}
               </span>
               <p className="text-gray-700 font-medium pt-1.5">{req}</p>
@@ -265,7 +265,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
           <div className="flex flex-wrap gap-6 justify-center">
             <Link
               href="/contact-us?type=consultation"
-              className="bg-white text-[#8424e8] font-bold px-12 py-5 rounded-full shadow-2xl hover:scale-110 hover:shadow-purple-500/30 transition-all text-lg"
+              className="bg-white text-[#6E00E0] font-bold px-12 py-5 rounded-full shadow-2xl hover:scale-110 hover:shadow-purple-500/30 transition-all text-lg"
             >
               Get Free Counseling
             </Link>

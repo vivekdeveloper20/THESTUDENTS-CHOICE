@@ -10,7 +10,6 @@ import { DestinationsSection } from '@/components/home/DestinationsSection';
 import { TestimonialSection } from '@/components/home/TestimonialSection';
 import { JourneySection } from '@/components/home/JourneySection';
 import { FaqSection } from '@/components/home/FaqSection';
-import { CtaBanner } from '@/components/home/CtaBanner';
 
 export interface StudyUSAPageProps {
   country: string;
@@ -40,41 +39,36 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
     <PageShell>
       {/* ── Hero ───────────────────────────────────────── */}
       <section className="relative pt-10 pb-6 px-3 md:px-5">
-        <div
-          className="max-w-[1400px] mx-auto rounded-[28px] overflow-hidden relative min-h-[340px] md:min-h-[420px] flex items-center shadow-2xl transition-all hover:shadow-purple-500/30"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-[1400px] mx-auto rounded-[28px] overflow-hidden relative min-h-[300px] md:min-h-[380px] flex items-center shadow-2xl transition-all hover:shadow-purple-500/30"
           style={{
-            backgroundImage: `url('${p.heroImage}')`,
+            backgroundImage: `url('/assets/images/USA%20Banner.svg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
-          {/* Dark overlay for better text contrast */}
-          <div className="absolute inset-0 bg-black/30" />
-
-          <div className="relative z-10 px-8 md:px-16 lg:px-28 w-full">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl"
-            >
-              <h1 className="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-lg leading-tight tracking-tight">
+          <div className="relative z-10 px-8 md:px-14 lg:px-20 w-full">
+            <div className="max-w-2xl">
+              <h1 className="text-3xl md:text-5xl font-black text-white mb-5 drop-shadow-lg leading-tight tracking-tight">
                 {p.tagline}
               </h1>
-              <p className="text-white/70 text-base md:text-xl font-semibold mb-10 max-w-2xl leading-relaxed drop-shadow-md">
+              <p className="text-white/85 text-sm md:text-lg font-semibold mb-8 max-w-xl leading-relaxed drop-shadow-md">
                 Discover top-ranked universities, explore scholarships, understand tuition costs, and plan your complete {p.country} journey with expert guidance from Students Choice.
               </p>
 
               <Link
                 href="/usa-universities"
-                className="inline-flex items-center bg-white text-[#8424e8] font-extrabold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all text-sm md:text-base group"
+                className="inline-flex items-center bg-white text-[#6E00E0] font-extrabold px-7 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base group"
               >
-                Explore {p.country} Universities
-                <span className="ml-3 group-hover:translate-x-1 transition-transform text-xl">→</span>
+                Explore {p.country} University
+                <span className="ml-2 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </Link>
-            </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── Intro ──────────────────────────────────────── */}
@@ -97,7 +91,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
       <section className="relative py-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#faf7ff] via-white to-[#f3eeff]" />
         {/* Decorative blob */}
-        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-[#8424e8]/6 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-[#6E00E0]/6 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
 
@@ -109,14 +103,14 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
             transition={{ duration: 0.55 }}
             className="flex items-center gap-3 mb-10"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8424e8] to-[#a855f7] flex items-center justify-center text-lg shadow-md shadow-purple-200">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6E00E0] to-[#a855f7] flex items-center justify-center text-lg shadow-md shadow-purple-200">
               ✨
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8424e8] mb-0.5">At a Glance</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6E00E0] mb-0.5">At a Glance</p>
               <h2 className="text-2xl font-extrabold text-gray-900">
                 Quick Insights About Studying in the{' '}
-                <span className="bg-gradient-to-r from-[#8424e8] to-[#6c47ff] bg-clip-text text-transparent">{p.country}</span>
+                <span className="bg-gradient-to-r from-[#6E00E0] to-[#6c47ff] bg-clip-text text-transparent">{p.country}</span>
               </h2>
             </div>
           </motion.div>
@@ -133,7 +127,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
               className="rounded-2xl overflow-hidden border border-purple-100 shadow-lg shadow-purple-500/5"
             >
               {/* Header */}
-              <div className="grid grid-cols-2 bg-gradient-to-r from-[#8424e8] to-[#6c47ff] px-6 py-4">
+              <div className="grid grid-cols-2 bg-gradient-to-r from-[#6E00E0] to-[#6c47ff] px-6 py-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-white/80">Key Insight</p>
                 <p className="text-xs font-bold uppercase tracking-widest text-white/80 text-right">Details</p>
               </div>
@@ -154,10 +148,10 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-lg flex-shrink-0">{icons[i % icons.length]}</span>
-                        <span className="text-sm font-semibold text-[#6b21a8] group-hover:text-[#8424e8] transition-colors">{item.key}</span>
+                        <span className="text-sm font-semibold text-[#6b21a8] group-hover:text-[#6E00E0] transition-colors">{item.key}</span>
                       </div>
                       <div className="text-right">
-                        <span className="inline-block bg-[#f4eeff] text-[#7c3aed] text-sm font-extrabold px-3 py-1 rounded-lg group-hover:bg-[#8424e8] group-hover:text-white transition-all duration-200">
+                        <span className="inline-block bg-[#f4eeff] text-[#7c3aed] text-sm font-extrabold px-3 py-1 rounded-lg group-hover:bg-[#6E00E0] group-hover:text-white transition-all duration-200">
                           {item.value}
                         </span>
                       </div>
@@ -167,7 +161,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
               </div>
 
               {/* Footer note */}
-              <div className="bg-gradient-to-r from-[#8424e8]/5 to-[#6c47ff]/5 px-6 py-3 border-t border-purple-100">
+              <div className="bg-gradient-to-r from-[#6E00E0]/5 to-[#6c47ff]/5 px-6 py-3 border-t border-purple-100">
                 <p className="text-[11px] text-gray-400 font-medium">* Values are indicative and may vary. Verify with institutions directly.</p>
               </div>
             </motion.div>
@@ -181,15 +175,15 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#8424e8] to-[#6c47ff] p-6 text-white shadow-xl shadow-purple-500/20"
+                className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#6E00E0] to-[#6c47ff] p-6 text-white shadow-xl shadow-purple-500/20"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4" />
                 <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Ready to move?</p>
                 <h3 className="text-xl font-extrabold leading-snug mb-3">Start Your {p.country} Study Journey Today</h3>
                 <p className="text-sm text-white/70 mb-5 leading-relaxed">Get personalised guidance from our expert consultants — completely free.</p>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-white text-[#8424e8] font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-yellow-50 hover:scale-105 transition-all shadow-md"
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2 bg-white text-[#6E00E0] font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-yellow-50 hover:scale-105 transition-all shadow-md"
                 >
                   Book Free Consultation
                   <span className="text-base">→</span>
@@ -204,7 +198,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="rounded-2xl bg-white border border-purple-100 shadow-md shadow-purple-500/5 p-5"
               >
-                <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8] mb-4">Why Students Choose {p.country}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#6E00E0] mb-4">Why Students Choose {p.country}</p>
                 <ul className="space-y-2.5">
                   {[
                     { icon: '🏆', text: 'Home to MIT, Harvard, Stanford' },
@@ -231,7 +225,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl">💡</span>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#8424e8]">Did You Know?</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#6E00E0]">Did You Know?</p>
                 </div>
                 <p className="text-sm text-gray-700 leading-relaxed font-medium">
                   The USA hosts over <strong>1 million international students</strong> annually and Indian students are the <strong>#2 largest group</strong>, with over 200,000 students studying across American universities.
@@ -246,7 +240,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
       {/* ── Highlights Grid ────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
             Why {p.country}?
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -280,7 +274,7 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
       <section className="bg-gradient-to-br from-[#faf7ff] to-[#f0e8ff] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+            <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Top Universities
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -299,12 +293,12 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="bg-white rounded-2xl p-6 border border-[#ede8f7] hover:shadow-xl hover:-translate-y-1.5 transition-all flex items-start gap-4 group"
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#b36af5] flex items-center justify-center text-white font-black text-sm flex-shrink-0">
                   #{i + 1}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-[#8424e8] transition-colors">{u.name}</h3>
-                  <p className="text-xs text-[#8424e8] font-semibold mt-1 uppercase tracking-wider">{u.rank}</p>
+                  <h3 className="font-bold text-gray-900 group-hover:text-[#6E00E0] transition-colors">{u.name}</h3>
+                  <p className="text-xs text-[#6E00E0] font-semibold mt-1 uppercase tracking-wider">{u.rank}</p>
                 </div>
               </motion.div>
             ))}
@@ -328,7 +322,6 @@ export function StudyUSAPage(p: StudyUSAPageProps) {
       <TestimonialSection />
       <JourneySection />
       <FaqSection />
-      <CtaBanner />
 
     </PageShell>
   );

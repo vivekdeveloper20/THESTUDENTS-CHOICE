@@ -75,7 +75,7 @@ export function SpainPopularUniversitiesSection() {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
             Popular Spain Universities{' '}
-            <span className="text-[#8424e8]">Students Explore</span>
+            <span className="text-[#6E00E0]">Students Explore</span>
           </h2>
         </div>
 
@@ -92,7 +92,7 @@ export function SpainPopularUniversitiesSection() {
                       className="border-r-2 border-gray-200 px-6 py-6 text-left last:border-r-0 relative"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8424e8] to-[#6c47ff] flex items-center justify-center text-xl shadow-md">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6E00E0] to-[#6c47ff] flex items-center justify-center text-xl shadow-md">
                           {cat.icon}
                         </div>
                         <span className="font-black text-gray-900 text-sm md:text-base leading-tight">
@@ -134,7 +134,7 @@ export function SpainPopularUniversitiesSection() {
                       className="border-r border-gray-200 px-6 py-6 last:border-r-0 align-top"
                     >
                       <div className="space-y-2">
-                        <p className="text-xs font-black uppercase tracking-widest text-[#8424e8]">
+                        <p className="text-xs font-black uppercase tracking-widest text-[#6E00E0]">
                           Best For
                         </p>
                         <p className="text-gray-700 text-sm leading-relaxed font-medium">

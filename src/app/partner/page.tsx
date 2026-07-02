@@ -34,7 +34,7 @@ export default function PartnerPage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#8424e8]">
+      <section className="relative overflow-hidden pt-20 pb-32 bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#6E00E0]">
         <div className="pointer-events-none absolute -top-24 -left-20 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
@@ -57,12 +57,12 @@ export default function PartnerPage() {
       {/* Who can partner */}
       <section className="max-w-5xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Who Can Partner</span>
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Who Can Partner</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Perfect for These Businesses</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
           {WHO.map((w) => (
-            <div key={w.label} className="bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-[0_8px_30px_rgba(132,36,232,0.10)] hover:-translate-y-1 transition-all">
+            <div key={w.label} className="bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-[0_8px_30px_rgba(110,0,224,0.10)] hover:-translate-y-1 transition-all">
               <span className="text-4xl block mb-2">{w.emoji}</span>
               <p className="text-sm font-semibold text-gray-700">{w.label}</p>
             </div>
@@ -71,14 +71,14 @@ export default function PartnerPage() {
 
         {/* Benefits */}
         <div className="text-center mb-10">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Partner Benefits</span>
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Partner Benefits</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Why Partner with Student&apos;s Choice?</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {BENEFITS.map((b, i) => (
             <motion.div key={b.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-[0_12px_40px_rgba(132,36,232,0.12)] hover:-translate-y-1.5 transition-all">
+              className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-[0_12px_40px_rgba(110,0,224,0.12)] hover:-translate-y-1.5 transition-all">
               <span className="text-3xl mb-3 block">{b.icon}</span>
               <h3 className="font-extrabold text-gray-900 mb-1">{b.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
@@ -93,7 +93,7 @@ export default function PartnerPage() {
             {submitted ? (
               <div className="bg-purple-50 border border-purple-200 rounded-2xl p-8 text-center">
                 <div className="text-5xl mb-3">🎊</div>
-                <h3 className="font-extrabold text-[#8424e8] text-lg">Application Received!</h3>
+                <h3 className="font-extrabold text-[#6E00E0] text-lg">Application Received!</h3>
                 <p className="text-gray-600 mt-2">Our partner team will contact you within 24 hours.</p>
               </div>
             ) : (
@@ -103,31 +103,31 @@ export default function PartnerPage() {
                     <label className="text-sm font-semibold text-gray-700 block mb-1.5">Your Name *</label>
                     <input required value={form.name} onChange={e => setForm({...form, name: e.target.value})}
                       placeholder="Full name"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-gray-700 block mb-1.5">Organization *</label>
                     <input required value={form.org} onChange={e => setForm({...form, org: e.target.value})}
                       placeholder="Company/Institute"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
                   </div>
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-gray-700 block mb-1.5">Email *</label>
                   <input required type="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})}
                     placeholder="work@company.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-gray-700 block mb-1.5">Phone *</label>
                   <input required type="tel" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})}
                     placeholder="+91 XXXXX XXXXX"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-gray-700 block mb-1.5">Business Type *</label>
                   <select required value={form.type} onChange={e => setForm({...form, type: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors bg-white">
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors bg-white">
                     <option value="">Select your business type...</option>
                     {['Education Consultant', 'Coaching Institute', 'Financial Advisor', 'Ed-Tech Platform', 'Travel Agency', 'HR Consultancy', 'Other'].map(t => (
                       <option key={t} value={t}>{t}</option>
@@ -139,10 +139,10 @@ export default function PartnerPage() {
                   <textarea value={form.message} onChange={e => setForm({...form, message: e.target.value})}
                     placeholder="How many students do you work with? Any specific services you offer?"
                     rows={3}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors resize-none" />
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors resize-none" />
                 </div>
                 <button type="submit"
-                  className="w-full bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg shadow-purple-200">
+                  className="w-full bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg shadow-purple-200">
                   Submit Partnership Application →
                 </button>
               </form>
@@ -152,7 +152,7 @@ export default function PartnerPage() {
           {/* Side info */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="space-y-5">
-            <div className="bg-gradient-to-br from-[#1a237e] to-[#8424e8] rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-br from-[#1a237e] to-[#6E00E0] rounded-2xl p-6 text-white">
               <h3 className="font-extrabold text-lg mb-1">How It Works</h3>
               <div className="space-y-4 mt-4">
                 {[

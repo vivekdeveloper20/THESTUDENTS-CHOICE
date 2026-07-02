@@ -45,12 +45,12 @@ function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
         id={`faq-btn-${idx}`}
       >
         <div className="flex items-center gap-3">
-          <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] text-white text-xs font-bold">
+          <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] text-white text-xs font-bold">
             {idx + 1}
           </span>
           <span className="font-extrabold text-[#1f2937] text-[15px] leading-snug">{q}</span>
         </div>
-        <span className={`text-[#8424e8] text-xl font-bold transition-transform duration-300 shrink-0 ${open ? 'rotate-45' : ''}`}>
+        <span className={`text-[#6E00E0] text-xl font-bold transition-transform duration-300 shrink-0 ${open ? 'rotate-45' : ''}`}>
           +
         </span>
       </button>
@@ -81,13 +81,13 @@ export function EduLoanFAQ() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-block bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             FAQs
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-[#1f1147]">
             Everything You Want to Know
             <br />
-            <span className="text-[#8424e8]">About Education Loans</span>
+            <span className="text-[#6E00E0]">About Education Loans</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
             Honest answers to the most common questions. No jargon, just clarity.

@@ -11,7 +11,7 @@ export default function AustraliaPage() {
     <StudyAustraliaPage
       country="Australia"
       tagline="Your Smart Path to Study in Australia"
-      heroImage="/assets/images/studyabroadcountry/AURTILA.png"
+      heroImage="/assets/images/Australia%20Banner.svg"
       introParagraphs={[
         "Australia has become one of the most preferred destinations for international students seeking globally recognised education, strong employability outcomes, and an outstanding quality of life. Known for innovation-driven universities, multicultural cities, and career-focused programs, Australia offers students the perfect balance of academic excellence and global exposure.",
         "With world-class institutions, practical learning approaches, and strong post-study opportunities, Australia continues to attract students who want international education with long-term career value."

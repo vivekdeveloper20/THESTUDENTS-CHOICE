@@ -11,7 +11,7 @@ export default function ItalyPage() {
     <StudyItalyPage
       country="Italy"
       tagline="Your Smart Path to Study in Italy"
-      heroImage="/assets/images/studyabroadcountry/ITALY.png"
+      heroImage="/assets/images/Italy%20Banner.svg"
       introParagraphs={[
         "Italy has become an increasingly popular destination for international students seeking high-quality education, affordable tuition fees, and globally recognised degrees. Known for its excellence in design, fashion, architecture, business, engineering, and research, Italy offers students the perfect blend of academic learning and cultural exposure.",
         "With historic universities, modern research facilities, and access to Europe's growing job market, Italy provides international students with strong academic and career opportunities. As a Schengen country and a major European economy, Italy attracts students who want practical learning, international exposure, and affordable education within Europe."

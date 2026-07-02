@@ -51,7 +51,7 @@ export function DestinationsSection() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-[38px] md:text-[44px] font-bold text-[#8424e8] mb-3 tracking-tight">
+          <h2 className="text-[38px] md:text-[44px] font-bold text-[#6E00E0] mb-3 tracking-tight">
             Explore popular study destinations
           </h2>
           <p className="text-[17px] md:text-[20px] text-gray-600 font-medium">
@@ -72,7 +72,7 @@ export function DestinationsSection() {
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </div>
-                  <p className="mt-3 text-[14px] md:text-[16px] font-bold text-gray-700 hover:text-[#8424e8] transition-colors text-center">
+                  <p className="mt-3 text-[14px] md:text-[16px] font-bold text-gray-700 hover:text-[#6E00E0] transition-colors text-center">
                     {dest.name}
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export function DestinationsSection() {
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </div>
-                  <p className="mt-3 text-[14px] md:text-[16px] font-bold text-gray-700 hover:text-[#8424e8] transition-colors text-center">
+                  <p className="mt-3 text-[14px] md:text-[16px] font-bold text-gray-700 hover:text-[#6E00E0] transition-colors text-center">
                     {dest.name}
                   </p>
                 </div>

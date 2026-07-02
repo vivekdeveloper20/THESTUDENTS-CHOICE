@@ -45,7 +45,7 @@ export function Footer() {
           </div>
 
           {/* Main Card Wrapper */}
-          <div className="relative w-full border border-[#e8dfff] bg-gradient-to-b from-[#FAF6FF] to-[#F2E8FF] rounded-[40px] px-6 md:px-12 lg:px-16 py-12 md:py-16 pb-28 overflow-hidden shadow-[0_8px_32px_rgba(132,36,232,0.04)]">
+          <div className="relative w-full border border-[#e8dfff] bg-gradient-to-b from-[#FAF6FF] to-[#F2E8FF] rounded-[40px] px-6 md:px-12 lg:px-16 py-12 md:py-16 pb-28 overflow-hidden shadow-[0_8px_32px_rgba(110,0,224,0.04)]">
 
             {/* Absolute Backgrounds */}
 
@@ -108,11 +108,11 @@ export function Footer() {
                 <div className="flex flex-col gap-3 mt-2">
                   <span className="font-bold text-[15px] text-[#2b0e63]">Contact Us</span>
                   <div className="flex flex-col gap-3">
-                    <a href="mailto:info@studentschoice.in" className="flex items-center gap-3 text-[#2b0e63] hover:text-[#8424e8] transition-colors text-[14px] w-fit">
+                    <a href="mailto:info@studentschoice.in" className="flex items-center gap-3 text-[#2b0e63] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">
                       <IconMail size={20} className="text-[#2b0e63]" />
                       <span className="font-medium">info@studentschoice.in</span>
                     </a>
-                    <a href="tel:+919801821680" className="flex items-center gap-3 text-[#2b0e63] hover:text-[#8424e8] transition-colors text-[14px] w-fit">
+                    <a href="tel:+919801821680" className="flex items-center gap-3 text-[#2b0e63] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">
                       <IconPhone size={20} className="text-[#2b0e63]" />
                       <span className="font-bold">+91 98018 21680</span>
                     </a>
@@ -125,14 +125,14 @@ export function Footer() {
               <div className="lg:col-span-2 flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Company</h3>
                 <div className="flex flex-col gap-2.5">
-                  <Link href="/about" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">About Us</Link>
-                  <Link href="/contact" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Contact Us</Link>
-                  <Link href="/partner" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Become a Partner</Link>
-                  <Link href="/faqs" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">FAQs</Link>
-                  <Link href="/media" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Media</Link>
-                  <Link href="/team" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Our Team</Link>
-                  <Link href="/terms" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Terms & Conditions</Link>
-                  <Link href="/privacy" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Privacy Policy</Link>
+                  <Link href="/about-us" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">About Us</Link>
+                  <Link href="/contact-us" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Contact Us</Link>
+                  <Link href="/partner" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Become a Partner</Link>
+                  <Link href="/faqs" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">FAQs</Link>
+                  <Link href="/media" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Media</Link>
+                  <Link href="/team" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Our Team</Link>
+                  <Link href="/terms" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Terms & Conditions</Link>
+                  <Link href="/privacy" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Privacy Policy</Link>
                 </div>
               </div>
 
@@ -140,40 +140,40 @@ export function Footer() {
               <div className="lg:col-span-2 flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Study Abroad</h3>
                 <div className="flex flex-col gap-2.5">
-                  <Link href="/study-abroad/usa" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in USA</Link>
-                  <Link href="/study-abroad/uk" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in UK</Link>
-                  <Link href="/study-abroad/canada" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Canada</Link>
-                  <Link href="/study-abroad/australia" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Australia</Link>
-                  <Link href="/study-abroad/germany" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Germany</Link>
-                  <Link href="/study-abroad/france" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in France</Link>
-                  <Link href="/study-abroad/ireland" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Ireland</Link>
-                  <Link href="/study-abroad/italy" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Italy</Link>
-                  <Link href="/study-abroad/spain" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Spain</Link>
-                  <Link href="/study-abroad/switzerland" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in Switzerland</Link>
-                  <Link href="/study-abroad/uae" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in UAE</Link>
-                  <Link href="/study-abroad/new-zealand" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Study in New Zealand</Link>
+                  <Link href="/study-abroad/usa" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in USA</Link>
+                  <Link href="/study-abroad/uk" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in UK</Link>
+                  <Link href="/study-abroad/canada" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Canada</Link>
+                  <Link href="/study-abroad/australia" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Australia</Link>
+                  <Link href="/study-abroad/germany" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Germany</Link>
+                  <Link href="/study-abroad/france" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in France</Link>
+                  <Link href="/study-abroad/ireland" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Ireland</Link>
+                  <Link href="/study-abroad/italy" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Italy</Link>
+                  <Link href="/study-abroad/spain" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Spain</Link>
+                  <Link href="/study-abroad/switzerland" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in Switzerland</Link>
+                  <Link href="/study-abroad/uae" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in UAE</Link>
+                  <Link href="/study-abroad/new-zealand" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Study in New Zealand</Link>
                 </div>
               </div>
 
               {/* Column 4 (Education Loan Links) */}
-              <div className="lg:col-span-2ca flex flex-col gap-4">
+              <div className="lg:col-span-3 flex flex-col gap-4">
                 <h3 className="font-bold text-[16px] text-[#2b0e63]">Education Loan</h3>
                 <div className="flex flex-col gap-2.5">
-                  <Link href="/loans/icici" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Icici Education Loan</Link>
-                  <Link href="/loans/axis" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Axis Education Loan</Link>
-                  <Link href="/loans/credila" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Credila Education Loan</Link>
-                  <Link href="/loans/avanse" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Avanse Education Loan</Link>
-                  <Link href="/loans/incred" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Incred Education Loan</Link>
-                  <Link href="/loans/auxilo" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Auxilo Education Loan</Link>
-                  <Link href="/loans/tata" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Tata Education Loan</Link>
-                  <Link href="/loans/poonawalla" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Poonawalla Education Loan</Link>
-                  <Link href="/loans/avanse-global" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Avanse Global Education Loan</Link>
-                  <Link href="/loans/idfc" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">IDFC Education Loan</Link>
-                  <Link href="/loans/prodigy" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Prodigy Education Loan</Link>
-                  <Link href="/loans/union" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Union Education Loan</Link>
-                  <Link href="/loans/pnb" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">PNB Education Loan</Link>
-                  <Link href="/loans/yes" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">YES Education Loan</Link>
-                  <Link href="/loans/edgro" className="text-[#554a70] hover:text-[#8424e8] transition-colors text-[14px] w-fit">Edgro Education Loan</Link>
+                  <Link href="/loans/icici" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Icici Education Loan</Link>
+                  <Link href="/loans/axis" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Axis Education Loan</Link>
+                  <Link href="/loans/credila" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Credila Education Loan</Link>
+                  <Link href="/loans/avanse" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Avanse Education Loan</Link>
+                  <Link href="/loans/incred" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Incred Education Loan</Link>
+                  <Link href="/loans/auxilo" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Auxilo Education Loan</Link>
+                  <Link href="/loans/tata" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Tata Education Loan</Link>
+                  <Link href="/loans/poonawalla" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Poonawalla Education Loan</Link>
+                  <Link href="/loans/avanse-global" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Avanse Global Education Loan</Link>
+                  <Link href="/loans/idfc" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">IDFC Education Loan</Link>
+                  <Link href="/loans/prodigy" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Prodigy Education Loan</Link>
+                  <Link href="/loans/union" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Union Education Loan</Link>
+                  <Link href="/loans/pnb" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">PNB Education Loan</Link>
+                  <Link href="/loans/yes" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">YES Education Loan</Link>
+                  <Link href="/loans/edgro" className="text-[#554a70] hover:text-[#6E00E0] transition-colors text-[14px] w-fit">Edgro Education Loan</Link>
                 </div>
               </div>
 

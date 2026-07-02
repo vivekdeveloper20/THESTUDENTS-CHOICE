@@ -54,7 +54,7 @@ const BADGES = [
 const CATEGORIES = ['Education Loan', 'Admission Assistance', 'Become a Partner'];
 
 const fieldCls =
-  'w-full pl-11 pr-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors';
+  'w-full pl-11 pr-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#6E00E0] focus:bg-white transition-colors';
 
 export default function ContactUsPage() {
   const [booking, setBooking] = useState({
@@ -85,7 +85,7 @@ export default function ContactUsPage() {
                 <p>Whether you&apos;re exploring universities, comparing loan options, or seeking professional guidance, our experts are ready to assist you.</p>
                 <p>Connect with Students Choice today and take the first step toward your academic success.</p>
               </div>
-              <button className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(132,36,232,0.35)] hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(132,36,232,0.45)] transition-all">
+              <button className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(110,0,224,0.45)] transition-all">
                 Talk to Counsellor <IconArrow />
               </button>
             </motion.div>
@@ -93,8 +93,8 @@ export default function ContactUsPage() {
             {/* Right image */}
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}
               className="relative">
-              <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-[#8424e8]/15 to-transparent blur-2xl" />
-              <div className="relative rounded-[28px] overflow-hidden shadow-[0_30px_70px_rgba(132,36,232,0.22)] ring-1 ring-[#ece5f9] bg-[#f3ecff]">
+              <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-[#6E00E0]/15 to-transparent blur-2xl" />
+              <div className="relative rounded-[28px] overflow-hidden shadow-[0_30px_70px_rgba(110,0,224,0.22)] ring-1 ring-[#ece5f9] bg-[#f3ecff]">
                 <img
                   src="/assets/images/contact-us-girl.jpg"
                   alt="Talk to a Students Choice counsellor"
@@ -107,7 +107,7 @@ export default function ContactUsPage() {
           {/* Contact pills bar */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-12 max-w-4xl mx-auto rounded-2xl bg-white border border-[#e7ddfa] shadow-[0_18px_50px_rgba(132,36,232,0.10)] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#efe8fb] overflow-hidden">
+            className="mt-12 max-w-4xl mx-auto rounded-2xl bg-white border border-[#e7ddfa] shadow-[0_18px_50px_rgba(110,0,224,0.10)] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#efe8fb] overflow-hidden">
             {[
               { big: '+91 980 182 1680', small: 'Call Us' },
               { big: 'contact@studentschoice.in', small: 'Email Us' },
@@ -126,7 +126,7 @@ export default function ContactUsPage() {
       <section className="text-center px-4 pt-10 pb-6">
         <h2 className="text-3xl md:text-[40px] font-extrabold text-gray-900">
           Connect with{' '}
-          <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#6E00E0] to-[#b14bf0] bg-clip-text text-transparent">
             Students Choice
           </span>
         </h2>
@@ -139,9 +139,9 @@ export default function ContactUsPage() {
           {/* Contact Details card */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(132,36,232,0.10)] p-7 md:p-8">
+            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(110,0,224,0.10)] p-7 md:p-8">
             <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#8424e8]"><IconPhone /></span>
+              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#6E00E0]"><IconPhone /></span>
               <h3 className="text-2xl font-extrabold text-gray-900">Contact Details</h3>
             </div>
             <p className="text-gray-500 mt-3 text-[15px]">Reach out via phone, WhatsApp, email, or visit us in person.</p>
@@ -149,8 +149,8 @@ export default function ContactUsPage() {
             <div className="mt-6 space-y-3.5">
               {DETAILS.map((d) => (
                 <div key={d.title}
-                  className="flex gap-4 rounded-2xl border border-[#f0eafa] bg-[#fbf9ff] p-4 hover:border-[#d9c7f7] hover:shadow-[0_10px_24px_rgba(132,36,232,0.10)] transition-all">
-                  <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#8424e8]">{d.icon}</span>
+                  className="flex gap-4 rounded-2xl border border-[#f0eafa] bg-[#fbf9ff] p-4 hover:border-[#d9c7f7] hover:shadow-[0_10px_24px_rgba(110,0,224,0.10)] transition-all">
+                  <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-[#f3ecff] text-[#6E00E0]">{d.icon}</span>
                   <div className="min-w-0">
                     <p className="font-bold text-gray-900">{d.title}</p>
                     <p className="text-gray-700 text-[14px] mt-0.5 break-words">{d.value}</p>
@@ -164,7 +164,7 @@ export default function ContactUsPage() {
           {/* Booking form card */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(132,36,232,0.10)] p-7 md:p-8">
+            className="rounded-3xl bg-white border border-[#ece5f9] shadow-[0_20px_55px_rgba(110,0,224,0.10)] p-7 md:p-8">
             <h3 className="text-2xl font-extrabold text-gray-900">Book Free Consultation</h3>
             <p className="text-gray-500 mt-1 text-[15px]">Schedule a 1-on-1 session with our expert counselors</p>
 
@@ -178,17 +178,17 @@ export default function ContactUsPage() {
               <form onSubmit={handleBookingSubmit} className="mt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Full Name<span className="text-[#8424e8]">*</span></label>
+                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Full Name<span className="text-[#6E00E0]">*</span></label>
                     <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconUser /></span>
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6E00E0]"><IconUser /></span>
                       <input required value={booking.name} onChange={e => setBooking({ ...booking, name: e.target.value })}
                         placeholder="Pankaj Sharma" className={fieldCls} />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Phone<span className="text-[#8424e8]">*</span></label>
+                    <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Phone<span className="text-[#6E00E0]">*</span></label>
                     <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconPhone /></span>
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6E00E0]"><IconPhone /></span>
                       <input required type="tel" value={booking.phone} onChange={e => setBooking({ ...booking, phone: e.target.value })}
                         placeholder="+91 980 182 1680" className={fieldCls} />
                     </div>
@@ -196,19 +196,19 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="mt-4">
-                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Email Address<span className="text-[#8424e8]">*</span></label>
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Email Address<span className="text-[#6E00E0]">*</span></label>
                   <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8424e8]"><IconMail /></span>
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6E00E0]"><IconMail /></span>
                     <input required type="email" value={booking.email} onChange={e => setBooking({ ...booking, email: e.target.value })}
                       placeholder="Pankaj@studentschoice.in" className={fieldCls} />
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Category<span className="text-[#8424e8]">*</span></label>
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Category<span className="text-[#6E00E0]">*</span></label>
                   <div className="relative">
                     <select required value={booking.category} onChange={e => setBooking({ ...booking, category: e.target.value })}
-                      className={`w-full px-4 py-3 pr-11 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors appearance-none ${booking.category ? 'text-gray-800' : 'text-gray-400'}`}>
+                      className={`w-full px-4 py-3 pr-11 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] focus:outline-none focus:border-[#6E00E0] focus:bg-white transition-colors appearance-none ${booking.category ? 'text-gray-800' : 'text-gray-400'}`}>
                       <option value="" disabled hidden>Select a category</option>
                       {CATEGORIES.map(c => (
                         <option key={c} value={c} className="text-gray-800">{c}</option>
@@ -219,21 +219,21 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="mt-4">
-                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Description<span className="text-[#8424e8]">*</span></label>
+                  <label className="text-[13px] font-semibold text-gray-700 block mb-1.5">Description<span className="text-[#6E00E0]">*</span></label>
                   <textarea required rows={4} value={booking.description} onChange={e => setBooking({ ...booking, description: e.target.value })}
                     placeholder="Tell us how we can help you..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8424e8] focus:bg-white transition-colors resize-none" />
+                    className="w-full px-4 py-3 rounded-xl bg-[#f6f3fc] border border-[#ece5f9] text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#6E00E0] focus:bg-white transition-colors resize-none" />
                 </div>
 
                 <button type="submit"
-                  className="mt-6 w-full bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-extrabold py-3.5 rounded-xl shadow-[0_12px_30px_rgba(132,36,232,0.35)] hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(132,36,232,0.45)] transition-all">
+                  className="mt-6 w-full bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-extrabold py-3.5 rounded-xl shadow-[0_12px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(110,0,224,0.45)] transition-all">
                   Continue
                 </button>
 
                 <div className="mt-6 grid grid-cols-3 gap-2 text-center">
                   {BADGES.map((b) => (
                     <div key={b.title} className="flex flex-col items-center gap-1.5">
-                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f3ecff] text-[#8424e8]">{b.icon}</span>
+                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f3ecff] text-[#6E00E0]">{b.icon}</span>
                       <span className="text-gray-800 text-[11px] font-bold leading-tight">{b.title}</span>
                       <span className="text-gray-400 text-[10px] leading-tight">{b.sub}</span>
                     </div>

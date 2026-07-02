@@ -6,7 +6,7 @@ import { IconBrandWhatsapp, IconPhone } from '@tabler/icons-react';
 
 export function EduLoanCTA() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#8424e8] via-[#6f1ed0] to-[#4c1387] py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#6E00E0] via-[#6f1ed0] to-[#4c1387] py-20 px-4 sm:px-6 lg:px-8">
       {/* BG Orbs */}
       <div className="pointer-events-none absolute -top-20 -left-16 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 rounded-full bg-fuchsia-300/15 blur-3xl" />
@@ -39,7 +39,7 @@ export function EduLoanCTA() {
             <Link
               href="/contact-us?type=consultation"
               id="edu-loan-final-cta"
-              className="inline-flex items-center justify-center bg-white text-[#8424e8] font-black px-10 py-4 rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.25)] hover:bg-[#f3ebff] hover:scale-105 transition-all text-lg"
+              className="inline-flex items-center justify-center bg-white text-[#6E00E0] font-black px-10 py-4 rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.25)] hover:bg-[#f3ebff] hover:scale-105 transition-all text-lg"
             >
               Book Free Consultation
             </Link>

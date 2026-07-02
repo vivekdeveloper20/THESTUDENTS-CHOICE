@@ -11,7 +11,7 @@ export default function CanadaPage() {
     <StudyCanadaPage
       country="Canada"
       tagline="Your Smart Path to Study in Canada"
-      heroImage="/assets/images/studyabroadcountry/CANADA.png"
+      heroImage="/assets/images/Canada%20Banner.svg"
       introParagraphs={[
         "Canada has become one of the most preferred destinations for international students seeking globally recognised education, excellent quality of life, and strong long-term career opportunities. Known for its welcoming environment, multicultural society, and industry-focused education system, Canada offers students the perfect balance of academic excellence and future growth.",
         "With globally ranked universities, practical learning, and post-study work opportunities, Canada continues to attract students who want internationally valued qualifications and real-world career outcomes."

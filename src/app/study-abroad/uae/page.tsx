@@ -11,7 +11,7 @@ export default function UAEPage() {
     <StudyUAEPage
       country="UAE"
       tagline="Your Smart Path to Study in the UAE"
-      heroImage="/assets/images/studyabroadcountry/UAE.png"
+      heroImage="/assets/images/UAE%20Banner.svg"
       introParagraphs={[
         "The UAE has rapidly become one of the most attractive destinations for international students seeking globally recognised education, modern infrastructure, and strong career opportunities. Known for its innovation-driven economy, multicultural lifestyle, and international university campuses, the UAE offers students a future-focused learning environment in the heart of the Middle East.",
         "With world-class cities like Dubai and Abu Dhabi, students gain access to international exposure, industry connections, and a high standard of living while studying."

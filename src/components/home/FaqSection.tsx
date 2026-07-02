@@ -30,7 +30,7 @@ const faqs = [
 export function FaqSection() {
   return (
     <section className="w-full bg-white pt-20 pb-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] rounded-full bg-[#8424e8]/8 blur-3xl"></div>
+      <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] rounded-full bg-[#6E00E0]/8 blur-3xl"></div>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,11 +53,11 @@ export function FaqSection() {
           transitionDuration={280}
           chevronPosition="right"
           classNames={{
-            item: 'border border-[#eadfff] rounded-2xl bg-white mb-3 overflow-hidden shadow-[0_8px_22px_rgba(132,36,232,0.08)]',
+            item: 'border border-[#eadfff] rounded-2xl bg-white mb-3 overflow-hidden shadow-[0_8px_22px_rgba(110,0,224,0.08)]',
             control: 'py-5 px-5 hover:bg-[#faf7ff] transition-colors duration-200',
             label: 'text-[17px] md:text-[19px] font-medium text-gray-900',
             content: 'text-[15px] pt-1 pb-6 px-5 text-gray-600 leading-relaxed border-t border-[#f0e8ff] bg-[#fdfbff]',
-            chevron: 'text-[#8424e8] w-5 h-5'
+            chevron: 'text-[#6E00E0] w-5 h-5'
           }}
         >
           {faqs.map((faq, index) => (

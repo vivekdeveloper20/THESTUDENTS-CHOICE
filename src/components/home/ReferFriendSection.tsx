@@ -13,7 +13,7 @@ export function ReferFriendSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative w-full rounded-[24px] bg-gradient-to-r from-[#9b30f0] via-[#8424e8] to-[#6a16c9] flex flex-col md:flex-row items-stretch min-h-[320px] mt-24 shadow-[0_30px_70px_rgba(132,36,232,0.30)]"
+          className="relative w-full rounded-[24px] bg-gradient-to-r from-[#9b30f0] via-[#6E00E0] to-[#6a16c9] flex flex-col md:flex-row items-stretch min-h-[320px] mt-24 shadow-[0_30px_70px_rgba(110,0,224,0.30)]"
           style={{ overflow: 'visible' }}
         >
           {/* Background concentric rings */}
@@ -37,7 +37,7 @@ export function ReferFriendSection() {
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link href="/contact-us?type=refer">
-                <Button bg="white" c="#8424e8" radius="md" size="md" className="font-bold px-7 hover:bg-gray-100 transition-colors shadow-sm">
+                <Button bg="white" c="#6E00E0" radius="md" size="md" className="font-bold px-7 hover:bg-gray-100 transition-colors shadow-sm">
                   Refer a Friend
                 </Button>
               </Link>

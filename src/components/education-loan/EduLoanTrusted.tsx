@@ -52,7 +52,7 @@ function CurvedArrow({ flip = false }: { flip?: boolean }) {
       viewBox="0 0 40 24"
       fill="none"
       className={`${flip ? 'scale-x-[-1]' : ''}`}
-      style={{ filter: 'drop-shadow(0 1px 2px rgba(132,36,232,0.15))' }}
+      style={{ filter: 'drop-shadow(0 1px 2px rgba(110,0,224,0.15))' }}
     >
       <path
         d="M2 20 C8 18 12 4 20 4 C28 4 32 14 38 4"
@@ -71,7 +71,7 @@ function CurvedArrow({ flip = false }: { flip?: boolean }) {
       <defs>
         <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#c084fc" />
-          <stop offset="100%" stopColor="#8424e8" />
+          <stop offset="100%" stopColor="#6E00E0" />
         </linearGradient>
       </defs>
     </svg>
@@ -131,12 +131,12 @@ export function EduLoanTrusted() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center gap-1.5 bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+                className="inline-flex items-center gap-1.5 bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
               >
                 ✦ Why Students Trust Us
               </motion.span>
               <h2 className="text-3xl md:text-[2.65rem] font-black leading-tight">
-                <span className="bg-gradient-to-r from-[#7c3aed] via-[#8424e8] to-[#a855f7] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#7c3aed] via-[#6E00E0] to-[#a855f7] bg-clip-text text-transparent">
                   Trusted by Students Worldwide
                 </span>
               </h2>
@@ -154,7 +154,7 @@ export function EduLoanTrusted() {
               {/* ── Animated progress line ── */}
               <motion.div
                 style={{ scaleY: lineScale }}
-                className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[3px] rounded-full bg-gradient-to-b from-[#8424e8] via-[#a855f7] to-[#c084fc] origin-top"
+                className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[3px] rounded-full bg-gradient-to-b from-[#6E00E0] via-[#a855f7] to-[#c084fc] origin-top"
               />
 
               {/* ── Scrolling Airplane ✈️ ── */}
@@ -166,13 +166,13 @@ export function EduLoanTrusted() {
                   animate={{ y: [0, -4, 0] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  <div className="w-11 h-11 md:w-13 md:h-13 rounded-full bg-gradient-to-br from-[#8424e8] to-[#6d28d9] flex items-center justify-center shadow-[0_4px_24px_rgba(132,36,232,0.5)] ring-[3px] ring-white/90">
+                  <div className="w-11 h-11 md:w-13 md:h-13 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6d28d9] flex items-center justify-center shadow-[0_4px_24px_rgba(110,0,224,0.5)] ring-[3px] ring-white/90">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                       <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                     </svg>
                   </div>
                   {/* Trail glow */}
-                  <div className="mx-auto mt-0.5 w-1.5 h-6 rounded-full bg-gradient-to-b from-[#8424e8]/30 to-transparent" />
+                  <div className="mx-auto mt-0.5 w-1.5 h-6 rounded-full bg-gradient-to-b from-[#6E00E0]/30 to-transparent" />
                 </motion.div>
               </motion.div>
 
@@ -200,7 +200,7 @@ export function EduLoanTrusted() {
                               <div className="absolute -top-6 right-4 opacity-60 group-hover:opacity-100 transition-opacity">
                                 <CurvedArrow />
                               </div>
-                              <h3 className="text-[17px] font-extrabold text-[#8424e8] mb-1.5 group-hover:text-[#6d28d9] transition-colors">
+                              <h3 className="text-[17px] font-extrabold text-[#6E00E0] mb-1.5 group-hover:text-[#6d28d9] transition-colors">
                                 {item.title}
                               </h3>
                               <p className="text-gray-500 text-[13px] leading-relaxed">
@@ -217,7 +217,7 @@ export function EduLoanTrusted() {
                           <motion.div
                             whileHover={{ scale: 1.18, rotate: 5 }}
                             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
-                            className="w-[54px] h-[54px] rounded-full bg-white border-[3px] border-[#d8b4fe] shadow-[0_4px_20px_rgba(132,36,232,0.18)] flex items-center justify-center text-2xl cursor-pointer hover:border-[#8424e8] hover:shadow-[0_8px_32px_rgba(132,36,232,0.3)] transition-all duration-300 relative z-10"
+                            className="w-[54px] h-[54px] rounded-full bg-white border-[3px] border-[#d8b4fe] shadow-[0_4px_20px_rgba(110,0,224,0.18)] flex items-center justify-center text-2xl cursor-pointer hover:border-[#6E00E0] hover:shadow-[0_8px_32px_rgba(110,0,224,0.3)] transition-all duration-300 relative z-10"
                           >
                             {item.emoji}
                           </motion.div>
@@ -230,7 +230,7 @@ export function EduLoanTrusted() {
                               <div className="absolute -top-6 left-4 opacity-60 group-hover:opacity-100 transition-opacity">
                                 <CurvedArrow flip />
                               </div>
-                              <h3 className="text-[17px] font-extrabold text-[#8424e8] mb-1.5 group-hover:text-[#6d28d9] transition-colors">
+                              <h3 className="text-[17px] font-extrabold text-[#6E00E0] mb-1.5 group-hover:text-[#6d28d9] transition-colors">
                                 {item.title}
                               </h3>
                               <p className="text-gray-500 text-[13px] leading-relaxed">
@@ -246,11 +246,11 @@ export function EduLoanTrusted() {
                       {/* ─── Mobile layout ─── */}
                       <div className="md:hidden flex items-start gap-4 pl-14">
                         {/* Dot on the rail */}
-                        <div className="absolute left-[14px] top-1 w-6 h-6 rounded-full bg-white border-[3px] border-[#d8b4fe] shadow-[0_2px_10px_rgba(132,36,232,0.18)] flex items-center justify-center text-xs z-10">
+                        <div className="absolute left-[14px] top-1 w-6 h-6 rounded-full bg-white border-[3px] border-[#d8b4fe] shadow-[0_2px_10px_rgba(110,0,224,0.18)] flex items-center justify-center text-xs z-10">
                           {item.emoji}
                         </div>
                         <div>
-                          <h3 className="text-base font-extrabold text-[#8424e8] mb-0.5">
+                          <h3 className="text-base font-extrabold text-[#6E00E0] mb-0.5">
                             {item.title}
                           </h3>
                           <p className="text-gray-500 text-xs leading-relaxed">

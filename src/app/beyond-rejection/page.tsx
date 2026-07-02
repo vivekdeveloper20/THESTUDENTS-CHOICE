@@ -79,7 +79,7 @@ export default function BeyondRejectionPage() {
                 ⚡ Rejection is not the end. It&apos;s a step to get it right.
               </span>
               <h1 className="text-4xl md:text-[52px] font-black leading-[1.08] tracking-tight">
-                <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">Loan Rejected?</span>
+                <span className="bg-gradient-to-r from-[#6E00E0] to-[#b14bf0] bg-clip-text text-transparent">Loan Rejected?</span>
                 <br />
                 <span className="text-[#15112b]">Let&apos;s Build a Stronger Comeback.</span>
               </h1>
@@ -89,11 +89,11 @@ export default function BeyondRejectionPage() {
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link href="/contact-us?type=consultation"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(132,36,232,0.35)] hover:-translate-y-0.5 transition-all">
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 transition-all">
                   Get Rejection Support <Arrow />
                 </Link>
                 <Link href="/tools/loan-eligibility"
-                  className="inline-flex items-center bg-white border-2 border-[#8424e8] text-[#8424e8] font-bold px-7 py-3 rounded-xl hover:bg-[#f7f0ff] transition-colors">
+                  className="inline-flex items-center bg-white border-2 border-[#6E00E0] text-[#6E00E0] font-bold px-7 py-3 rounded-xl hover:bg-[#f7f0ff] transition-colors">
                   Check Free Eligibility
                 </Link>
               </div>
@@ -133,7 +133,7 @@ export default function BeyondRejectionPage() {
           </div>
 
           {/* Feature pills */}
-          <div className="mt-12 rounded-2xl bg-white border border-[#ece5f9] shadow-[0_18px_50px_rgba(132,36,232,0.10)] grid grid-cols-2 md:grid-cols-5 divide-x divide-y md:divide-y-0 divide-[#f1ebfb] overflow-hidden">
+          <div className="mt-12 rounded-2xl bg-white border border-[#ece5f9] shadow-[0_18px_50px_rgba(110,0,224,0.10)] grid grid-cols-2 md:grid-cols-5 divide-x divide-y md:divide-y-0 divide-[#f1ebfb] overflow-hidden">
             {HERO_FEATURES.map((f) => (
               <div key={f.title} className="flex items-center gap-3 px-5 py-5">
                 <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#f3ecff] text-lg flex-shrink-0">{f.icon}</span>
@@ -152,7 +152,7 @@ export default function BeyondRejectionPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-[40px] font-black leading-tight">
-              <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">A Rejection Doesn&apos;t</span>
+              <span className="bg-gradient-to-r from-[#6E00E0] to-[#b14bf0] bg-clip-text text-transparent">A Rejection Doesn&apos;t</span>
               <br />
               <span className="text-[#15112b]">Define Your Future</span>
             </h2>
@@ -165,7 +165,7 @@ export default function BeyondRejectionPage() {
             <p className="mt-4 text-gray-600 leading-relaxed">
               At Students Choice, we don&apos;t simply reapply applications. We help students build stronger profiles, improve documentation, choose suitable lenders, and maximize approval opportunities.
             </p>
-            <p className="mt-5 font-bold text-[#8424e8]">
+            <p className="mt-5 font-bold text-[#6E00E0]">
               Because every educational dream deserves another chance.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function BeyondRejectionPage() {
           <div className="flex items-stretch justify-center gap-2 md:gap-3">
             {FUTURE_STEPS.map((s, i) => (
               <div key={s.title} className="flex items-center gap-2 md:gap-3">
-                <div className="w-28 md:w-40 rounded-2xl border border-[#ece5f9] bg-white p-4 md:p-5 text-center shadow-[0_12px_30px_rgba(132,36,232,0.08)]">
+                <div className="w-28 md:w-40 rounded-2xl border border-[#ece5f9] bg-white p-4 md:p-5 text-center shadow-[0_12px_30px_rgba(110,0,224,0.08)]">
                   <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#f3ecff] text-2xl mb-3">{s.icon}</span>
                   <h3 className="font-extrabold text-gray-900 text-[15px]">{s.title}</h3>
                   <p className="text-[11px] text-gray-500 mt-1.5 leading-snug">{s.desc}</p>
@@ -191,16 +191,16 @@ export default function BeyondRejectionPage() {
 
       {/* ═══ How Students Choice Helps ══════════════════════════ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="rounded-[28px] border border-[#ece5f9] bg-gradient-to-br from-white to-[#faf6ff] p-7 md:p-12 shadow-[0_20px_55px_rgba(132,36,232,0.10)]">
+        <div className="rounded-[28px] border border-[#ece5f9] bg-gradient-to-br from-white to-[#faf6ff] p-7 md:p-12 shadow-[0_20px_55px_rgba(110,0,224,0.10)]">
           <h2 className="text-center text-2xl md:text-[34px] font-black text-[#15112b] mb-12">
-            How <span className="bg-gradient-to-r from-[#8424e8] to-[#b14bf0] bg-clip-text text-transparent">Students Choice</span> Helps After Loan Rejection
+            How <span className="bg-gradient-to-r from-[#6E00E0] to-[#b14bf0] bg-clip-text text-transparent">Students Choice</span> Helps After Loan Rejection
           </h2>
 
           <div className="relative grid gap-8 md:grid-cols-5 md:gap-4">
-            <div className="pointer-events-none hidden md:block absolute left-[9%] right-[9%] top-8 h-[2px] bg-gradient-to-r from-[#8424e8] via-[#b14bf0] to-[#8424e8] opacity-40" />
+            <div className="pointer-events-none hidden md:block absolute left-[9%] right-[9%] top-8 h-[2px] bg-gradient-to-r from-[#6E00E0] via-[#b14bf0] to-[#6E00E0] opacity-40" />
             {HELP_STEPS.map((step, idx) => (
               <div key={step.title} className="relative text-center">
-                <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8b2fe8] to-[#6d17c9] text-white shadow-[0_14px_30px_rgba(132,36,232,0.40)] ring-4 ring-white">
+                <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8b2fe8] to-[#6d17c9] text-white shadow-[0_14px_30px_rgba(110,0,224,0.40)] ring-4 ring-white">
                   {step.icon}
                 </div>
                 <h3 className="font-extrabold text-gray-900 text-[15px] mb-2 leading-tight">{step.title}</h3>
@@ -258,10 +258,10 @@ export default function BeyondRejectionPage() {
 
       {/* ═══ Get Your Case Reviewed by Experts ══════════════════ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="rounded-3xl border border-[#e9defc] bg-gradient-to-br from-[#ffffff] via-[#faf6ff] to-[#f3ebff] p-7 md:p-10 shadow-[0_16px_40px_rgba(132,36,232,0.1)]">
+        <div className="rounded-3xl border border-[#e9defc] bg-gradient-to-br from-[#ffffff] via-[#faf6ff] to-[#f3ebff] p-7 md:p-10 shadow-[0_16px_40px_rgba(110,0,224,0.1)]">
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-10 items-start">
             <div>
-              <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Beyond Rejection</span>
+              <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Beyond Rejection</span>
               <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">Get Your Case Reviewed by Experts</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">Share your details and we&apos;ll provide a free assessment of your rejection case and next steps.</p>
               <div className="space-y-3">
@@ -286,34 +286,34 @@ export default function BeyondRejectionPage() {
             <form className="grid sm:grid-cols-2 gap-4 rounded-2xl border border-[#ebe4fb] bg-white/90 p-5 md:p-6">
               <div className="sm:col-span-2">
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Student Name *</label>
-                <input type="text" placeholder="Enter your full name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="text" placeholder="Enter your full name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Phone Number *</label>
-                <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="tel" placeholder="+91 XXXXX XXXXX" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Country *</label>
-                <input type="text" placeholder="Study destination" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="text" placeholder="Study destination" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">University *</label>
-                <input type="text" placeholder="University name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="text" placeholder="University name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Rejected By *</label>
-                <input type="text" placeholder="Bank/NBFC name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="text" placeholder="Bank/NBFC name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div className="sm:col-span-2">
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Loan Amount *</label>
-                <input type="text" placeholder="Amount needed (in ₹)" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors" />
+                <input type="text" placeholder="Amount needed (in ₹)" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors" />
               </div>
               <div className="sm:col-span-2">
                 <label className="text-sm font-semibold text-gray-700 block mb-1.5">Message</label>
-                <textarea rows={4} placeholder="Brief description of your situation" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#8424e8] transition-colors resize-none" />
+                <textarea rows={4} placeholder="Brief description of your situation" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6E00E0] transition-colors resize-none" />
               </div>
               <div className="sm:col-span-2">
-                <button type="button" className="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold px-8 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(132,36,232,0.28)] hover:brightness-110 transition-all">Review My Case</button>
+                <button type="button" className="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white font-bold px-8 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(110,0,224,0.28)] hover:brightness-110 transition-all">Review My Case</button>
               </div>
             </form>
           </div>

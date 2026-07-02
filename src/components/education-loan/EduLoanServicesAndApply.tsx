@@ -11,7 +11,7 @@ const SERVICES = [
       'Loan options from NBFCs, public & private banks',
       'Faster and timely loan disbursement',
     ],
-    color: 'from-[#7c3aed] to-[#8424e8]',
+    color: 'from-[#7c3aed] to-[#6E00E0]',
   },
   {
     icon: '💱',
@@ -21,7 +21,7 @@ const SERVICES = [
       'Forex Card Currency Exchange',
       'Prepaid/Postpaid SIM cards with free incoming calls',
     ],
-    color: 'from-[#8424e8] to-[#a855f7]',
+    color: 'from-[#6E00E0] to-[#a855f7]',
   },
   {
     icon: '🛡️',
@@ -30,7 +30,7 @@ const SERVICES = [
       'Cashless treatment in hospitals around the world',
       'Personal Accident Cover',
     ],
-    color: 'from-[#6d28d9] to-[#8424e8]',
+    color: 'from-[#6d28d9] to-[#6E00E0]',
   },
   {
     icon: '🏦',
@@ -48,7 +48,7 @@ const SERVICES = [
       'University shortlisting & application support',
       'SOP & LOR review by experts',
     ],
-    color: 'from-[#8424e8] to-[#7c3aed]',
+    color: 'from-[#6E00E0] to-[#7c3aed]',
   },
   {
     icon: '✈️',
@@ -57,7 +57,7 @@ const SERVICES = [
       'End-to-end visa documentation support',
       '98% student visa success rate',
     ],
-    color: 'from-[#6d28d9] to-[#8424e8]',
+    color: 'from-[#6d28d9] to-[#6E00E0]',
   },
   {
     icon: '🏠',
@@ -109,7 +109,7 @@ export function EduLoanServicesAndApply() {
 
       {/* ─── SECTION 1: Zero Service Charges ─────────────────────── */}
       <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#f8f4ff] via-[#fdfaff] to-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute -top-16 right-0 w-80 h-80 rounded-full bg-[#8424e8]/08 blur-3xl" />
+        <div className="pointer-events-none absolute -top-16 right-0 w-80 h-80 rounded-full bg-[#6E00E0]/08 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 w-64 h-64 rounded-full bg-fuchsia-200/15 blur-3xl" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -122,17 +122,17 @@ export function EduLoanServicesAndApply() {
               viewport={{ once: true }}
               className="lg:w-[280px] shrink-0"
             >
-              <span className="inline-flex items-center gap-2 border border-[#d4b8f8] bg-white text-[#8424e8] text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-sm">
+              <span className="inline-flex items-center gap-2 border border-[#d4b8f8] bg-white text-[#6E00E0] text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-sm">
                 ✦ Zero service charges
               </span>
               <h2 className="text-2xl md:text-3xl font-black text-[#1f1147] leading-tight mb-6">
                 Explore all{' '}
-                <span className="text-[#8424e8]">7 services</span> we offer at{' '}
-                <span className="text-[#8424e8]">Zero Charges</span> Whatsoever!
+                <span className="text-[#6E00E0]">7 services</span> we offer at{' '}
+                <span className="text-[#6E00E0]">Zero Charges</span> Whatsoever!
               </h2>
               <Link
                 href="tel:+918888888888"
-                className="inline-flex items-center gap-2 border-2 border-[#8424e8] text-[#8424e8] font-bold px-6 py-3 rounded-full hover:bg-[#8424e8] hover:text-white transition-all duration-300 text-sm"
+                className="inline-flex items-center gap-2 border-2 border-[#6E00E0] text-[#6E00E0] font-bold px-6 py-3 rounded-full hover:bg-[#6E00E0] hover:text-white transition-all duration-300 text-sm"
               >
                 📞 Call an Expert
               </Link>
@@ -148,7 +148,7 @@ export function EduLoanServicesAndApply() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className={`group relative w-52 flex-shrink-0 rounded-2xl bg-gradient-to-br ${svc.color} p-5 shadow-[0_10px_28px_rgba(132,36,232,0.22)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(132,36,232,0.35)] transition-all duration-300 cursor-pointer overflow-hidden`}
+                    className={`group relative w-52 flex-shrink-0 rounded-2xl bg-gradient-to-br ${svc.color} p-5 shadow-[0_10px_28px_rgba(110,0,224,0.22)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(110,0,224,0.35)] transition-all duration-300 cursor-pointer overflow-hidden`}
                   >
                     {/* Glow circle */}
                     <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-white/10 blur-xl pointer-events-none" />
@@ -173,7 +173,7 @@ export function EduLoanServicesAndApply() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className={`group relative w-52 flex-shrink-0 rounded-2xl bg-gradient-to-br ${svc.color} p-5 shadow-[0_10px_28px_rgba(132,36,232,0.22)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(132,36,232,0.35)] transition-all duration-300 cursor-pointer overflow-hidden`}
+                    className={`group relative w-52 flex-shrink-0 rounded-2xl bg-gradient-to-br ${svc.color} p-5 shadow-[0_10px_28px_rgba(110,0,224,0.22)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(110,0,224,0.35)] transition-all duration-300 cursor-pointer overflow-hidden`}
                   >
                     {/* Glow circle */}
                     <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-white/10 blur-xl pointer-events-none" />
@@ -209,7 +209,7 @@ export function EduLoanServicesAndApply() {
           >
             <h2 className="text-3xl md:text-4xl font-black text-[#1f1147]">
               How to apply for an{' '}
-              <span className="text-[#8424e8]">Education Loan?</span>
+              <span className="text-[#6E00E0]">Education Loan?</span>
             </h2>
             <p className="text-gray-500 text-lg mt-3 max-w-xl mx-auto">
               A simple 5-step process from application to disbursement — we handle it all.
@@ -222,7 +222,7 @@ export function EduLoanServicesAndApply() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-[40px] bg-gradient-to-br from-[#8424e8] via-[#7c3aed] to-[#6d28d9] p-8 md:p-12 overflow-hidden shadow-[0_24px_70px_rgba(132,36,232,0.35)]"
+            className="relative rounded-[40px] bg-gradient-to-br from-[#6E00E0] via-[#7c3aed] to-[#6d28d9] p-8 md:p-12 overflow-hidden shadow-[0_24px_70px_rgba(110,0,224,0.35)]"
           >
             {/* BG decorations */}
             <div className="pointer-events-none absolute -top-16 -left-16 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
@@ -260,10 +260,10 @@ export function EduLoanServicesAndApply() {
                   className="relative bg-white rounded-2xl p-5 shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#8424e8] to-[#6d28d9] text-white font-black text-sm flex items-center justify-center shadow-md">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6d28d9] text-white font-black text-sm flex items-center justify-center shadow-md">
                       {step.number}
                     </div>
-                    <h3 className="text-[#8424e8] font-extrabold text-[14px] leading-snug">{step.title}</h3>
+                    <h3 className="text-[#6E00E0] font-extrabold text-[14px] leading-snug">{step.title}</h3>
                   </div>
                   <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
                 </motion.div>
@@ -282,10 +282,10 @@ export function EduLoanServicesAndApply() {
                   className="relative bg-white rounded-2xl p-5 shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#8424e8] to-[#6d28d9] text-white font-black text-sm flex items-center justify-center shadow-md">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#6d28d9] text-white font-black text-sm flex items-center justify-center shadow-md">
                       {step.number}
                     </div>
-                    <h3 className="text-[#8424e8] font-extrabold text-[14px] leading-snug">{step.title}</h3>
+                    <h3 className="text-[#6E00E0] font-extrabold text-[14px] leading-snug">{step.title}</h3>
                   </div>
                   <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
                 </motion.div>

@@ -11,7 +11,7 @@ export default function NewZealandPage() {
     <StudyNewZealandPage
       country="New Zealand"
       tagline="Your Smart Path to Study in New Zealand"
-      heroImage="/assets/images/studyabroadcountry/NEW ZELAND.png"
+      heroImage="/assets/images/New%20Zealand%20Banner.svg"
       introParagraphs={[
         "New Zealand has become one of the most attractive destinations for international students seeking globally recognised education, practical learning, and a balanced lifestyle. Known for its safe cities, welcoming culture, research-focused universities, and strong post-study opportunities, New Zealand offers students a modern education experience with excellent quality of life.",
         "With internationally respected qualifications and industry-focused programs, New Zealand helps students build strong academic and professional foundations for the future."

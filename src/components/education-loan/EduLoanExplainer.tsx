@@ -62,7 +62,7 @@ export function EduLoanExplainer() {
       {/* ─── SECTION 1: What is an Education Loan ─────────────────── */}
       <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#f8f4ff] via-white to-[#f0e8ff] py-20 px-4 sm:px-6 lg:px-8">
         {/* BG glows */}
-        <div className="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#8424e8]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#6E00E0]/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 w-72 h-72 rounded-full bg-fuchsia-200/20 blur-3xl" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -75,13 +75,13 @@ export function EduLoanExplainer() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block bg-[#8424e8]/10 text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+              <span className="inline-block bg-[#6E00E0]/10 text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
                 Education Loan 101
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-[#1f1147] leading-tight mb-5">
                 What is an
                 <br />
-                <span className="text-[#8424e8]">Education Loan?</span>
+                <span className="text-[#6E00E0]">Education Loan?</span>
               </h2>
               <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider mb-5">
                 Study Abroad Without Financial Stress — Powered by Student&apos;s Choice
@@ -99,7 +99,7 @@ export function EduLoanExplainer() {
 
               <Link
                 href="/contact-us?type=consultation"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8424e8] to-[#6f1ed0] text-white font-bold px-7 py-3.5 rounded-full shadow-[0_12px_28px_rgba(132,36,232,0.3)] hover:brightness-110 hover:scale-105 transition-all"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#6E00E0] to-[#6f1ed0] text-white font-bold px-7 py-3.5 rounded-full shadow-[0_12px_28px_rgba(110,0,224,0.3)] hover:brightness-110 hover:scale-105 transition-all"
               >
                 Talk to a Loan Expert Free →
               </Link>
@@ -114,12 +114,12 @@ export function EduLoanExplainer() {
               className="relative"
             >
               {/* Big decorative card behind */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] rounded-[40px] rotate-2 opacity-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] rounded-[40px] rotate-2 opacity-10" />
 
-              <div className="relative rounded-[32px] border border-[#e8dcff] bg-white/80 backdrop-blur-sm p-8 shadow-[0_20px_60px_rgba(132,36,232,0.12)]">
+              <div className="relative rounded-[32px] border border-[#e8dcff] bg-white/80 backdrop-blur-sm p-8 shadow-[0_20px_60px_rgba(110,0,224,0.12)]">
                 {/* Header badge */}
                 <div className="flex items-center gap-3 mb-8 pb-6 border-b border-[#f0e8ff]">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] flex items-center justify-center text-xl shadow-lg">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] flex items-center justify-center text-xl shadow-lg">
                     💡
                   </div>
                   <div>
@@ -136,7 +136,7 @@ export function EduLoanExplainer() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 + i * 0.1 }}
-                      className="flex items-start gap-4 bg-[#faf6ff] rounded-2xl px-5 py-4 border border-[#ede4ff] hover:border-[#c8a8f8] hover:shadow-[0_6px_18px_rgba(132,36,232,0.1)] transition-all duration-300"
+                      className="flex items-start gap-4 bg-[#faf6ff] rounded-2xl px-5 py-4 border border-[#ede4ff] hover:border-[#c8a8f8] hover:shadow-[0_6px_18px_rgba(110,0,224,0.1)] transition-all duration-300"
                     >
                       <span className="text-2xl">{point.icon}</span>
                       <p className="text-gray-700 text-sm leading-relaxed font-medium">{point.text}</p>
@@ -152,7 +152,7 @@ export function EduLoanExplainer() {
                     { val: '24hr', label: 'Expert Response' },
                   ].map((s) => (
                     <div key={s.label}>
-                      <p className="text-[#8424e8] font-black text-xl">{s.val}</p>
+                      <p className="text-[#6E00E0] font-black text-xl">{s.val}</p>
                       <p className="text-gray-400 text-xs font-medium">{s.label}</p>
                     </div>
                   ))}
@@ -166,9 +166,9 @@ export function EduLoanExplainer() {
       {/* ─── SECTION 2: Which Loan is Right for You ────────────────── */}
       <section className="relative w-full bg-[#1f1147] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* BG glows */}
-        <div className="pointer-events-none absolute -top-24 left-0 w-96 h-96 rounded-full bg-[#8424e8]/25 blur-3xl" />
+        <div className="pointer-events-none absolute -top-24 left-0 w-96 h-96 rounded-full bg-[#6E00E0]/25 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 rounded-full bg-fuchsia-500/15 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#8424e8]/10 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#6E00E0]/10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Header */}
@@ -237,18 +237,18 @@ export function EduLoanExplainer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative rounded-3xl border border-[#8424e8]/40 bg-gradient-to-br from-[#8424e8]/20 to-[#6f1ed0]/10 backdrop-blur-sm p-8 overflow-hidden group hover:border-[#8424e8]/60 transition-all duration-300 shadow-[0_0_40px_rgba(132,36,232,0.2)]"
+              className="relative rounded-3xl border border-[#6E00E0]/40 bg-gradient-to-br from-[#6E00E0]/20 to-[#6f1ed0]/10 backdrop-blur-sm p-8 overflow-hidden group hover:border-[#6E00E0]/60 transition-all duration-300 shadow-[0_0_40px_rgba(110,0,224,0.2)]"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#8424e8] to-[#c084fc]" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#6E00E0] to-[#c084fc]" />
               {/* Most popular tag */}
               <div className="absolute top-5 right-5">
-                <span className="bg-[#8424e8] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                <span className="bg-[#6E00E0] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                   Most Popular
                 </span>
               </div>
 
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8424e8] to-[#c084fc] flex items-center justify-center text-xl shadow-lg">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6E00E0] to-[#c084fc] flex items-center justify-center text-xl shadow-lg">
                   🚀
                 </div>
                 <div>
@@ -260,7 +260,7 @@ export function EduLoanExplainer() {
               <ul className="flex flex-col gap-3 mb-7">
                 {UNSECURED.map((point) => (
                   <li key={point} className="flex items-start gap-3">
-                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#8424e8]/30 border border-[#8424e8]/50 text-[#c084fc] text-xs font-bold">
+                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#6E00E0]/30 border border-[#6E00E0]/50 text-[#c084fc] text-xs font-bold">
                       ✓
                     </span>
                     <span className="text-white/80 text-sm leading-relaxed">{point}</span>
@@ -270,7 +270,7 @@ export function EduLoanExplainer() {
 
               <Link
                 href="/contact-us?type=consultation"
-                className="inline-flex items-center justify-center w-full bg-[#8424e8] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#6f1ed0] transition-all text-sm shadow-[0_8px_20px_rgba(132,36,232,0.4)]"
+                className="inline-flex items-center justify-center w-full bg-[#6E00E0] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#6f1ed0] transition-all text-sm shadow-[0_8px_20px_rgba(110,0,224,0.4)]"
               >
                 Apply for Unsecured Loan →
               </Link>
@@ -296,7 +296,7 @@ export function EduLoanExplainer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.35 + i * 0.1 }}
-                  className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/05 p-5 hover:border-[#8424e8]/40 hover:bg-white/10 transition-all duration-300"
+                  className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/05 p-5 hover:border-[#6E00E0]/40 hover:bg-white/10 transition-all duration-300"
                 >
                   <span className="text-2xl">{cat.icon}</span>
                   <h4 className="text-white font-extrabold text-sm leading-snug">{cat.title}</h4>

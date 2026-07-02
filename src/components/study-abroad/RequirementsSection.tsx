@@ -39,7 +39,7 @@ export function RequirementsSection({ requirements, avgCost, workPermit, process
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-[#f4eeff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+          <span className="inline-block bg-[#f4eeff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
             Eligibility
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
@@ -66,9 +66,9 @@ export function RequirementsSection({ requirements, avgCost, workPermit, process
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:border-[#8424e8]/30 hover:shadow-lg transition-all"
+                  className="flex items-start gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:border-[#6E00E0]/30 hover:shadow-lg transition-all"
                 >
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-[#8424e8] to-[#b36af5] text-white text-sm font-bold flex-shrink-0">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-[#6E00E0] to-[#b36af5] text-white text-sm font-bold flex-shrink-0">
                     {i + 1}
                   </span>
                   <p className="text-gray-700 font-medium pt-1.5">{req}</p>
@@ -112,7 +112,7 @@ export function RequirementsSection({ requirements, avgCost, workPermit, process
             </div>
 
             {/* Documents Checklist */}
-            <div className="bg-white border-2 border-[#8424e8]/20 rounded-xl p-8">
+            <div className="bg-white border-2 border-[#6E00E0]/20 rounded-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Documents Checklist</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {documents.map((doc, i) => (
@@ -125,7 +125,7 @@ export function RequirementsSection({ requirements, avgCost, workPermit, process
                     viewport={{ once: true }}
                     className="flex items-center gap-3 text-gray-700 font-medium"
                   >
-                    <span className="text-[#8424e8] text-lg">✓</span>
+                    <span className="text-[#6E00E0] text-lg">✓</span>
                     <span>{doc}</span>
                   </motion.div>
                 ))}

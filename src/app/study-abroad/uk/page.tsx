@@ -11,7 +11,7 @@ export default function UKPage() {
     <StudyUKPage
       country="UK"
       tagline="Your Smart Path to Study in the UK"
-      heroImage="/assets/images/studyabroadcountry/UK Banner.png"
+      heroImage="/assets/images/UK%20Banner.svg"
       introParagraphs={[
         "The UK continues to be one of the world's most preferred destinations for students who want globally respected education, faster degree completion, and strong career opportunities. It offers a powerful combination of academic excellence, innovation, multicultural exposure, and real-world learning.",
         "Studying in the UK is more than earning a degree — it is an investment in your future. With internationally recognised universities, industry-focused programs, and post-study opportunities, students gain the skills, confidence, and global exposure needed to succeed in a competitive world."

@@ -51,7 +51,7 @@ function HeroStatsRow() {
       <div className="relative flex items-stretch divide-x divide-[#e6d9fb]">
         {HERO_STATS.map((stat, i) => (
           <div key={stat.key} className="px-6 first:pl-0 text-center">
-            <div className="bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] bg-clip-text text-transparent font-extrabold text-2xl md:text-[28px] tabular-nums leading-none">
+            <div className="bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] bg-clip-text text-transparent font-extrabold text-2xl md:text-[28px] tabular-nums leading-none">
               {stat.format(values[i])}
             </div>
             <div className="mt-1.5 text-[12px] font-semibold text-gray-500">{stat.label}</div>
@@ -76,7 +76,7 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full bg-white overflow-hidden pt-12 pb-20">
-      <div className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#8424e8]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -left-20 w-72 h-72 rounded-full bg-[#6E00E0]/10 blur-3xl" />
       <div className="pointer-events-none absolute top-36 right-0 w-80 h-80 rounded-full bg-fuchsia-200/30 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,11 +99,11 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-[56px] font-black leading-[1.06] tracking-tight mb-6">
-              <span className="bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] bg-clip-text text-transparent">Get Guided by India&apos;s</span>
+              <span className="bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] bg-clip-text text-transparent">Get Guided by India&apos;s</span>
               <br />
               <span className="text-[#520dd8]">Trusted Study</span>
               <br />
-              <span className="bg-gradient-to-br from-[#8424e8] to-[#6f1ed0] bg-clip-text text-transparent">Abroad Experts</span>
+              <span className="bg-gradient-to-br from-[#6E00E0] to-[#6f1ed0] bg-clip-text text-transparent">Abroad Experts</span>
             </h1>
 
             {/* Subtitle */}
@@ -133,13 +133,13 @@ export function HeroSection() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.9 }}
                   transition={{ duration: 0.5, ease: 'easeOut' }}
-                  className="bg-white border-2 border-[#8424e8] rounded-full pl-6 pr-4 py-2 flex items-center justify-between min-w-[300px] relative z-10 shadow-[0_14px_34px_rgba(132,36,232,0.20)]"
+                  className="bg-white border-2 border-[#6E00E0] rounded-full pl-6 pr-4 py-2 flex items-center justify-between min-w-[300px] relative z-10 shadow-[0_14px_34px_rgba(110,0,224,0.20)]"
                 >
                   <div className="flex flex-col items-start pr-8">
-                    <span className="text-[#8424e8] font-extrabold text-[15px]">{badge.name}</span>
+                    <span className="text-[#6E00E0] font-extrabold text-[15px]">{badge.name}</span>
                     <div className="flex items-baseline gap-2 mt-0.5">
                       <span className="text-black font-black text-[18px]">{badge.amount}</span>
-                      <span className="text-[#8424e8] text-[12px] font-bold uppercase tracking-tighter">Loan Approved</span>
+                      <span className="text-[#6E00E0] text-[12px] font-bold uppercase tracking-tighter">Loan Approved</span>
                     </div>
                   </div>
                   <div className="w-12 h-[30px] rounded overflow-hidden flex-shrink-0 flex items-center justify-center border border-gray-100 shadow-inner">

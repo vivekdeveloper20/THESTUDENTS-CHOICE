@@ -2,103 +2,100 @@
 
 import { motion } from 'framer-motion';
 
+// Left column — scrolls up (clockwise)
 const leftBanks = [
-  { name: "Bank 2",  logo: "/assets/images/banks/2.svg"  },
-  { name: "Bank 3",  logo: "/assets/images/banks/3.svg"  },
-  { name: "Bank 4",  logo: "/assets/images/banks/4.svg"  },
-  { name: "Bank 5",  logo: "/assets/images/banks/5.svg"  },
-  { name: "Bank 6",  logo: "/assets/images/banks/6.svg"  },
-  { name: "Bank 7",  logo: "/assets/images/banks/7.svg"  },
+  { name: 'Bank of Baroda',       logo: '/assets/images/banks/BOB.png' },
+  { name: 'Yes Bank',             logo: '/assets/images/banks/Yes.png' },
+  { name: 'Punjab National Bank', logo: '/assets/images/banks/PNB.png' },
+  { name: 'ICICI Bank',           logo: '/assets/images/banks/ICICI.png' },
+  { name: 'Union Bank of India',  logo: '/assets/images/banks/Union.png' },
+  { name: 'IDFC First Bank',      logo: '/assets/images/banks/IDFC.png' },
 ];
 
+// Right column — scrolls down (anti-clockwise)
 const rightBanks = [
-  { name: "Bank 8",  logo: "/assets/images/banks/8.svg"  },
-  { name: "Bank 9",  logo: "/assets/images/banks/9.svg"  },
-  { name: "Bank 10", logo: "/assets/images/banks/10.svg" },
-  { name: "Bank 11", logo: "/assets/images/banks/11.svg" },
-  { name: "Bank 12", logo: "/assets/images/banks/12.svg" },
-  { name: "Bank 13", logo: "/assets/images/banks/13.svg" },
+  { name: 'Credila',            logo: '/assets/images/banks/Credila.png' },
+  { name: 'Avanse',             logo: '/assets/images/banks/Avanse.png' },
+  { name: 'InCred',             logo: '/assets/images/banks/Incred.png' },
+  { name: 'Tata Capital',       logo: '/assets/images/banks/Tata.png' },
+  { name: 'Poonawalla Fincorp', logo: '/assets/images/banks/Poonawalla.png' },
+  // NOTE: "Avanse Global" logo not found — using Auxilo as placeholder.
+  { name: 'Auxilo',             logo: '/assets/images/banks/Auxilo.png' },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const logoVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
-
-function renderBankCard(bank: { name: string; logo: string }, key: string) {
+function BankCard({ bank }: { bank: { name: string; logo: string } }) {
   return (
-    <motion.div
-      key={key}
-      variants={logoVariants}
-      className="bg-white rounded-2xl p-4 h-28 flex items-center justify-center shadow-lg transition-transform hover:scale-105"
-    >
-      <img
-        src={bank.logo}
-        alt={bank.name}
-        className="max-h-full w-full object-contain"
-      />
-    </motion.div>
+    <div className="bg-white rounded-2xl px-9 py-6 h-24 md:h-[104px] flex items-center justify-center shadow-[0_8px_24px_rgba(91,23,168,0.15)]">
+      <img src={bank.logo} alt={bank.name} className="max-h-full max-w-[80%] w-auto object-contain" />
+    </div>
   );
 }
 
-export function LoanOptionsSection() {
-  const repeatedLeftBanks = [...leftBanks, ...leftBanks];
-  const repeatedRightBanks = [...rightBanks, ...rightBanks];
+const IconArrow = () => (
+  <svg className="w-5 h-5" viewBox="0 0 28 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="12" x2="24" y2="12" /><polyline points="17 5 24 12 17 19" />
+  </svg>
+);
 
+export function LoanOptionsSection() {
   return (
     <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, scale: 0.97 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto rounded-[40px] bg-[#8424e8] p-8 md:p-14 overflow-hidden shadow-2xl"
+        transition={{ duration: 0.7 }}
+        className="max-w-7xl mx-auto rounded-[40px] p-8 md:p-12 relative overflow-hidden shadow-2xl"
+        style={{
+          background:
+            'radial-gradient(ellipse 85% 95% at 50% 50%, #f4ecfd 0%, #e0c9f8 28%, #b377ef 60%, #8a2be2 100%)',
+        }}
       >
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        {/* Faint dotted world map */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-25 pointer-events-none"
+          style={{ backgroundImage: 'url(/assets/images/Map.png)' }}
+        />
 
-          {/* Left Column Logos */}
-          <div className="w-full lg:w-[240px]">
-            <div className="grid grid-cols-2 gap-5 lg:hidden">
-              {leftBanks.map((bank, idx) => renderBankCard(bank, `left-mobile-${idx}`))}
+        <div className="relative grid grid-cols-2 lg:grid-cols-[210px_1fr_210px] gap-6 md:gap-8 items-center">
+
+          {/* Left logos — scroll up (clockwise) */}
+          <div className="order-2 lg:order-1">
+            <div className="grid grid-cols-1 gap-5 lg:hidden">
+              {leftBanks.map((bank) => <BankCard key={bank.name} bank={bank} />)}
             </div>
-            <div className="hidden lg:block h-[31.75rem] overflow-hidden">
+            <div className="hidden lg:block h-[480px] overflow-hidden">
               <div className="flex flex-col gap-5 animate-logo-scroll-up will-change-transform">
-                {repeatedLeftBanks.map((bank, idx) => renderBankCard(bank, `left-desktop-${idx}`))}
+                {[...leftBanks, ...leftBanks].map((bank, idx) => <BankCard key={`l-${idx}`} bank={bank} />)}
               </div>
             </div>
           </div>
 
-          {/* Center Content */}
-          <div className="flex-1 text-center flex flex-col items-center justify-center px-4">
-            <h2 className="text-[28px] md:text-[40px] font-bold text-white leading-tight mb-6 max-w-[600px]">
-              Explore Loan Options from Public Banks, Private Banks & NBFCs
+          {/* Center content */}
+          <div className="col-span-2 lg:col-span-1 order-1 lg:order-2 text-center flex flex-col items-center justify-center px-2 py-2">
+            <h2 className="text-[28px] md:text-[42px] leading-[1.15] mb-5">
+              <span className="font-semibold text-black">One Profile. </span>
+              <span className="font-extrabold text-[#5b1ba8]">Multiple Loan</span>
+              <br />
+              <span className="font-semibold text-black">Offers. </span>
+              <span className="font-extrabold text-[#5b1ba8]">Best Decision.</span>
             </h2>
-            <div className="w-16 h-1 bg-white/30 rounded-full mb-8"></div>
-            <p className="text-white/80 text-[16px] md:text-[22px] font-medium max-w-[450px] leading-relaxed">
-              Your Trusted Partner for Overseas Education Loans
+            <p className="text-black/85 text-[15px] md:text-[18px] leading-relaxed max-w-[470px] mb-8">
+              At Students Choice, we help you compare, evaluate, and secure the most suitable education loan for your study abroad journey.
             </p>
+            <button className="inline-flex items-center gap-3 bg-white text-[#6d28d9] font-extrabold text-[15px] md:text-base px-8 py-3.5 rounded-xl border border-[#d9c3f5] shadow-[0_8px_22px_rgba(91,23,168,0.18)] hover:bg-[#f6efff] hover:-translate-y-0.5 transition-all">
+              Start your journey <IconArrow />
+            </button>
           </div>
 
-          {/* Right Column Logos */}
-          <div className="w-full lg:w-[240px]">
-            <div className="grid grid-cols-2 gap-5 lg:hidden">
-              {rightBanks.map((bank, idx) => renderBankCard(bank, `right-mobile-${idx}`))}
+          {/* Right logos — scroll down (anti-clockwise) */}
+          <div className="order-3">
+            <div className="grid grid-cols-1 gap-5 lg:hidden">
+              {rightBanks.map((bank) => <BankCard key={bank.name} bank={bank} />)}
             </div>
-            <div className="hidden lg:block h-[31.75rem] overflow-hidden">
+            <div className="hidden lg:block h-[480px] overflow-hidden">
               <div className="flex flex-col gap-5 animate-logo-scroll-down will-change-transform">
-                {repeatedRightBanks.map((bank, idx) => renderBankCard(bank, `right-desktop-${idx}`))}
+                {[...rightBanks, ...rightBanks].map((bank, idx) => <BankCard key={`r-${idx}`} bank={bank} />)}
               </div>
             </div>
           </div>

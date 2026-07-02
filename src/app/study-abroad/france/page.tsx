@@ -11,7 +11,7 @@ export default function FrancePage() {
     <StudyFrancePage
       country="France"
       tagline="Your Smart Path to Study in France"
-      heroImage="/assets/images/studyabroadcountry/FRANCE.png"
+      heroImage="/assets/images/France%20Banner.svg"
       introParagraphs={[
         "France has become one of the most attractive study destinations for international students seeking globally recognised education, affordable tuition options, innovation-driven learning, and access to Europe's international job market. Known for its excellence in business, fashion, luxury management, engineering, culinary arts, and research, France offers students a strong balance of academic quality and lifestyle.",
         "As one of Europe's leading economies and cultural hubs, France gives students the opportunity to gain international exposure while studying in a globally connected environment."

@@ -18,7 +18,7 @@ const cards = [
     image: '/assets/images/Students.svg',
     tag: 'For Students',
     icon: '🎓',
-    color: 'from-[#8424e8] to-[#6c1cb8]',
+    color: 'from-[#6E00E0] to-[#6c1cb8]',
   },
   {
     title: 'Consultants & Agents',
@@ -70,7 +70,7 @@ export function JourneySection() {
       style={{ background: 'linear-gradient(135deg, #faf7ff 0%, #f3ebff 50%, #fdf8ff 100%)' }}
     >
       {/* Decorative blobs */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#8424e8]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#6E00E0]/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#6c1cb8]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -83,12 +83,12 @@ export function JourneySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block bg-[#f3ebff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-[#f3ebff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Who We Serve
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
             Start Your Journey{' '}
-            <span className="text-[#8424e8]">With Students Choice</span>
+            <span className="text-[#6E00E0]">With Students Choice</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto">
             Whether you&apos;re a student, consultant, or institution — we have the right solution and support for your success.
@@ -108,7 +108,7 @@ export function JourneySection() {
               key={idx}
               variants={cardVariants}
               whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(132,36,232,0.10)] border border-[#ede8f7] flex flex-col"
+              className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(110,0,224,0.10)] border border-[#ede8f7] flex flex-col"
             >
               {/* Image */}
               <div className="relative h-52 overflow-hidden">
@@ -133,7 +133,7 @@ export function JourneySection() {
 
               {/* Content */}
               <div className="p-7 flex flex-col flex-grow">
-                <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[#8424e8] transition-colors">
+                <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[#6E00E0] transition-colors">
                   {card.title}
                 </h3>
                 <p className="text-gray-500 text-[15px] leading-relaxed mb-5">

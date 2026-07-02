@@ -27,7 +27,7 @@ export function EduLoanBankMarquee() {
             <div
               key={`${bank.name}-${i}`}
               className="flex-shrink-0 h-24 w-52 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-[#e0d4ff] hover:scale-105 transition-all duration-300 flex items-center justify-center p-2 group"
-              style={{ boxShadow: '0 2px 12px rgba(132,36,232,0.06)' }}
+              style={{ boxShadow: '0 2px 12px rgba(110,0,224,0.06)' }}
             >
               <img
                 src={bank.logo}

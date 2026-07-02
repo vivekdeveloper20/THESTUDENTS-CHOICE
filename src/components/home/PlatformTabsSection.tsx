@@ -130,7 +130,7 @@ export function PlatformTabsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p className="text-[18px] md:text-[22px] font-bold text-[#8424e8] mb-2">
+          <p className="text-[18px] md:text-[22px] font-bold text-[#6E00E0] mb-2">
             Your All-in One Platform for Studying Abroad
           </p>
           <h2 className="text-[34px] md:text-[52px] font-extrabold text-[#1a0040] leading-tight">

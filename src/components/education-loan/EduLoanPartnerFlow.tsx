@@ -51,12 +51,12 @@ function PartnerCard({
       whileHover={{
         y: -3,
         scale: 1.04,
-        boxShadow: '0 12px 28px rgba(132,36,232,0.18)',
+        boxShadow: '0 12px 28px rgba(110,0,224,0.18)',
       }}
-      className="relative bg-white rounded-xl border border-[#ebe4fb]/80 shadow-[0_2px_12px_rgba(132,36,232,0.06)] flex items-center justify-center cursor-pointer transition-colors duration-300 hover:border-[#c084fc] group"
+      className="relative bg-white rounded-xl border border-[#ebe4fb]/80 shadow-[0_2px_12px_rgba(110,0,224,0.06)] flex items-center justify-center cursor-pointer transition-colors duration-300 hover:border-[#c084fc] group"
       style={{ height: 60, width: '100%' }}
     >
-      <div className="absolute inset-x-3 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#8424e8] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-x-3 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#6E00E0] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <img
         src={logo}
         alt={name}
@@ -83,9 +83,9 @@ function CenterNode() {
           opacity: [0.25, 0.12, 0.25],
         }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#8424e8]/20 blur-xl"
+        className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#6E00E0]/20 blur-xl"
       />
-      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#8424e8] via-[#7c3aed] to-[#6d28d9] shadow-[0_8px_40px_rgba(132,36,232,0.4)] flex items-center justify-center ring-4 ring-white/80">
+      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#6E00E0] via-[#7c3aed] to-[#6d28d9] shadow-[0_8px_40px_rgba(110,0,224,0.4)] flex items-center justify-center ring-4 ring-white/80">
         <img
           src="/assets/images/white-logo.png"
           alt="Student's Choice Consultancy"
@@ -96,7 +96,7 @@ function CenterNode() {
         <p className="text-sm md:text-base font-extrabold text-[#1f1147] leading-tight">
           Student&apos;s Choice
         </p>
-        <p className="text-[10px] md:text-xs text-[#8424e8] font-semibold tracking-wider uppercase">
+        <p className="text-[10px] md:text-xs text-[#6E00E0] font-semibold tracking-wider uppercase">
           Consultancy
         </p>
       </div>
@@ -156,8 +156,8 @@ function BranchSVG({ side }: { side: 'left' | 'right' }) {
     >
       <defs>
         <linearGradient id={`branchGrad-${side}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor={side === 'left' ? '#d8b4fe' : '#8424e8'} />
-          <stop offset="100%" stopColor={side === 'left' ? '#8424e8' : '#d8b4fe'} />
+          <stop offset="0%" stopColor={side === 'left' ? '#d8b4fe' : '#6E00E0'} />
+          <stop offset="100%" stopColor={side === 'left' ? '#6E00E0' : '#d8b4fe'} />
         </linearGradient>
       </defs>
       {paths.map((d, i) => (
@@ -189,7 +189,7 @@ function MobileLayout() {
         whileInView={{ scaleY: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[3px] h-8 rounded-full bg-gradient-to-b from-[#8424e8] to-[#c084fc] origin-top"
+        className="w-[3px] h-8 rounded-full bg-gradient-to-b from-[#6E00E0] to-[#c084fc] origin-top"
       />
       <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
         {allPartners.map((p, i) => (
@@ -255,7 +255,7 @@ function LeftBranches() {
       <defs>
         <linearGradient id="leftGrad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#d8b4fe" />
-          <stop offset="100%" stopColor="#8424e8" />
+          <stop offset="100%" stopColor="#6E00E0" />
         </linearGradient>
       </defs>
       {Array.from({ length: count }).map((_, i) => {
@@ -320,7 +320,7 @@ function RightBranches() {
     >
       <defs>
         <linearGradient id="rightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#8424e8" />
+          <stop offset="0%" stopColor="#6E00E0" />
           <stop offset="100%" stopColor="#d8b4fe" />
         </linearGradient>
       </defs>
@@ -396,14 +396,14 @@ export function EduLoanPartnerFlow() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur border border-[#e9d5ff] text-[#8424e8] text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-5 shadow-sm"
+            className="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur border border-[#e9d5ff] text-[#6E00E0] text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-5 shadow-sm"
           >
-            <span className="inline-block w-2 h-2 rounded-full bg-[#8424e8] animate-pulse" />
+            <span className="inline-block w-2 h-2 rounded-full bg-[#6E00E0] animate-pulse" />
             Our Lending Network
           </motion.span>
           <h2 className="text-3xl md:text-[2.75rem] font-black leading-tight">
             <span className="text-[#1f1147]">Connected to </span>
-            <span className="bg-gradient-to-r from-[#7c3aed] via-[#8424e8] to-[#a855f7] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7c3aed] via-[#6E00E0] to-[#a855f7] bg-clip-text text-transparent">
               15+ Leading Lenders
             </span>
           </h2>
