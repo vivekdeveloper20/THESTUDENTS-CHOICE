@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { Burger, Drawer, Stack } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import { IconArrowRight } from '@tabler/icons-react';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
 const WorldMapDropdown = dynamic(
   () => import('./WorldMapDropdown').then((m) => m.WorldMapDropdown),
@@ -65,17 +66,6 @@ const studyAbroadGroups = [
       { label: 'New Zealand', href: '/study-abroad/new-zealand', flag: 'nz' },
     ],
   },
-];
-
-/* ─── Simple dropdown data ───────────────────────────────────── */
-interface DropdownItem { label: string; href: string; icon: string }
-
-const toolsItems: DropdownItem[] = [
-  { label: 'Education Loan EMI Calculator', href: '/tools/emi-calculator', icon: '🧮' },
-  { label: 'INR USD Calculator', href: '/tools/inr-usd-calculator', icon: '💱' },
-  { label: 'Loan Eligibility Checker', href: '/tools/loan-eligibility', icon: '✅' },
-  { label: 'Currency Converter', href: '/tools/currency-converter', icon: '🔄' },
-  { label: 'About Us', href: '/about-us', icon: '🏫' },
 ];
 
 /* ─── Study Abroad Mega-menu (Desktop) ───────────────────────── */
@@ -145,60 +135,6 @@ function StudyAbroadMega() {
   );
 }
 
-/* ─── Simple dropdown (Desktop) ──────────────────────────────── */
-function DesktopDropdown({ label, items }: { label: string; items: DropdownItem[] }) {
-  const [open, setOpen] = useState(false);
-  const closeTimer = useState<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleMouseEnter = () => {
-    if (closeTimer[0]) clearTimeout(closeTimer[0]);
-    setOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    const timer = setTimeout(() => setOpen(false), 300);
-    closeTimer[1](timer);
-  };
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <button
-        className="flex items-center whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors hover:text-[#6E00E0] focus:outline-none"
-        aria-expanded={open}
-      >
-        {label}
-        <ChevronDown open={open} />
-      </button>
-
-      <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 min-w-[240px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(110,0,224,0.14)] border border-[#ede8f7] overflow-hidden transition-all duration-200 origin-top z-50 ${
-          open
-            ? 'opacity-100 scale-100 pointer-events-auto translate-y-0'
-            : 'opacity-0 scale-95 pointer-events-none -translate-y-2'
-        }`}
-      >
-        <div className="h-1 w-full bg-gradient-to-r from-[#6E00E0] to-[#b36af5]" />
-        <div className="py-2">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-3 px-5 py-3 text-[14px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#6E00E0] transition-colors group"
-            >
-              <span className="text-[18px] group-hover:scale-110 transition-transform">{item.icon}</span>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Mobile accordion ───────────────────────────────────────── */
 function MobileAccordion({
   label,
@@ -227,6 +163,7 @@ export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [scroll] = useWindowScroll();
   const scrolled = (scroll.y ?? 0) > 8;
+  const { open: openLead } = useLeadForm();
 
   return (
     <header className="sticky top-0 z-50 w-full pt-3 px-3 sm:px-4 lg:px-5">
@@ -248,8 +185,9 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+          {/* Right group: Nav + CTA */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="flex items-center gap-4 xl:gap-6">
             <StudyAbroadMega />
             <Link
               href="/beyond-rejection"
@@ -263,7 +201,10 @@ export function Header() {
             >
               Education Loan
             </Link>
-            <DesktopDropdown label="Tools" items={toolsItems} />
+            <div className="flex flex-col items-center justify-center whitespace-nowrap cursor-default select-none">
+              <span className="text-black font-sans font-medium text-[15px]">Tools</span>
+              <span className="text-[10px] font-light text-gray-400 leading-none mt-0.5">Coming soon</span>
+            </div>
             <Link
               href="/contact-us"
               className="relative whitespace-nowrap text-black font-sans font-medium text-[15px] transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-[#6E00E0] after:transition-[width] after:duration-300 hover:text-[#6E00E0] hover:after:w-full"
@@ -273,14 +214,15 @@ export function Header() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center shrink-0">
-            <Link
-              href="/contact-us"
+          <div className="flex items-center shrink-0">
+            <button
+              onClick={() => openLead('Apply Now')}
               className="flex items-center gap-2 shrink-0 whitespace-nowrap bg-[#6E00E0] text-white font-semibold text-[14px] px-6 py-2.5 rounded-full shadow-[0_6px_20px_rgba(110,0,224,0.28)] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(110,0,224,0.38)] transition-all"
             >
               Apply Now
               <IconArrowRight size={17} className="shrink-0" />
-            </Link>
+            </button>
+          </div>
           </div>
 
           {/* Burger */}
@@ -355,22 +297,11 @@ export function Header() {
             Education Loan
           </Link>
 
-          {/* Tools accordion */}
-          <MobileAccordion label="Tools">
-            <div className="flex flex-col gap-1">
-              {toolsItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={close}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[15px] font-medium text-gray-700 hover:bg-[#f7f0ff] hover:text-[#6E00E0] transition-colors"
-                >
-                  <span className="text-[18px]">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </MobileAccordion>
+          {/* Tools — coming soon (no inner pages) */}
+          <div className="flex items-center justify-between text-xl font-bold text-gray-900 border-b border-gray-100 pb-4 pt-2">
+            <span>Tools</span>
+            <span className="text-[12px] font-light text-gray-400">Coming soon</span>
+          </div>
 
           {/* Contact Us link */}
           <Link
@@ -381,13 +312,12 @@ export function Header() {
             Contact Us
           </Link>
 
-          <Link
-            href="/contact-us"
-            onClick={close}
+          <button
+            onClick={() => { close(); openLead('Apply Now'); }}
             className="mt-4 flex items-center justify-center gap-2 bg-[#6E00E0] text-white font-bold h-14 rounded-xl shadow-[0_6px_20px_rgba(110,0,224,0.28)]"
           >
             Apply Now <IconArrowRight size={18} />
-          </Link>
+          </button>
         </Stack>
       </Drawer>
     </header>

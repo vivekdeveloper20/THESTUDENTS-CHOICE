@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { PageShell } from '@/components/layout/PageShell';
+import { useLeadForm } from '@/components/lead/LeadModal';
+import { ReferFriendSection } from '@/components/home/ReferFriendSection';
 
 export interface CountryPageProps {
   country: string;
@@ -30,6 +32,7 @@ const fadeUp = {
 };
 
 export function CountryPage(p: CountryPageProps) {
+  const { open } = useLeadForm();
   return (
     <PageShell>
       {/* ── Hero ───────────────────────────────────────── */}
@@ -65,14 +68,15 @@ export function CountryPage(p: CountryPageProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/contact-us?type=consultation"
+              <button
+                type="button"
+                onClick={() => open('Book Free Consultation')}
                 className="bg-white text-[#6E00E0] font-bold px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               >
                 Book Free Consultation
-              </Link>
+              </button>
               <Link
-                href="https://wa.me/918888888888"
+                href="https://wa.me/919801821680"
                 className="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white/10 transition-all"
               >
                 💬 WhatsApp Us
@@ -230,6 +234,8 @@ export function CountryPage(p: CountryPageProps) {
         </div>
       </section>
 
+      <ReferFriendSection />
+
       {/* ── CTA ────────────────────────────────────────── */}
       <section className={`${p.heroGradient} py-20`}>
         <div className="max-w-3xl mx-auto text-center px-4">
@@ -247,7 +253,7 @@ export function CountryPage(p: CountryPageProps) {
               Get Free Counseling
             </Link>
             <Link
-              href="tel:+918888888888"
+              href="tel:+919801821680"
               className="border-2 border-white text-white font-bold px-10 py-4 rounded-full hover:bg-white/10 transition-all"
             >
               📞 Call Us Now

@@ -270,7 +270,7 @@ export function StudyCountryPage(p: StudyCountryPageProps) {
               Get Free Counseling
             </Link>
             <Link
-              href="tel:+918888888888"
+              href="tel:+919801821680"
               className="border-2 border-white text-white font-bold px-12 py-5 rounded-full hover:bg-white/10 transition-all text-lg"
             >
               📞 Call an Expert

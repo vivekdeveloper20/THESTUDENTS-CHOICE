@@ -4,6 +4,7 @@ import { PageShell } from '@/components/layout/PageShell';
 import { EduLoanBankMarquee } from '@/components/education-loan/EduLoanBankMarquee';
 import { ReferFriendSection } from '@/components/home/ReferFriendSection';
 import { TestimonialSection } from '@/components/home/TestimonialSection';
+import { RejectionSupportButton } from '@/components/beyond-rejection/RejectionSupportButton';
 
 export const metadata: Metadata = {
   title: "Beyond Rejection | Student's Choice",
@@ -88,10 +89,7 @@ export default function BeyondRejectionPage() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link href="/contact-us?type=consultation"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_12px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 transition-all">
-                  Get Rejection Support <Arrow />
-                </Link>
+                <RejectionSupportButton />
                 <Link href="/tools/loan-eligibility"
                   className="inline-flex items-center bg-white border-2 border-[#6E00E0] text-[#6E00E0] font-bold px-7 py-3 rounded-xl hover:bg-[#f7f0ff] transition-colors">
                   Check Free Eligibility
@@ -320,9 +318,9 @@ export default function BeyondRejectionPage() {
         </div>
       </section>
 
-      {/* ═══ Refer a Friend + Testimonials ══════════════════════ */}
-      <ReferFriendSection />
+      {/* ═══ Testimonials + Refer a Friend ══════════════════════ */}
       <TestimonialSection />
+      <ReferFriendSection />
     </PageShell>
   );
 }

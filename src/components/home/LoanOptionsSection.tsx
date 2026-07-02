@@ -1,32 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
-// Left column — scrolls up (clockwise)
 const leftBanks = [
-  { name: 'Bank of Baroda',       logo: '/assets/images/banks/BOB.png' },
-  { name: 'Yes Bank',             logo: '/assets/images/banks/Yes.png' },
-  { name: 'Punjab National Bank', logo: '/assets/images/banks/PNB.png' },
-  { name: 'ICICI Bank',           logo: '/assets/images/banks/ICICI.png' },
-  { name: 'Union Bank of India',  logo: '/assets/images/banks/Union.png' },
-  { name: 'IDFC First Bank',      logo: '/assets/images/banks/IDFC.png' },
+  { name: 'Bank of Baroda',       logo: '/assets/images/Bob.svg' },
+  { name: 'Yes Bank',             logo: '/assets/images/Yes.svg' },
+  { name: 'Punjab National Bank', logo: '/assets/images/Pnb.svg' },
+  { name: 'ICICI Bank',           logo: '/assets/images/Icici.svg' },
+  { name: 'Union Bank of India',  logo: '/assets/images/Union.svg' },
+  { name: 'IDFC First Bank',      logo: '/assets/images/Idfc.svg' },
 ];
 
-// Right column — scrolls down (anti-clockwise)
 const rightBanks = [
-  { name: 'Credila',            logo: '/assets/images/banks/Credila.png' },
-  { name: 'Avanse',             logo: '/assets/images/banks/Avanse.png' },
-  { name: 'InCred',             logo: '/assets/images/banks/Incred.png' },
-  { name: 'Tata Capital',       logo: '/assets/images/banks/Tata.png' },
-  { name: 'Poonawalla Fincorp', logo: '/assets/images/banks/Poonawalla.png' },
-  // NOTE: "Avanse Global" logo not found — using Auxilo as placeholder.
-  { name: 'Auxilo',             logo: '/assets/images/banks/Auxilo.png' },
+  { name: 'Credila',            logo: '/assets/images/Credila.svg' },
+  { name: 'Avanse',             logo: '/assets/images/Avanse.svg' },
+  { name: 'Axis Bank',          logo: '/assets/images/Axis.svg' },
+  { name: 'Tata Capital',       logo: '/assets/images/Tata.svg' },
+  { name: 'Poonawalla Fincorp', logo: '/assets/images/Poonawalla.svg' },
+  { name: 'Auxilo',             logo: '/assets/images/Auxilo.svg' },
 ];
 
 function BankCard({ bank }: { bank: { name: string; logo: string } }) {
   return (
-    <div className="bg-white rounded-2xl px-9 py-6 h-24 md:h-[104px] flex items-center justify-center shadow-[0_8px_24px_rgba(91,23,168,0.15)]">
-      <img src={bank.logo} alt={bank.name} className="max-h-full max-w-[80%] w-auto object-contain" />
+    <div className="bg-white rounded-2xl px-7 py-5 h-24 md:h-[104px] flex items-center justify-center shadow-[0_8px_24px_rgba(91,23,168,0.15)]">
+      <img src={bank.logo} alt={bank.name} className="max-h-full max-w-full w-auto object-contain" />
     </div>
   );
 }
@@ -38,6 +36,7 @@ const IconArrow = () => (
 );
 
 export function LoanOptionsSection() {
+  const { open } = useLeadForm();
   return (
     <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -51,7 +50,6 @@ export function LoanOptionsSection() {
             'radial-gradient(ellipse 85% 95% at 50% 50%, #f4ecfd 0%, #e0c9f8 28%, #b377ef 60%, #8a2be2 100%)',
         }}
       >
-        {/* Faint dotted world map */}
         <div
           className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-25 pointer-events-none"
           style={{ backgroundImage: 'url(/assets/images/Map.png)' }}
@@ -59,7 +57,6 @@ export function LoanOptionsSection() {
 
         <div className="relative grid grid-cols-2 lg:grid-cols-[210px_1fr_210px] gap-6 md:gap-8 items-center">
 
-          {/* Left logos — scroll up (clockwise) */}
           <div className="order-2 lg:order-1">
             <div className="grid grid-cols-1 gap-5 lg:hidden">
               {leftBanks.map((bank) => <BankCard key={bank.name} bank={bank} />)}
@@ -71,7 +68,6 @@ export function LoanOptionsSection() {
             </div>
           </div>
 
-          {/* Center content */}
           <div className="col-span-2 lg:col-span-1 order-1 lg:order-2 text-center flex flex-col items-center justify-center px-2 py-2">
             <h2 className="text-[28px] md:text-[42px] leading-[1.15] mb-5">
               <span className="font-semibold text-black">One Profile. </span>
@@ -83,12 +79,11 @@ export function LoanOptionsSection() {
             <p className="text-black/85 text-[15px] md:text-[18px] leading-relaxed max-w-[470px] mb-8">
               At Students Choice, we help you compare, evaluate, and secure the most suitable education loan for your study abroad journey.
             </p>
-            <button className="inline-flex items-center gap-3 bg-white text-[#6d28d9] font-extrabold text-[15px] md:text-base px-8 py-3.5 rounded-xl border border-[#d9c3f5] shadow-[0_8px_22px_rgba(91,23,168,0.18)] hover:bg-[#f6efff] hover:-translate-y-0.5 transition-all">
+            <button onClick={() => open('Start your journey')} className="inline-flex items-center gap-3 bg-white text-[#6d28d9] font-extrabold text-[15px] md:text-base px-8 py-3.5 rounded-xl border border-[#d9c3f5] shadow-[0_8px_22px_rgba(91,23,168,0.18)] hover:bg-[#f6efff] hover:-translate-y-0.5 transition-all">
               Start your journey <IconArrow />
             </button>
           </div>
 
-          {/* Right logos — scroll down (anti-clockwise) */}
           <div className="order-3">
             <div className="grid grid-cols-1 gap-5 lg:hidden">
               {rightBanks.map((bank) => <BankCard key={bank.name} bank={bank} />)}

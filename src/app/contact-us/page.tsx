@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PageShell } from '@/components/layout/PageShell';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
 /* ─── Inline line icons ──────────────────────────────────────── */
 const cx = 'w-5 h-5';
@@ -61,9 +62,24 @@ export default function ContactUsPage() {
     name: '', phone: '', email: '', category: '', description: '',
   });
   const [bookingDone, setBookingDone] = useState(false);
+  const { open } = useLeadForm();
 
   function handleBookingSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const lines = [
+      'Hello Students Choice! I would like to book a free consultation.',
+      '',
+      `Name: ${booking.name}`,
+      `Phone: ${booking.phone}`,
+      booking.email ? `Email: ${booking.email}` : '',
+      booking.category ? `Category: ${booking.category}` : '',
+      booking.description ? `Message: ${booking.description}` : '',
+    ].filter(Boolean);
+    window.open(
+      `https://wa.me/919801821680?text=${encodeURIComponent(lines.join('\n'))}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
     setBookingDone(true);
   }
 
@@ -85,7 +101,7 @@ export default function ContactUsPage() {
                 <p>Whether you&apos;re exploring universities, comparing loan options, or seeking professional guidance, our experts are ready to assist you.</p>
                 <p>Connect with Students Choice today and take the first step toward your academic success.</p>
               </div>
-              <button className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(110,0,224,0.45)] transition-all">
+              <button onClick={() => open('Talk to Counsellor')} className="mt-8 inline-flex items-center gap-3 bg-gradient-to-r from-[#8b2fe8] to-[#6d17c9] text-white font-bold px-7 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(110,0,224,0.35)] hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(110,0,224,0.45)] transition-all">
                 Talk to Counsellor <IconArrow />
               </button>
             </motion.div>
@@ -244,7 +260,6 @@ export default function ContactUsPage() {
           </motion.div>
         </div>
       </section>
-
     </PageShell>
   );
 }

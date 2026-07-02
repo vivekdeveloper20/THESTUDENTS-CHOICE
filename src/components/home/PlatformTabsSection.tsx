@@ -3,6 +3,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLeadForm } from '@/components/lead/LeadModal';
+
+const ArrowRight = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+);
 
 /* ─── Tab Data ─────────────────────────────────────────────────── */
 const tabData = [
@@ -114,6 +119,7 @@ const tabData = [
 
 /* ─── Component ─────────────────────────────────────────────────── */
 export function PlatformTabsSection() {
+  const { open } = useLeadForm();
   const [activeTab, setActiveTab] = useState('university');
   const active = tabData.find((t) => t.id === activeTab) || tabData[0];
   const isUniversity = active.id === 'university';
@@ -227,16 +233,22 @@ export function PlatformTabsSection() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <button className="inline-flex items-center gap-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold text-[15px] px-7 py-3.5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
-                    {active.buttonIcon && (
-                      <span className="text-[16px]">{active.buttonIcon}</span>
-                    )}
+                  <button
+                    onClick={() => open(active.buttonText)}
+                    className="inline-flex items-center gap-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold text-[15px] px-7 py-3.5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95"
+                  >
                     {active.buttonText}
+                    <ArrowRight />
                   </button>
                   {(active as typeof tabData[1]).whatsapp && (
-                    <button className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#1a0040] font-semibold text-[15px] px-7 py-3.5 rounded-full border border-gray-200 shadow-sm transition-all hover:scale-105 active:scale-95">
-                      <span>💬</span> Chat on WhatsApp
-                    </button>
+                    <a
+                      href="https://wa.me/919801821680?text=Hello%20Students%20Choice!%20I%20want%20to%20know%20more%20about%20education%20loans."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1faa55] text-white font-semibold text-[15px] px-7 py-3.5 rounded-full shadow-sm transition-all hover:scale-105 active:scale-95"
+                    >
+                      Chat on WhatsApp
+                    </a>
                   )}
                 </div>
               </div>

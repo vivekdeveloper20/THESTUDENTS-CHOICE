@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { IconBrandWhatsapp, IconStarFilled } from '@tabler/icons-react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
 const APPROVAL_BADGES = [
   { name: 'Vijayalakshmi', amount: '₹70 Lakh', country: 'USA', flag: 'https://flagcdn.com/w40/us.png' },
@@ -63,6 +64,7 @@ function HeroStatsRow() {
 }
 
 export function HeroSection() {
+  const { open } = useLeadForm();
   const [badgeIndex, setBadgeIndex] = useState(0);
 
   useEffect(() => {
@@ -113,12 +115,17 @@ export function HeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="inline-flex items-center justify-center font-bold px-8 h-14 rounded-full text-white bg-[#520dd8] hover:bg-[#8c52ff] hover:scale-[1.03] transition-all duration-300 shadow-[0_12px_30px_rgba(82,13,216,0.35)]">
+              <button onClick={() => open('Book Free Consultation — Hero')} className="inline-flex items-center justify-center font-bold px-8 h-14 rounded-full text-white bg-[#520dd8] hover:bg-[#8c52ff] hover:scale-[1.03] transition-all duration-300 shadow-[0_12px_30px_rgba(82,13,216,0.35)]">
                 Book Free Consultation
               </button>
-              <button className="inline-flex items-center gap-2 justify-center font-bold px-8 h-14 rounded-full text-white bg-[#520dd8] hover:bg-[#8c52ff] hover:scale-[1.03] transition-all duration-300 shadow-[0_12px_30px_rgba(82,13,216,0.35)]">
+              <a
+                href="https://wa.me/919801821680?text=Hello%20Students%20Choice!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 justify-center font-bold px-8 h-14 rounded-full text-white bg-[#25D366] hover:bg-[#1faa55] hover:scale-[1.03] transition-all duration-300 shadow-[0_12px_30px_rgba(37,211,102,0.35)]"
+              >
                 <IconBrandWhatsapp size={22} /> WhatsApp
-              </button>
+              </a>
             </div>
 
             {/* Stats row */}
@@ -158,7 +165,7 @@ export function HeroSection() {
             className="relative flex justify-center items-center"
           >
             <div className="relative z-10 w-full flex justify-center items-center">
-              <img
+                <img
                 src="/assets/images/hero-banner.svg"
                 alt="Student Study Abroad Consultancy"
                 className="w-full max-w-[720px] lg:scale-110 lg:-mr-6 h-auto object-contain animate-float drop-shadow-2xl"

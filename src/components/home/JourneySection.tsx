@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
 const cards = [
   {
@@ -65,6 +65,7 @@ const cardVariants = {
 };
 
 export function JourneySection() {
+  const { open } = useLeadForm();
   return (
     <section className="w-full relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8"
       style={{ background: 'linear-gradient(135deg, #faf7ff 0%, #f3ebff 50%, #fdf8ff 100%)' }}
@@ -155,13 +156,13 @@ export function JourneySection() {
                 </ul>
 
                 {/* CTA */}
-                <Link
-                  href={card.href}
+                <button
+                  onClick={() => open(`${card.title} — ${card.buttonText}`)}
                   className={`self-start inline-flex items-center gap-2 bg-gradient-to-r ${card.color} text-white font-bold text-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300`}
                 >
                   {card.buttonText}
                   <span className="text-base group-hover:translate-x-1 transition-transform">→</span>
-                </Link>
+                </button>
               </div>
 
               {/* Bottom accent line */}

@@ -155,16 +155,6 @@ export function EduLoanHero() {
                   </div>
                 </motion.div>
               </AnimatePresence>
-              {/* Confetti dots */}
-              <div
-                className="absolute -top-14 -left-8 w-40 h-32 opacity-25 pointer-events-none"
-                style={{
-                  backgroundImage:
-                    'radial-gradient(circle, #facc15 3px, transparent 3px), radial-gradient(circle, #6E00E0 3px, transparent 3px), radial-gradient(circle, #3b82f6 3px, transparent 3px)',
-                  backgroundSize: '24px 24px, 30px 30px, 36px 36px',
-                  backgroundPosition: '0 0, 12px 12px, 22px 6px',
-                }}
-              />
             </div>
           </motion.div>
 
@@ -222,7 +212,7 @@ export function EduLoanHero() {
 
             {/* WhatsApp button — commented out, restore to re-enable
             <motion.a
-              href="https://wa.me/918888888888"
+              href="https://wa.me/919801821680"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}

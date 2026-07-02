@@ -4,6 +4,7 @@ import "./globals.css";
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { SiteEffects } from '@/components/layout/SiteEffects';
+import { LeadModalProvider } from '@/components/lead/LeadModal';
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,8 +29,10 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} font-sans antialiased`}>
         <MantineProvider defaultColorScheme="light">
-          <SiteEffects />
-          {children}
+          <LeadModalProvider>
+            <SiteEffects />
+            {children}
+          </LeadModalProvider>
         </MantineProvider>
       </body>
     </html>

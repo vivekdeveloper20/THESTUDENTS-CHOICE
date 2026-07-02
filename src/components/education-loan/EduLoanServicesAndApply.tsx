@@ -131,7 +131,7 @@ export function EduLoanServicesAndApply() {
                 <span className="text-[#6E00E0]">Zero Charges</span> Whatsoever!
               </h2>
               <Link
-                href="tel:+918888888888"
+                href="tel:+919801821680"
                 className="inline-flex items-center gap-2 border-2 border-[#6E00E0] text-[#6E00E0] font-bold px-6 py-3 rounded-full hover:bg-[#6E00E0] hover:text-white transition-all duration-300 text-sm"
               >
                 📞 Call an Expert

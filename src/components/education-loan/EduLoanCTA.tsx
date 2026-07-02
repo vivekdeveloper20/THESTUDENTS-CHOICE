@@ -3,8 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { IconBrandWhatsapp, IconPhone } from '@tabler/icons-react';
+import { useLeadForm } from '@/components/lead/LeadModal';
 
 export function EduLoanCTA() {
+  const { open } = useLeadForm();
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#6E00E0] via-[#6f1ed0] to-[#4c1387] py-20 px-4 sm:px-6 lg:px-8">
       {/* BG Orbs */}
@@ -36,15 +38,16 @@ export function EduLoanCTA() {
 
           {/* Action buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-            <Link
-              href="/contact-us?type=consultation"
+            <button
+              type="button"
+              onClick={() => open('Book Free Consultation')}
               id="edu-loan-final-cta"
               className="inline-flex items-center justify-center bg-white text-[#6E00E0] font-black px-10 py-4 rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.25)] hover:bg-[#f3ebff] hover:scale-105 transition-all text-lg"
             >
               Book Free Consultation
-            </Link>
+            </button>
             <a
-              href="https://wa.me/918888888888"
+              href="https://wa.me/919801821680"
               id="edu-loan-whatsapp-cta"
               className="inline-flex items-center gap-2 bg-[#1fc65f] text-white font-bold px-8 py-4 rounded-full shadow-[0_12px_30px_rgba(27,154,74,0.4)] hover:bg-[#16b454] hover:scale-105 transition-all text-lg"
             >
@@ -52,7 +55,7 @@ export function EduLoanCTA() {
               WhatsApp Us
             </a>
             <a
-              href="tel:+918888888888"
+              href="tel:+919801821680"
               id="edu-loan-call-cta"
               className="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white font-bold px-8 py-4 rounded-full hover:bg-white/25 transition-all text-lg"
             >

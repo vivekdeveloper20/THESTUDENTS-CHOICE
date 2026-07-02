@@ -6,10 +6,10 @@ import { LoanSupportSection } from "@/components/home/LoanSupportSection";
 import { LoanOptionsSection } from "@/components/home/LoanOptionsSection";
 import { DestinationsSection } from "@/components/home/DestinationsSection";
 import { TestimonialSection } from "@/components/home/TestimonialSection";
+import { ReferFriendSection } from "@/components/home/ReferFriendSection";
 import { JourneySection } from "@/components/home/JourneySection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { LoanApprovalBanner } from "@/components/layout/LoanApprovalBanner";
-// import { PreFooter } from "@/components/layout/PreFooter";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -17,17 +17,16 @@ export default function Home() {
     <main id="main-content" className="min-h-screen bg-white">
       <Header />
       <HeroSection />
-      {/* Page Content goes here dynamically */}
       <PlatformTabsSection />
       <WhyTrustSection />
       <LoanSupportSection />
       <LoanOptionsSection />
       <DestinationsSection />
       <TestimonialSection />
+      <ReferFriendSection />
       <JourneySection />
       <FaqSection />
       <LoanApprovalBanner />
-      {/* <PreFooter /> */}
       <Footer />
     </main>
   );

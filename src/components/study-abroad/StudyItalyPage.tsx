@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useLeadForm } from '@/components/lead/LeadModal';
 import { PageShell } from '@/components/layout/PageShell';
 import { WhyItalyTopChoiceSection } from './WhyItalyTopChoiceSection';
 import { ItalyPopularUniversitiesSection } from './ItalyPopularUniversitiesSection';
 import { RequirementsSection } from './RequirementsSection';
 import { DestinationsSection } from '@/components/home/DestinationsSection';
 import { TestimonialSection } from '@/components/home/TestimonialSection';
+import { ReferFriendSection } from '@/components/home/ReferFriendSection';
 import { JourneySection } from '@/components/home/JourneySection';
 import { FaqSection } from '@/components/home/FaqSection';
 
@@ -35,6 +37,7 @@ const fadeUp = {
 };
 
 export function StudyItalyPage(p: StudyItalyPageProps) {
+  const { open } = useLeadForm();
   return (
     <PageShell>
       {/* ── Hero ───────────────────────────────────────── */}
@@ -62,13 +65,12 @@ export function StudyItalyPage(p: StudyItalyPageProps) {
                 Discover globally respected universities, affordable education, rich cultural experiences, and career-focused programs in one of Europe's most iconic study destinations.
               </p>
 
-              <Link
-                href="/italy-universities"
+              <button type="button" onClick={() => open(`Explore ${p.country} University`)}
                 className="inline-flex items-center bg-white text-[#6E00E0] font-extrabold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all text-sm md:text-base group"
               >
                 Explore {p.country} Universities
                 <span className="ml-3 group-hover:translate-x-1 transition-transform text-xl">→</span>
-              </Link>
+              </button>
             </motion.div>
           </div>
         </div>
@@ -184,13 +186,12 @@ export function StudyItalyPage(p: StudyItalyPageProps) {
                 <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Ready to move?</p>
                 <h3 className="text-xl font-extrabold leading-snug mb-3">Start Your {p.country} Study Journey Today</h3>
                 <p className="text-sm text-white/70 mb-5 leading-relaxed">Get personalised guidance from our expert consultants — completely free.</p>
-                <Link
-                  href="/contact-us"
+                <button type="button" onClick={() => open('Book Free Consultation')}
                   className="inline-flex items-center gap-2 bg-white text-[#6E00E0] font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-yellow-50 hover:scale-105 transition-all shadow-md"
                 >
                   Book Free Consultation
                   <span className="text-base">→</span>
-                </Link>
+                </button>
               </motion.div>
 
               {/* Why Italy trust list */}
@@ -323,6 +324,7 @@ export function StudyItalyPage(p: StudyItalyPageProps) {
       {/* ── Destinations & Global Sections ────────────────────────────── */}
       <DestinationsSection />
       <TestimonialSection />
+      <ReferFriendSection />
       <JourneySection />
       <FaqSection />
 
